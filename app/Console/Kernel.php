@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Console\Commands\InstallAppCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -13,13 +14,14 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+    InstallAppCommand::class,
     ];
 
     /**
      * Define the application's command schedule.
      *
-     * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
+     * @param \Illuminate\Console\Scheduling\Schedule $schedule
+     *
      * @return void
      */
     protected function schedule(Schedule $schedule)
@@ -29,14 +31,12 @@ class Kernel extends ConsoleKernel
     }
 
     /**
-     * Register the commands for the application.
+     * Register the Closure based commands for the application.
      *
      * @return void
      */
     protected function commands()
     {
-        $this->load(__DIR__.'/Commands');
-
         require base_path('routes/console.php');
     }
 }
