@@ -58,5 +58,15 @@ return [
             'reactivated'         => 'reactivated user',
             'restored'            => 'restored user',
         ],
+        'zumhicache' => [
+            'created' => 'created ZumhiCache',
+            'deleted' => 'deleted ZumhiCache',
+            'updated' => 'updated ZumhiCache',
+        ],
+        'zumhicacheuser' => [
+            'created' => 'created ZumhiCache User',
+            'deleted' => 'deleted ZumhiCache User',
+            'updated' => 'updated ZumhiCache User',
+        ],
     ],
 ];

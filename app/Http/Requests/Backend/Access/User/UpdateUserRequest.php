@@ -28,6 +28,7 @@ class UpdateUserRequest extends Request
     {
         return [
             'email'           => 'required|email',
+            'username'        => ['required', 'string', 'alpha_dash'],
             'first_name'      => 'required',
             'last_name'       => 'required',
             'permissions'     => 'required',

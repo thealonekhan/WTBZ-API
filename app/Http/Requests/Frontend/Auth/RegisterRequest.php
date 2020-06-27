@@ -30,6 +30,7 @@ class RegisterRequest extends Request
         return [
             'first_name'           => 'required|max:255',
             'last_name'            => 'required|max:255',
+            'username'             => ['required', 'string', 'max:255', 'unique:users', 'alpha_dash'],
             'email'                => ['required', 'email', 'max:255', Rule::unique('users')],
             'password'             => 'required|min:8|confirmed|regex:"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$"',
             'is_term_accept'       => 'required',

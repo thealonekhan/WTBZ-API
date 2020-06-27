@@ -23,6 +23,12 @@ class DatabaseSeeder extends Seeder
         $this->call(PagesTableSeeder::class);
         $this->call(MenuTableSeeder::class);
         $this->call(ModulesTableSeeder::class);
+        $this->call(CountryTableSeeder::class);
+        $this->call(TypesTableSeeder::class);
+        $this->call(SizesTableSeeder::class);
+        $this->call(StatusTableSeeder::class);
+        $this->call(MembershipsTableSeeder::class);
+        $this->call(CoordinatesSeeder::class);
 
         Model::reguard();
     }

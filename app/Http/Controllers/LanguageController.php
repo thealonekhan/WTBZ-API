@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Requests\Request;
+use Illuminate\Support\Str;
 
 /**
  * Class LanguageController.
@@ -17,5 +19,10 @@ class LanguageController extends Controller
         session()->put('locale', $lang);
 
         return redirect()->back();
+    }
+
+    public function generate_slug(Request $request)
+    {
+        return Str::slug($request['text']);
     }
 }

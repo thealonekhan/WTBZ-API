@@ -18,7 +18,7 @@ class AuthController extends APIController
     public function login(Request $request)
     {
         $validation = Validator::make($request->all(), [
-            'email'    => 'required|email',
+            'username' => ['required', 'string', 'max:255', 'alpha_dash'],
             'password' => 'required|min:4',
         ]);
 
@@ -26,7 +26,7 @@ class AuthController extends APIController
             return $this->throwValidation($validation->messages()->first());
         }
 
-        $credentials = $request->only(['email', 'password']);
+        $credentials = $request->only(['username', 'password']);
 
         try {
             if (!Auth::attempt($credentials)) {

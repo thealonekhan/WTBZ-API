@@ -31,12 +31,9 @@ class RegisterController extends APIController
     public function register(Request $request)
     {
         $validation = Validator::make($request->all(), [
-            'first_name'            => 'required',
-            'last_name'             => 'required',
+            'username'              => ['required', 'string', 'max:255', 'unique:users', 'alpha_dash'],
             'email'                 => 'required|email|unique:users',
-            'password'              => 'required|min:4',
-            'password_confirmation' => 'required|same:password',
-            'is_term_accept'        => 'required',
+            'password'              => 'required|min:4'
         ]);
 
         if ($validation->fails()) {

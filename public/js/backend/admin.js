@@ -383,6 +383,151 @@ var Backend = {}; // common variable used in all the files of the backend
             }
         },
 
+        /**
+         * ZumhiCache
+         *
+         */
+        ZumhiCache: {
+            selectors: {
+                ddUser: jQuery(".dd-user"),
+                ddSize: jQuery(".dd-size"),
+                ddType: jQuery(".dd-type"),
+                ddCountry: jQuery(".dd-country"),
+                ddState: jQuery(".dd-state"),
+                ddTimezone: jQuery(".dd-timezone"),
+                ddCoordinates: jQuery(".dd-coordinates"),
+                ddStatus: jQuery(".dd-status"),
+                datetimepicker1: jQuery(".datetimepicker1"),
+                StateAjaxUrl: "",
+                //name: document.getElementById("name"),
+                //SlugUrl: "",
+                //slug: document.getElementById("slug"),
+            },
+
+            init: function (locale) {
+                this.addHandlers();
+                Backend.tinyMCE.init(locale);
+            },
+
+            addHandlers: function () {
+
+                // this.selectors.tags.select2({
+                //     tags: true,
+                // });
+                this.selectors.ddUser.select2({
+                    placeholder: "Select a User",
+                    allowClear: true
+                });
+                this.selectors.ddSize.select2({
+                    placeholder: "Select a Size",
+                    allowClear: true
+                });
+                this.selectors.ddType.select2({
+                    placeholder: "Select a Type",
+                    allowClear: true
+                });
+                this.selectors.ddCountry.select2({
+                    placeholder: "Select a Country",
+                    allowClear: true
+                });
+                this.selectors.ddState.select2({
+                    placeholder: "Please select country first",
+                    allowClear: true
+                });
+                this.selectors.ddTimezone.select2({
+                    placeholder: "Select a Timezone",
+                    allowClear: true
+                });
+                this.selectors.ddCoordinates.select2({
+                    placeholder: "Select a Coordinate",
+                    allowClear: true
+                });
+                this.selectors.ddStatus.select2({
+                    placeholder: "Select a Status",
+                    allowClear: true
+                });
+                //this.selectors.toDisplay.select2();
+                //this.selectors.status.select2();
+
+                //For Blog datetimepicker for publish_datetime
+                this.selectors.datetimepicker1.datetimepicker();
+                var url = this.selectors.StateAjaxUrl;
+                this.selectors.ddCountry.on('change', function (event) {
+                    countryID = event.target.value;
+                    if (countryID !== '') {
+                        callback = {
+                            success: function (request) {
+                                if (request.status >= 200 && request.status < 400) {
+                                    // Success!
+                                    // var obj = [];
+                                    // var resultData = JSON.parse(request.response);
+                                    // var stateData = $.map(resultData, function(value, index) {
+                                    //     return {"id": index, "name": value};
+                                    // });
+                                    // // console.log(data);
+                                    // // $.each(resultData, function( index, value ) {
+                                    // //     //alert( index + ": " + value );
+                                    // //     obj[0] = {id: index, text: value};
+                                    // // });
+                                    // // console.log(obj);
+                                    $("#state-dd-area").html(request.response);
+                                    $('.dd-state').select2({
+                                        placeholder: 'Select a State',
+                                    });
+                                }
+                            },
+                            error: function (request) {
+
+                            }
+                        };
+                        Backend.Utils.ajaxrequest(Backend.ZumhiCache.selectors.StateAjaxUrl, "post", {
+                            countryID: countryID
+                        }, Backend.Utils.csrf, callback);
+                    }
+                });
+            }
+        },
+
+        /**
+         * ZumhiCache
+         *
+         */
+        ZumhiCacheUser: {
+            selectors: {
+                ddUser: jQuery(".dd-user"),
+                ddMembership: jQuery(".dd-membership"),
+                ddCoordinates: jQuery(".dd-coordinates"),
+                datetimepicker1: jQuery(".datetimepicker1"),
+            },
+
+            init: function (locale) {
+                this.addHandlers();
+                Backend.tinyMCE.init(locale);
+            },
+
+            addHandlers: function () {
+
+                // this.selectors.tags.select2({
+                //     tags: true,
+                // });
+                this.selectors.ddUser.select2({
+                    placeholder: "Select a User",
+                    allowClear: true
+                });
+                this.selectors.ddMembership.select2({
+                    placeholder: "Select Memebership",
+                    allowClear: true
+                });
+                this.selectors.ddCoordinates.select2({
+                    placeholder: "Select a Coordinate",
+                    allowClear: true
+                });
+
+                //For Blog datetimepicker for publish_datetime
+                this.selectors.datetimepicker1.datetimepicker();
+            }
+        },
+
         Menu: {
             selectors: {
                 menuItemContainer: jQuery("#menu-items"),

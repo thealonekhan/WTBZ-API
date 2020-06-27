@@ -1,0 +1,1 @@
+{{ Form::select('state_id', $states, null, ['class' => 'form-control dd-state box-size', 'required' => 'required']) }}

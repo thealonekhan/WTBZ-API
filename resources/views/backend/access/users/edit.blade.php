@@ -40,6 +40,15 @@
                     </div><!--col-lg-10-->
                 </div><!--form control-->
 
+                {{-- Username --}}
+                <div class="form-group">
+                    {{ Form::label('username', trans('validation.attributes.backend.access.users.username'), ['class' => 'col-lg-2 control-label required']) }}
+
+                    <div class="col-lg-10">
+                        {{ Form::text('username', null, ['class' => 'form-control box-size', 'placeholder' => trans('validation.attributes.backend.access.users.username'), 'required' => 'required']) }}
+                    </div><!--col-lg-10-->
+                </div><!--form control-->
+
                 {{-- Email --}}
                 <div class="form-group">
                     {{ Form::label('email', trans('validation.attributes.backend.access.users.email'), ['class' => 'col-lg-2 control-label required']) }}

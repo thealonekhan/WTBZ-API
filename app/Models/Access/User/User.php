@@ -39,8 +39,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'first_name',
-        'last_name',
+        //'first_name',
+        //'last_name',
+        'username',
         'email',
         'status',
         'confirmation_code',
@@ -91,6 +92,7 @@ class User extends Authenticatable
             'id'          => $this->id,
             'first_name'  => $this->first_name,
             'last_name'   => $this->last_name,
+            'username'    => $this->username,
             'email'       => $this->email,
             'picture'     => $this->getPicture(),
             'confirmed'   => $this->confirmed,

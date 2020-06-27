@@ -5,6 +5,11 @@
     </tr>
 
     <tr>
+        <th>{{ trans('labels.backend.access.users.tabs.content.overview.username') }}</th>
+        <td>{{ $user->username }}</td>
+    </tr>
+
+    <tr>
         <th>{{ trans('labels.backend.access.users.tabs.content.overview.email') }}</th>
         <td>{{ $user->email }}</td>
     </tr>

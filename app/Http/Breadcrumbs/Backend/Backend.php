@@ -16,3 +16,14 @@ require __DIR__.'/Blog_Management.php';
 require __DIR__.'/Faqs.php';
 require __DIR__.'/Menu.php';
 require __DIR__.'/LogViewer.php';
+
+require __DIR__.'/ZumhiCache.php';
+require __DIR__.'/Country.php';
+require __DIR__.'/State.php';
+require __DIR__.'/ZumhiCacheType.php';
+require __DIR__.'/ZumhiCacheSize.php';
+require __DIR__.'/ZumhiCacheUser.php';
+require __DIR__.'/ZumhiCacheCoordinate.php';
+require __DIR__.'/ZumhiCacheAttribute.php';
+require __DIR__.'/ZumhiCacheMembership.php';
+require __DIR__.'/Status.php';

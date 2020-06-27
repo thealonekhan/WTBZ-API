@@ -1,0 +1,1 @@
+{!! history()->renderEntity('ZumhiCache', $zumhicache->id) !!}

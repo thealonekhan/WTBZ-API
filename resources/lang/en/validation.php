@@ -146,6 +146,7 @@ return [
                     'active'                  => 'Active',
                     'associated_roles'        => 'Associated Roles',
                     'confirmed'               => 'Confirmed',
+                    'username'                => 'Username',
                     'email'                   => 'E-mail Address',
                     'firstName'               => 'First Name',
                     'lastName'                => 'Last Name',
@@ -191,6 +192,45 @@ return [
                 'status'           => 'Status',
             ],
 
+            'zumhicache' => [
+                'referenceCode'    => 'Reference Code',
+                'name'             => 'Name',
+                'difficulty'       => 'Difficulty',
+                'terrain'          => 'Terrain',
+                'placedDate'       => 'Placed',
+                'publishedDate'    => 'Published',
+                'eventEndDate'     => 'Event End',
+                'user_id'          => 'User',
+                'type_id'          => 'Type',
+                'size_id'          => 'Size',
+                'country_id'       => 'Country',
+                'state_id'         => 'State',
+                'coordinates_id'   => 'Coordinates',
+                'shortDescription' => 'Short Description',
+                'longDescription'  => 'Long Description',
+                'hints'            => 'Hints',
+                'ianaTimezoneId'   => 'ianaTimezoneId',
+                'relatedWebPage'   => 'Related Web Page',
+                'url'              => 'URL',
+                'containsHtml'     => 'Contains Html?',
+                'hasSolutionChecker' => 'Has Solution Checker?',
+                'status_id'        => 'Status',
+            ],
+
+            'zumhicacheuser' => [
+                'referenceCode'         => 'Reference Code',
+                'user_id'               => 'User',
+                'membership_id'         => 'Membership',
+                'joinedDateUtc'         => 'Join Date',
+                'avatarUrl'             => 'Avatar URL',
+                'bannerUrl'             => 'Banner URL',
+                'url'                   => 'URL',
+                'profileText'           => 'Profile Text',
+                'coordinates_id'        => 'Coordinates',
+                'isFriend'              => 'Is Friend?',
+                'optedInFriendSharing'  => 'Opted In firend sharing',
+            ],
+
             'settings' => [
                 'sitelogo'        => 'Site Logo',
                 'favicon'         => 'Fav Icon',
@@ -226,6 +266,7 @@ return [
 
         'frontend' => [
             'register-user' => [
+                'username'                  => 'Username',
                 'email'                     => 'E-mail Address',
                 'firstName'                 => 'First Name',
                 'lastName'                  => 'Last Name',

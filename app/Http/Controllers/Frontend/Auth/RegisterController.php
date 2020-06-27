@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Frontend\Auth\RegisterRequest;
 use App\Repositories\Frontend\Access\User\UserRepository;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Http\Responses\RedirectResponse;
+use App\Exceptions\GeneralException;
 
 /**
  * Class RegisterController.
@@ -40,7 +42,9 @@ class RegisterController extends Controller
      */
     public function showRegistrationForm()
     {
-        return view('frontend.auth.register');
+        return new RedirectResponse('/', ['flash_error' => trans('alerts.frontend.users.register-front-error')]);
+        throw new GeneralException(trans('alerts.frontend.users.register-front-error'));
+        // return view('frontend.auth.register');
     }
 
     /**
@@ -61,6 +65,8 @@ class RegisterController extends Controller
 
             return redirect($this->redirectPath());
         }*/
+
+        return new RedirectResponse('/', ['flash_error' => trans('alerts.frontend.users.register-front-error')]);
 
         if (config('access.users.confirm_email') || config('access.users.requires_approval')) {
             $user = $this->user->create($request->only('first_name', 'last_name', 'email', 'password', 'is_term_accept'));

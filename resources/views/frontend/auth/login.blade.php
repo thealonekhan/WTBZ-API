@@ -14,9 +14,9 @@
                     {{ Form::open(['route' => 'frontend.auth.login', 'class' => 'form-horizontal']) }}
 
                     <div class="form-group">
-                        {{ Form::label('email', trans('validation.attributes.frontend.register-user.email'), ['class' => 'col-md-4 control-label']) }}
+                        {{ Form::label('username', trans('validation.attributes.frontend.register-user.username'), ['class' => 'col-md-4 control-label']) }}
                         <div class="col-md-6">
-                            {{ Form::input('email', 'email', null, ['class' => 'form-control', 'placeholder' => trans('validation.attributes.frontend.register-user.email')]) }}
+                            {{ Form::input('text', 'username', null, ['class' => 'form-control', 'placeholder' => trans('validation.attributes.frontend.register-user.username')]) }}
                         </div><!--col-md-6-->
                     </div><!--form-group-->
 

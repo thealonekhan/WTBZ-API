@@ -1,346 +1,468 @@
 <?php
-
 return [
-
-    /*
-    |--------------------------------------------------------------------------
-    | Labels Language Lines
-    |--------------------------------------------------------------------------
-    |
-    | The following language lines are used in labels throughout the system.
-    | Regardless where it is placed, a label can be listed here so it is easily
-    | found in a intuitive way.
-    |
-    */
-
-    'general' => [
-        'all'     => 'All',
-        'yes'     => 'Yes',
-        'no'      => 'No',
-        'custom'  => 'Custom',
-        'actions' => 'Actions',
-        'active'  => 'Active',
-        'buttons' => [
-            'save'   => 'Save',
-            'update' => 'Update',
-        ],
-        'hide'              => 'Hide',
-        'inactive'          => 'Inactive',
-        'none'              => 'None',
-        'show'              => 'Show',
-        'toggle_navigation' => 'Toggle Navigation',
-    ],
-
-    'backend' => [
-        'profile_updated' => 'Your profile has been updated.',
-        'access'          => [
-            'roles' => [
-                'create'     => 'Create Role',
-                'edit'       => 'Edit Role',
-                'management' => 'Role Management',
-
-                'table' => [
-                    'number_of_users' => 'Number of Users',
-                    'permissions'     => 'Permissions',
-                    'role'            => 'Role',
-                    'sort'            => 'Sort',
-                    'total'           => 'role total|roles total',
-                ],
-            ],
-
-            'permissions' => [
-                'create'     => 'Create Permission',
-                'edit'       => 'Edit Permission',
-                'management' => 'Permission Management',
-
-                'table' => [
-                    'permission'   => 'Permission',
-                    'display_name' => 'Display Name',
-                    'sort'         => 'Sort',
-                    'status'       => 'Status',
-                    'total'        => 'role total|roles total',
-                ],
-            ],
-
-            'users' => [
-                'active'              => 'Active Users',
-                'all_permissions'     => 'All Permissions',
-                'change_password'     => 'Change Password',
-                'change_password_for' => 'Change Password for :user',
-                'create'              => 'Create User',
-                'deactivated'         => 'Deactivated Users',
-                'deleted'             => 'Deleted Users',
-                'edit'                => 'Edit User',
-                'edit-profile'        => 'Edit Profile',
-                'management'          => 'User Management',
-                'no_permissions'      => 'No Permissions',
-                'no_roles'            => 'No Roles to set.',
-                'permissions'         => 'Permissions',
-
-                'table' => [
-                    'confirmed'      => 'Confirmed',
-                    'created'        => 'Created',
-                    'email'          => 'E-mail',
-                    'id'             => 'ID',
-                    'last_updated'   => 'Last Updated',
-                    'first_name'     => 'First Name',
-                    'last_name'      => 'Last Name',
-                    'no_deactivated' => 'No Deactivated Users',
-                    'no_deleted'     => 'No Deleted Users',
-                    'roles'          => 'Roles',
-                    'total'          => 'user total|users total',
-                ],
-
-                'tabs' => [
-                    'titles' => [
-                        'overview' => 'Overview',
-                        'history'  => 'History',
-                    ],
-
-                    'content' => [
-                        'overview' => [
-                            'avatar'       => 'Avatar',
-                            'confirmed'    => 'Confirmed',
-                            'created_at'   => 'Created At',
-                            'deleted_at'   => 'Deleted At',
-                            'email'        => 'E-mail',
-                            'last_updated' => 'Last Updated',
-                            'name'         => 'Name',
-                            'status'       => 'Status',
-                        ],
-                    ],
-                ],
-
-                'view' => 'View User',
-            ],
-        ],
-
-        'pages' => [
-            'create'     => 'Create Page',
-            'edit'       => 'Edit Page',
-            'management' => 'Page Management',
-            'title'      => 'Pages',
-
-            'table' => [
-                'title'     => 'Title',
-                'status'    => 'Status',
-                'createdat' => 'Created At',
-                'updatedat' => 'Updated At',
-                'createdby' => 'Created By',
-                'all'       => 'All',
-            ],
-        ],
-
-        'blogcategories' => [
-            'create'     => 'Create Blog Category',
-            'edit'       => 'Edit Blog Category',
-            'management' => 'Blog Category Management',
-            'title'      => 'Blog Category',
-
-            'table' => [
-                'title'     => 'Blog Category',
-                'status'    => 'Status',
-                'createdat' => 'Created At',
-                'createdby' => 'Created By',
-                'all'       => 'All',
-            ],
-        ],
-
-        'blogtags' => [
-            'create'     => 'Create Blog Tag',
-            'edit'       => 'Edit Blog Tag',
-            'management' => 'Blog Tag Management',
-            'title'      => 'Blog Tags',
-
-            'table' => [
-                'title'     => 'Blog Tag',
-                'status'    => 'Status',
-                'createdat' => 'Created At',
-                'createdby' => 'Created By',
-                'all'       => 'All',
-            ],
-        ],
-
-        'blogs' => [
-            'create'     => 'Create Blog',
-            'edit'       => 'Edit Blog',
-            'management' => 'Blog Management',
-            'title'      => 'Blogs',
-
-            'table' => [
-                'title'     => 'Blog',
-                'publish'   => 'PublishDateTime',
-                'status'    => 'Status',
-                'createdat' => 'Created At',
-                'createdby' => 'Created By',
-                'all'       => 'All',
-            ],
-        ],
-
-        'settings' => [
-            'edit'           => 'Edit Settings',
-            'management'     => 'Settings Management',
-            'title'          => 'Settings',
-            'seo'            => 'SEO Settings',
-            'companydetails' => 'Company Contact Details',
-            'mail'           => 'Mail Settings',
-            'footer'         => 'Footer Settings',
-            'terms'          => 'Terms and Condition Settings',
-            'google'         => 'Google Analytics Track Code',
-        ],
-
-        'faqs' => [
-            'create'     => 'Create FAQ',
-            'edit'       => 'Edit FAQ',
-            'management' => 'FAQ Management',
-            'title'      => 'FAQ',
-
-            'table' => [
-                'title'     => 'FAQs',
-                'publish'   => 'PublishDateTime',
-                'status'    => 'Status',
-                'createdat' => 'Created At',
-                'createdby' => 'Created By',
-                'answer'    => 'Answer',
-                'question'  => 'Question',
-                'updatedat' => 'Updated At',
-                'all'       => 'All',
-            ],
-        ],
-
-        'menus' => [
-            'create'     => 'Create Menu',
-            'edit'       => 'Edit Menu',
-            'management' => 'Menu Management',
-            'title'      => 'Menus',
-
-            'table' => [
-                'name'      => 'Name',
-                'type'      => 'Type',
-                'createdat' => 'Created At',
-                'createdby' => 'Created By',
-                'all'       => 'All',
-            ],
-            'field' => [
-                'name'      => 'Name',
-                'type'      => 'Type',
-                'items'     => 'Menu Items',
-                'url'       => 'URL',
-                'url_type'  => 'URL Type',
-                'url_types' => [
-                  'route'  => 'Route',
-                  'static' => 'Static',
-                ],
-                'open_in_new_tab'    => 'Open URL in new tab',
-                'view_permission_id' => 'Permission',
-                'icon'               => 'Icon Class',
-                'icon_title'         => 'Font Awesome Class. eg. fa-edit',
-            ],
-        ],
-
-        'modules' => [
-            'create'     => 'Create Module',
-            'management' => 'Module Management',
-            'title'      => 'Module',
-            'edit'       => 'Edit Module',
-
-            'table' => [
-                'name'               => 'Module Name',
-                'url'                => 'Module View Route',
-                'view_permission_id' => 'View Permission',
-                'created_by'         => 'Created By',
-            ],
-
-            'form' => [
-                'name'                  => 'Module Name',
-                'url'                   => 'View Route',
-                'view_permission_id'    => 'View Permission',
-                'directory_name'        => 'Directory Name',
-                'namespace'             => 'Namespace',
-                'model_name'            => 'Model Name',
-                'controller_name'       => 'Controller &nbsp;Name',
-                'resource_controller'   => 'Resourceful Controller',
-                'table_controller_name' => 'Controller &nbsp;Name',
-                'table_name'            => 'Table Name',
-                'route_name'            => 'Route Name',
-                'route_controller_name' => 'Controller &nbsp;Name',
-                'resource_route'        => 'Resourceful Routes',
-                'views_directory'       => 'Directory &nbsp;&nbsp;&nbsp;Name',
-                'index_file'            => 'Index',
-                'create_file'           => 'Create',
-                'edit_file'             => 'Edit',
-                'form_file'             => 'Form',
-                'repo_name'             => 'Repository Name',
-                'event'                 => 'Event Name',
-            ],
-        ],
-    ],
-
-    'frontend' => [
-
-        'auth' => [
-            'login_box_title'    => 'Login',
-            'login_button'       => 'Login',
-            'login_with'         => 'Login with :social_media',
-            'register_box_title' => 'Register',
-            'register_button'    => 'Register',
-            'remember_me'        => 'Remember Me',
-        ],
-
-        'passwords' => [
-            'forgot_password'                 => 'Forgot Your Password?',
-            'reset_password_box_title'        => 'Reset Password',
-            'reset_password_button'           => 'Reset Password',
-            'send_password_reset_link_button' => 'Send Password Reset Link',
-        ],
-
-        'macros' => [
-            'country' => [
-                'alpha'   => 'Country Alpha Codes',
-                'alpha2'  => 'Country Alpha 2 Codes',
-                'alpha3'  => 'Country Alpha 3 Codes',
-                'numeric' => 'Country Numeric Codes',
-            ],
-
-            'macro_examples' => 'Macro Examples',
-
-            'state' => [
-                'mexico' => 'Mexico State List',
-                'us'     => [
-                    'us'       => 'US States',
-                    'outlying' => 'US Outlying Territories',
-                    'armed'    => 'US Armed Forces',
-                ],
-            ],
-
-            'territories' => [
-                'canada' => 'Canada Province & Territories List',
-            ],
-
-            'timezone' => 'Timezone',
-        ],
-
-        'user' => [
-            'passwords' => [
-                'change' => 'Change Password',
-            ],
-
-            'profile' => [
-                'avatar'             => 'Avatar',
-                'created_at'         => 'Created At',
-                'edit_information'   => 'Edit Information',
-                'email'              => 'E-mail',
-                'last_updated'       => 'Last Updated',
-                'first_name'         => 'First Name',
-                'last_name'          => 'Last Name',
-                'address'            => 'Address',
-                'state'              => 'State',
-                'city'               => 'City',
-                'zipcode'            => 'Zip Code',
-                'ssn'                => 'SSN',
-                'update_information' => 'Update Information',
-            ],
-        ],
-
-    ],
+	"general" => [
+	"all" => "All",
+	"yes" => "Yes",
+	"no" => "No",
+	"custom" => "Custom",
+	"actions" => "Actions",
+	"active" => "Active",
+	"buttons" => [
+	"save" => "Save",
+	"update" => "Update",
+	],
+	"hide" => "Hide",
+	"inactive" => "Inactive",
+	"none" => "None",
+	"show" => "Show",
+	"toggle_navigation" => "Toggle Navigation",
+	],
+	"backend" => [
+	"profile_updated" => "Your profile has been updated.",
+	"access" => [
+	"roles" => [
+	"create" => "Create Role",
+	"edit" => "Edit Role",
+	"management" => "Role Management",
+	"table" => [
+	"number_of_users" => "Number of Users",
+	"permissions" => "Permissions",
+	"role" => "Role",
+	"sort" => "Sort",
+	"total" => "role total|roles total",
+	],
+	],
+	"permissions" => [
+	"create" => "Create Permission",
+	"edit" => "Edit Permission",
+	"management" => "Permission Management",
+	"table" => [
+	"permission" => "Permission",
+	"display_name" => "Display Name",
+	"sort" => "Sort",
+	"status" => "Status",
+	"total" => "role total|roles total",
+	],
+	],
+	"users" => [
+	"active" => "Active Users",
+	"all_permissions" => "All Permissions",
+	"change_password" => "Change Password",
+	"change_password_for" => "Change Password for :user",
+	"create" => "Create User",
+	"deactivated" => "Deactivated Users",
+	"deleted" => "Deleted Users",
+	"edit" => "Edit User",
+	"edit-profile" => "Edit Profile",
+	"management" => "User Management",
+	"no_permissions" => "No Permissions",
+	"no_roles" => "No Roles to set.",
+	"permissions" => "Permissions",
+	"table" => [
+	"confirmed" => "Confirmed",
+	"created" => "Created",
+	"username" => "Username",
+	"email" => "E-mail",
+	"id" => "ID",
+	"last_updated" => "Last Updated",
+	"first_name" => "First Name",
+	"last_name" => "Last Name",
+	"no_deactivated" => "No Deactivated Users",
+	"no_deleted" => "No Deleted Users",
+	"roles" => "Roles",
+	"total" => "user total|users total",
+	],
+	"tabs" => [
+	"titles" => [
+	"overview" => "Overview",
+	"history" => "History",
+	],
+	"content" => [
+	"overview" => [
+	"avatar" => "Avatar",
+	"confirmed" => "Confirmed",
+	"created_at" => "Created At",
+	"deleted_at" => "Deleted At",
+	"username" => "Username",
+	"email" => "E-mail",
+	"last_updated" => "Last Updated",
+	"name" => "Name",
+	"status" => "Status",
+	],
+	],
+	],
+	"view" => "View User",
+	],
+	],
+	"pages" => [
+	"create" => "Create Page",
+	"edit" => "Edit Page",
+	"management" => "Page Management",
+	"title" => "Pages",
+	"table" => [
+	"title" => "Title",
+	"status" => "Status",
+	"createdat" => "Created At",
+	"updatedat" => "Updated At",
+	"createdby" => "Created By",
+	"all" => "All",
+	],
+	],
+	"blogcategories" => [
+	"create" => "Create Blog Category",
+	"edit" => "Edit Blog Category",
+	"management" => "Blog Category Management",
+	"title" => "Blog Category",
+	"table" => [
+	"title" => "Blog Category",
+	"status" => "Status",
+	"createdat" => "Created At",
+	"createdby" => "Created By",
+	"all" => "All",
+	],
+	],
+	"blogtags" => [
+	"create" => "Create Blog Tag",
+	"edit" => "Edit Blog Tag",
+	"management" => "Blog Tag Management",
+	"title" => "Blog Tags",
+	"table" => [
+	"title" => "Blog Tag",
+	"status" => "Status",
+	"createdat" => "Created At",
+	"createdby" => "Created By",
+	"all" => "All",
+	],
+	],
+	"blogs" => [
+	"create" => "Create Blog",
+	"edit" => "Edit Blog",
+	"management" => "Blog Management",
+	"title" => "Blogs",
+	"table" => [
+	"title" => "Blog",
+	"publish" => "PublishDateTime",
+	"status" => "Status",
+	"createdat" => "Created At",
+	"createdby" => "Created By",
+	"all" => "All",
+	],
+	],
+	"settings" => [
+	"edit" => "Edit Settings",
+	"management" => "Settings Management",
+	"title" => "Settings",
+	"seo" => "SEO Settings",
+	"companydetails" => "Company Contact Details",
+	"mail" => "Mail Settings",
+	"footer" => "Footer Settings",
+	"terms" => "Terms and Condition Settings",
+	"google" => "Google Analytics Track Code",
+	],
+	"faqs" => [
+	"create" => "Create FAQ",
+	"edit" => "Edit FAQ",
+	"management" => "FAQ Management",
+	"title" => "FAQ",
+	"table" => [
+	"title" => "FAQs",
+	"publish" => "PublishDateTime",
+	"status" => "Status",
+	"createdat" => "Created At",
+	"createdby" => "Created By",
+	"answer" => "Answer",
+	"question" => "Question",
+	"updatedat" => "Updated At",
+	"all" => "All",
+	],
+	],
+	"menus" => [
+	"create" => "Create Menu",
+	"edit" => "Edit Menu",
+	"management" => "Menu Management",
+	"title" => "Menus",
+	"table" => [
+	"name" => "Name",
+	"type" => "Type",
+	"createdat" => "Created At",
+	"createdby" => "Created By",
+	"all" => "All",
+	],
+	"field" => [
+	"name" => "Name",
+	"type" => "Type",
+	"items" => "Menu Items",
+	"url" => "URL",
+	"url_type" => "URL Type",
+	"url_types" => [
+	"route" => "Route",
+	"static" => "Static",
+	],
+	"open_in_new_tab" => "Open URL in new tab",
+	"view_permission_id" => "Permission",
+	"icon" => "Icon Class",
+	"icon_title" => "Font Awesome Class. eg. fa-edit",
+	],
+	],
+	"modules" => [
+	"create" => "Create Module",
+	"management" => "Module Management",
+	"title" => "Module",
+	"edit" => "Edit Module",
+	"table" => [
+	"name" => "Module Name",
+	"url" => "Module View Route",
+	"view_permission_id" => "View Permission",
+	"created_by" => "Created By",
+	],
+	"form" => [
+	"name" => "Module Name",
+	"url" => "View Route",
+	"view_permission_id" => "View Permission",
+	"directory_name" => "Directory Name",
+	"namespace" => "Namespace",
+	"model_name" => "Model Name",
+	"controller_name" => "Controller &nbsp;Name",
+	"resource_controller" => "Resourceful Controller",
+	"table_controller_name" => "Controller &nbsp;Name",
+	"table_name" => "Table Name",
+	"route_name" => "Route Name",
+	"route_controller_name" => "Controller &nbsp;Name",
+	"resource_route" => "Resourceful Routes",
+	"views_directory" => "Directory &nbsp;&nbsp;&nbsp;Name",
+	"index_file" => "Index",
+	"create_file" => "Create",
+	"edit_file" => "Edit",
+	"form_file" => "Form",
+	"repo_name" => "Repository Name",
+	"event" => "Event Name",
+	],
+	],
+	"zumhicaches" => [
+	"create" => "Create Zumhicache",
+	"edit" => "Edit Zumhicache",
+	"show" => "View Zumhicache",
+	"management" => "Zumhicache Management",
+	"title" => "Zumhicaches",
+	"table" => [
+	"id" => "Id",
+	"referenceCode" => "Reference Code",
+	"name" => "Name",
+	"status" => "Status",
+	"createdat" => "Created At",
+	"all" => "All",
+	],
+	"tabs" => [
+			"titles" => [
+			"overview" => "Overview",
+			"history" => "History",
+		],
+		"content" => [
+			"overview" => [
+				'referenceCode'    => 'Reference Code',
+                'name'             => 'Name',
+                'difficulty'       => 'Difficulty',
+                'terrain'          => 'Terrain',
+                'placedDate'       => 'Placed',
+                'publishedDate'    => 'Published',
+                'eventEndDate'     => 'Event End',
+                'user_id'          => 'User',
+                'type_id'          => 'Type',
+                'size_id'          => 'Size',
+                'country_id'       => 'Country',
+                'state_id'         => 'State',
+                'coordinates_id'   => 'Coordinates',
+                'shortDescription' => 'Short Description',
+                'longDescription'  => 'Long Description',
+                'hints'            => 'Hints',
+                'ianaTimezoneId'   => 'ianaTimezoneId',
+                'relatedWebPage'   => 'Related Web Page',
+                'url'              => 'URL',
+                'containsHtml'     => 'Contains Html?',
+                'hasSolutionChecker' => 'Has Solution Checker?',
+                'status_id'        => 'Status',
+				"created_at" => "Created At",
+				"last_updated" => "Last Updated",
+				"deleted_at" => "Deleted At",
+			],
+		],
+	],
+	],
+	"countries" => [
+	"create" => "Create Country",
+	"edit" => "Edit Country",
+	"management" => "Country Management",
+	"title" => "Countries",
+	"table" => [
+	"id" => "Id",
+	"createdat" => "Created At",
+	],
+	],
+	"states" => [
+	"create" => "Create State",
+	"edit" => "Edit State",
+	"management" => "State Management",
+	"title" => "States",
+	"table" => [
+	"id" => "Id",
+	"createdat" => "Created At",
+	],
+	],
+	"zumhicachetypes" => [
+	"create" => "Create ZumhicacheType",
+	"edit" => "Edit ZumhicacheType",
+	"management" => "ZumhicacheType Management",
+	"title" => "ZumhicacheTypes",
+	"table" => [
+	"id" => "Id",
+	"createdat" => "Created At",
+	],
+	],
+	"zumhicachesizes" => [
+	"create" => "Create ZumhicacheSize",
+	"edit" => "Edit ZumhicacheSize",
+	"management" => "ZumhicacheSize Management",
+	"title" => "ZumhicacheSizes",
+	"table" => [
+	"id" => "Id",
+	"createdat" => "Created At",
+	],
+	],
+	"zumhicacheusers" => [
+	"create" => "Create ZumhicacheUser",
+	"edit" => "Edit ZumhicacheUser",
+	"show" => "View Zumhicache",
+	"management" => "ZumhicacheUser Management",
+	"title" => "ZumhicacheUsers",
+	"table" => [
+	"id" => "Id",
+	"referenceCode" => "",
+	"user" => "User",
+	"membership" => "Membership",
+	"createdat" => "Created At",
+	],
+	"tabs" => [
+			"titles" => [
+			"overview" => "Overview",
+			"history" => "History",
+		],
+		"content" => [
+			"overview" => [
+				'referenceCode'         => 'Reference Code',
+                'user_id'               => 'User',
+                'membership_id'         => 'Membership',
+                'joinedDateUtc'         => 'Join Date',
+                'avatarUrl'             => 'Avatar URL',
+                'bannerUrl'             => 'Banner URL',
+                'url'                   => 'URL',
+                'profileText'           => 'Profile Text',
+                'coordinates_id'        => 'Coordinates',
+                'isFriend'              => 'Is Friend?',
+                'optedInFriendSharing'  => 'Opted In firend sharing',
+				"created_at" 			=> "Created At",
+				"last_updated" 			=> "Last Updated",
+				"deleted_at" 			=> "Deleted At",
+			],
+		],
+	],
+	],
+	"zumhicachecoordinates" => [
+	"create" => "Create ZumhicacheCoordinate",
+	"edit" => "Edit ZumhicacheCoordinate",
+	"management" => "ZumhicacheCoordinate Management",
+	"title" => "ZumhicacheCoordinates",
+	"table" => [
+	"id" => "Id",
+	"createdat" => "Created At",
+	],
+	],
+	"zumhicacheattributes" => [
+	"create" => "Create ZumhicacheAttribute",
+	"edit" => "Edit ZumhicacheAttribute",
+	"management" => "ZumhicacheAttribute Management",
+	"title" => "ZumhicacheAttributes",
+	"table" => [
+	"id" => "Id",
+	"createdat" => "Created At",
+	],
+	],
+	"zumhicachememberships" => [
+	"create" => "Create ZumhicacheMembership",
+	"edit" => "Edit ZumhicacheMembership",
+	"management" => "ZumhicacheMembership Management",
+	"title" => "ZumhicacheMemberships",
+	"table" => [
+	"id" => "Id",
+	"createdat" => "Created At",
+	],
+	],
+	"statuses" => [
+	"create" => "Create Status",
+	"edit" => "Edit Status",
+	"management" => "Status Management",
+	"title" => "Statuses",
+	"table" => [
+	"id" => "Id",
+	"createdat" => "Created At",
+	],
+	],
+	],
+	"frontend" => [
+	"auth" => [
+	"login_box_title" => "Login",
+	"login_button" => "Login",
+	"login_with" => "Login with :social_media",
+	"register_box_title" => "Register",
+	"register_button" => "Register",
+	"remember_me" => "Remember Me",
+	],
+	"passwords" => [
+	"forgot_password" => "Forgot Your Password?",
+	"reset_password_box_title" => "Reset Password",
+	"reset_password_button" => "Reset Password",
+	"send_password_reset_link_button" => "Send Password Reset Link",
+	],
+	"macros" => [
+	"country" => [
+	"alpha" => "Country Alpha Codes",
+	"alpha2" => "Country Alpha 2 Codes",
+	"alpha3" => "Country Alpha 3 Codes",
+	"numeric" => "Country Numeric Codes",
+	],
+	"macro_examples" => "Macro Examples",
+	"state" => [
+	"mexico" => "Mexico State List",
+	"us" => [
+	"us" => "US States",
+	"outlying" => "US Outlying Territories",
+	"armed" => "US Armed Forces",
+	],
+	],
+	"territories" => [
+	"canada" => "Canada Province & Territories List",
+	],
+	"timezone" => "Timezone",
+	],
+	"user" => [
+	"passwords" => [
+	"change" => "Change Password",
+	],
+	"profile" => [
+	"avatar" => "Avatar",
+	"created_at" => "Created At",
+	"edit_information" => "Edit Information",
+	"username" => "Username",
+	"email" => "E-mail",
+	"last_updated" => "Last Updated",
+	"first_name" => "First Name",
+	"last_name" => "Last Name",
+	"address" => "Address",
+	"state" => "State",
+	"city" => "City",
+	"zipcode" => "Zip Code",
+	"ssn" => "SSN",
+	"update_information" => "Update Information",
+	],
+	],
+	],
 ];

@@ -9,6 +9,10 @@
         <td>{{ !empty($logged_in_user->last_name) ? $logged_in_user->last_name : '' }}</td>
     </tr>
     <tr>
+        <th>{{ trans('labels.frontend.user.profile.username') }}</th>
+        <td>{{ !empty($logged_in_user->username) ? $logged_in_user->username : '' }}</td>
+    </tr>
+    <tr>
         <th>{{ trans('labels.frontend.user.profile.email') }}</th>
         <td>{{ !empty($logged_in_user->email) ? $logged_in_user->email : '' }}</td>
     </tr>

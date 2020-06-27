@@ -66,6 +66,7 @@ class UserRepository extends BaseRepository
                 config('access.users_table').'.id',
                 config('access.users_table').'.first_name',
                 config('access.users_table').'.last_name',
+                config('access.users_table').'.username',
                 config('access.users_table').'.email',
                 config('access.users_table').'.status',
                 config('access.users_table').'.confirmed',
@@ -96,6 +97,7 @@ class UserRepository extends BaseRepository
         $permissions = $request->get('permissions');
         $user = $this->createUserStub($data);
 
+        $this->checkUserByUsername($data, $user);
         $this->checkUserByEmail($data, $user);
 
         DB::transaction(function () use ($user, $data, $roles, $permissions) {
@@ -140,6 +142,7 @@ class UserRepository extends BaseRepository
         $roles = $request->get('assignees_roles');
         $permissions = $request->get('permissions');
 
+        $this->checkUserByUsername($data, $user);
         $this->checkUserByEmail($data, $user);
 
         DB::transaction(function () use ($user, $data, $roles, $permissions) {
@@ -330,6 +333,27 @@ class UserRepository extends BaseRepository
      *
      * @return null
      */
+    protected function checkUserByUsername($input, $user = null)
+    {
+        //Figure out if email is not the same
+        if ($user && $user->username === $input['username']) {
+            return;
+        }
+
+        //Check to see if email exists
+        if ($this->query()->where('username', '=', $input['username'])->withTrashed()->exists()) {
+            throw new GeneralException(trans('exceptions.backend.access.users.username_error'));
+        }
+    }
+
+    /**
+     * @param  $input
+     * @param  $user
+     *
+     * @throws GeneralException
+     *
+     * @return null
+     */
     protected function checkUserByEmail($input, $user = null)
     {
         //Figure out if email is not the same
@@ -394,6 +418,7 @@ class UserRepository extends BaseRepository
         $user = new $user();
         $user->first_name = $input['first_name'];
         $user->last_name = $input['last_name'];
+        $user->username = $input['username'];
         $user->email = $input['email'];
         $user->password = Hash::make($input['password']);
         $user->status = isset($input['status']) ? 1 : 0;

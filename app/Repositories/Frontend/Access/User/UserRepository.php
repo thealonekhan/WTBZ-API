@@ -91,13 +91,14 @@ class UserRepository extends BaseRepository
     {
         $user = self::MODEL;
         $user = new $user();
-        $user->first_name = $data['first_name'];
-        $user->last_name = $data['last_name'];
+        // $user->first_name = $data['first_name'];
+        // $user->last_name = $data['last_name'];
+        $user->username = $data['username'];
         $user->email = $data['email'];
         $user->confirmation_code = md5(uniqid(mt_rand(), true));
         $user->status = 1;
         $user->password = $provider ? null : Hash::make($data['password']);
-        $user->is_term_accept = $data['is_term_accept'];
+        $user->is_term_accept = 1;
 
         // If users require approval, confirmed is false regardless of account type
         if (config('access.users.requires_approval')) {
@@ -139,7 +140,7 @@ class UserRepository extends BaseRepository
                  * If this is a social account they are confirmed through the social provider by default
                  */
                 if (config('access.users.confirm_email') && $provider === false) {
-                    $user->notify(new UserNeedsConfirmation($user->confirmation_code));
+                    // $user->notify(new UserNeedsConfirmation($user->confirmation_code));
                 }
             }
         });
