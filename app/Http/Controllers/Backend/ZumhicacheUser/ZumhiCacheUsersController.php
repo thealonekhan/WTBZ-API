@@ -18,8 +18,8 @@ use App\Http\Requests\Backend\ZumhicacheUser\UpdateZumhiCacheUserRequest;
 use App\Http\Requests\Backend\ZumhicacheUser\DeleteZumhiCacheUserRequest;
 use App\Models\ZumhicacheUser\ZumhiCacheUser;
 use App\Models\Access\User\User;
-use App\Models\ZumhicacheMemberships\ZumhicacheMembership;
-use App\Models\ZumhicacheCoordinates\ZumhicacheCoordinate;
+use App\Models\ZumhicacheMemberships\ZumhiCacheMembership;
+use App\Models\ZumhicacheCoordinates\ZumhiCacheCoordinate;
 
 /**
  * ZumhiCacheUsersController
@@ -60,8 +60,8 @@ class ZumhiCacheUsersController extends Controller
     public function create(CreateZumhiCacheUserRequest $request)
     {
         $users = User::pluck('username', 'id');
-        $memberships = ZumhicacheMembership::getSelectData();
-        $coordinates = ZumhicacheCoordinate::get()->pluck('full_name', 'id');
+        $memberships = ZumhiCacheMembership::getSelectData();
+        $coordinates = ZumhiCacheCoordinate::get()->pluck('full_name', 'id');
         return new CreateResponse($users, $memberships, $coordinates);
     }
     /**
@@ -99,8 +99,8 @@ class ZumhiCacheUsersController extends Controller
     {
         $zumhicacheuser = ZumhiCacheUser::findOrFail($id);
         $users = User::pluck('username', 'id');
-        $memberships = ZumhicacheMembership::getSelectData();
-        $coordinates = ZumhicacheCoordinate::get()->pluck('full_name', 'id');
+        $memberships = ZumhiCacheMembership::getSelectData();
+        $coordinates = ZumhiCacheCoordinate::get()->pluck('full_name', 'id');
 
         return new EditResponse($zumhicacheuser, $users, $memberships, $coordinates);
     }

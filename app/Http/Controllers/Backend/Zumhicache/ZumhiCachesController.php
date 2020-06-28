@@ -17,11 +17,11 @@ use App\Http\Requests\Backend\Zumhicache\EditZumhiCacheRequest;
 use App\Http\Requests\Backend\Zumhicache\UpdateZumhiCacheRequest;
 use App\Http\Requests\Backend\Zumhicache\DeleteZumhiCacheRequest;
 use App\Models\Zumhicache\ZumhiCache;
-use App\Models\ZumhicacheSizes\ZumhicacheSize;
-use App\Models\ZumhicacheTypes\ZumhicacheType;
-use App\Models\ZumhicacheCoordinates\ZumhicacheCoordinate;
-use App\Models\ZumhicacheMemberships\ZumhicacheMembership;
-use App\Models\ZumhicacheUser\ZumhicacheUser;
+use App\Models\ZumhicacheSizes\ZumhiCacheSize;
+use App\Models\ZumhicacheTypes\ZumhiCacheType;
+use App\Models\ZumhicacheCoordinates\ZumhiCacheCoordinate;
+use App\Models\ZumhicacheMemberships\ZumhiCacheMembership;
+use App\Models\ZumhicacheUser\ZumhiCacheUser;
 use App\Models\Status\Status;
 use App\Models\Country\Country;
 use App\Models\State\State;
@@ -67,10 +67,10 @@ class ZumhiCachesController extends Controller
     {
         $statuses = Status::getSelectData();
         $countries = Country::getSelectData();
-        $coordinates = ZumhicacheCoordinate::get()->pluck('full_name', 'id');
-        $types = ZumhicacheType::getSelectData();
-        $sizes = ZumhicacheSize::getSelectData();
-        $users = ZumhicacheUser::getSelectData('referenceCode');
+        $coordinates = ZumhiCacheCoordinate::get()->pluck('full_name', 'id');
+        $types = ZumhiCacheType::getSelectData();
+        $sizes = ZumhiCacheSize::getSelectData();
+        $users = ZumhiCacheUser::getSelectData('referenceCode');
         
         return new CreateResponse($users, $types, $sizes, $coordinates, $countries, $statuses, config('timezone.timezone_ids'));
     }
@@ -112,10 +112,10 @@ class ZumhiCachesController extends Controller
         $statuses = Status::getSelectData();
         $countries = Country::getSelectData();
         $selectedStates = State::where('country_id', $zumhicache->country_id)->pluck('name', 'id');
-        $coordinates = ZumhicacheCoordinate::get()->pluck('full_name', 'id');
-        $types = ZumhicacheType::getSelectData();
-        $sizes = ZumhicacheSize::getSelectData();
-        $users = ZumhicacheUser::getSelectData('referenceCode');
+        $coordinates = ZumhiCacheCoordinate::get()->pluck('full_name', 'id');
+        $types = ZumhiCacheType::getSelectData();
+        $sizes = ZumhiCacheSize::getSelectData();
+        $users = ZumhiCacheUser::getSelectData('referenceCode');
         return new EditResponse($zumhicache, $users, $types, $sizes, $coordinates, $countries, $selectedStates, $statuses, config('timezone.timezone_ids'));
     }
     /**
