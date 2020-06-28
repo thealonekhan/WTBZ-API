@@ -336,7 +336,7 @@ return [
 	"title" => "ZumhicacheUsers",
 	"table" => [
 	"id" => "Id",
-	"referenceCode" => "",
+	"referenceCode" => "Reference Code",
 	"user" => "User",
 	"membership" => "Membership",
 	"createdat" => "Created At",

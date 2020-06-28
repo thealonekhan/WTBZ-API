@@ -10,7 +10,7 @@
 
         <!-- Meta -->
         <meta name="description" content="@yield('meta_description', 'Default Description')">
-        <meta name="author" content="@yield('meta_author', 'Viral Solani')">
+        <meta name="author" content="@yield('meta_author', 'ZumhiCache')">
         <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
         @yield('meta')
 
@@ -20,12 +20,12 @@
         <!-- Check if the language is set to RTL, so apply the RTL layouts -->
         <!-- Otherwise apply the normal LTR layouts -->
         @langrtl
-            {{ Html::style(getRtlCss(mix('css/backend.css'))) }}
+            {{ Html::style(getRtlCss(mix('/css/backend.css'))) }}
         @else
-            {{ Html::style(mix('css/backend.css')) }}
+            {{ Html::style(mix('/css/backend.css')) }}
         @endlangrtl
 
-        {{ Html::style(mix('css/backend-custom.css')) }}
+        {{ Html::style(mix('/css/backend-custom.css')) }}
         @yield('after-styles')
 
         <!-- Html5 Shim and Respond.js IE8 support of Html5 elements and media queries -->
@@ -76,8 +76,8 @@
 
         <!-- JavaScripts -->
         @yield('before-scripts')
-        {{ Html::script(mix('js/backend.js')) }}
-        {{ Html::script(mix('js/backend-custom.js')) }}
+        {{ Html::script(mix('/js/backend.js')) }}
+        {{ Html::script(mix('/js/backend-custom.js')) }}
         @yield('after-scripts')
     </body>
 </html>
