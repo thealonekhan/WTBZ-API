@@ -88,6 +88,7 @@
         {{ Html::script('js/moment.min.js') }}
         {{ Html::script('js/bootstrap-datepicker.min.js') }}
         {{ Html::script('js/bootstrap-datetimepicker.min.js') }}
+        @include('includes.datatables')
         {{ Html::script('js/select2/select2.js') }}
         {{ Html::script('js/tinymce/tinymce.min.js') }}
         {{ Html::script('js/plugin/sweetalert.min.js') }}
