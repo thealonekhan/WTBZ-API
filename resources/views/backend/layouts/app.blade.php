@@ -16,13 +16,13 @@
 
         <!-- Styles -->
         @yield('before-styles')
-        {{ URL::asset('css/plugin/datatables/jquery.dataTables.min.css') }}
-        {{ URL::asset('css/backend/plugin/datatables/dataTables.bootstrap.min.css') }}
-        {{ URL::asset('css/plugin/datatables/buttons.dataTables.min.css') }}
-        {{ URL::asset('js/select2.css') }}
-        {{ URL::asset('css/bootstrap.min.css') }}
-        {{ URL::asset('css/loader.css') }}
-        {{ URL::asset('css/bootstrap-datetimepicker.min.css') }}
+        {{ Html::style('css/plugin/datatables/jquery.dataTables.min.css') }}
+        {{ Html::style('css/backend/plugin/datatables/dataTables.bootstrap.min.css') }}
+        {{ Html::style('css/plugin/datatables/buttons.dataTables.min.css') }}
+        {{ Html::style('js/select2.css') }}
+        {{ Html::style('css/bootstrap.min.css') }}
+        {{ Html::style('css/loader.css') }}
+        {{ Html::style('css/bootstrap-datetimepicker.min.css') }}
         <!-- Check if the language is set to RTL, so apply the RTL layouts -->
         <!-- Otherwise apply the normal LTR layouts -->
         @langrtl
