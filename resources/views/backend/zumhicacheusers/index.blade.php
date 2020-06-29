@@ -49,7 +49,8 @@
 
 @section('after-scripts')
     {{-- For DataTables --}}
-    {{ Html::script('js/dataTable.js') }}
+    {{-- Html::script('js/dataTable.js') --}}
+    @include('includes.datatables')
 
     <script>
         //Below written line is short form of writing $(document).ready(function() { })
