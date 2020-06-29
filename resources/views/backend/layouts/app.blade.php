@@ -16,7 +16,7 @@
 
         <!-- Styles -->
         @yield('before-styles')
-        {{ Html::style('js/select2.css') }}
+        {{ URL::asset('js/select2.css') }}
         <!-- Check if the language is set to RTL, so apply the RTL layouts -->
         <!-- Otherwise apply the normal LTR layouts -->
         @langrtl
@@ -76,7 +76,7 @@
 
         <!-- JavaScripts -->
         @yield('before-scripts')
-
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
         {{ Html::script('js/bootstrap-datepicker.min.js') }}
         {{ Html::script('js/bootstrap-datetimepicker.min.js') }}
         {{ Html::script('js/moment.min.js') }}
