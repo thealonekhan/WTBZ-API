@@ -88,7 +88,7 @@
         {{ Html::script('js/bootstrap-datetimepicker.min.js') }}
         {{ Html::script('js/select2/select2.js') }}
         {{ Html::script('js/tinymce/tinymce.min.js') }}
-        {{ Html::script('js/plugin/sweetalert/sweetalert.min.js') }}
+        {{ Html::script('js/plugin/sweetalert.min.js') }}
         {{ Html::script('js/backend/custom-file-input.js') }}
         {{ Html::script('js/backend/notification.js') }}
         {{ Html::script('js/backend/admin.js') }}
