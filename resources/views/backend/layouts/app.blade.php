@@ -16,13 +16,6 @@
 
         <!-- Styles -->
         @yield('before-styles')
-        {{ Html::style('css/plugin/datatables/jquery.dataTables.min.css') }}
-        {{ Html::style('css/backend/plugin/datatables/dataTables.bootstrap.min.css') }}
-        {{ Html::style('css/plugin/datatables/buttons.dataTables.min.css') }}
-        {{ Html::style('js/select2.css') }}
-        {{ Html::style('css/bootstrap.min.css') }}
-        {{ Html::style('css/loader.css') }}
-        {{ Html::style('css/bootstrap-datetimepicker.min.css') }}
         <!-- Check if the language is set to RTL, so apply the RTL layouts -->
         <!-- Otherwise apply the normal LTR layouts -->
         @langrtl
@@ -33,6 +26,13 @@
 
         {{ Html::style('css/backend-custom.css') }}
         @yield('after-styles')
+        {{ Html::style('css/plugin/datatables/jquery.dataTables.min.css') }}
+        {{ Html::style('css/backend/plugin/datatables/dataTables.bootstrap.min.css') }}
+        {{ Html::style('css/plugin/datatables/buttons.dataTables.min.css') }}
+        {{ Html::style('js/select2.css') }}
+        {{ Html::style('css/bootstrap.min.css') }}
+        {{ Html::style('css/loader.css') }}
+        {{ Html::style('css/bootstrap-datetimepicker.min.css') }}
 
         <!-- Html5 Shim and Respond.js IE8 support of Html5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
