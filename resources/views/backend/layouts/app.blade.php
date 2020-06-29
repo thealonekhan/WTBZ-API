@@ -17,13 +17,13 @@
         <!-- Styles -->
         @yield('before-styles')
 
-        <!-- <link href="{!! asset('css/plugin/datatables/jquery.dataTables.min.css') !!}" media="all" rel="stylesheet" type="text/css" />
+        <link href="{!! asset('css/plugin/datatables/jquery.dataTables.min.css') !!}" media="all" rel="stylesheet" type="text/css" />
         <link href="{!! asset('css/backend/plugin/datatables/dataTables.bootstrap.min.css') !!}" media="all" rel="stylesheet" type="text/css" />
         <link href="{!! asset('css/plugin/datatables/buttons.dataTables.min.css') !!}" media="all" rel="stylesheet" type="text/css" />
-        <link href="{!! asset('js/select2.css') !!}" media="all" rel="stylesheet" type="text/css" />
+        <!-- <link href="{!! asset('js/select2.css') !!}" media="all" rel="stylesheet" type="text/css" /> -->
         <link href="{!! asset('css/bootstrap.min.css') !!}" media="all" rel="stylesheet" type="text/css" />
-        <link href="{!! asset('css/loader.css') !!}" media="all" rel="stylesheet" type="text/css" />
-        <link href="{!! asset('css/bootstrap-datetimepicker.min.css') !!}" media="all" rel="stylesheet" type="text/css" /> -->
+        <!-- <link href="{!! asset('css/loader.css') !!}" media="all" rel="stylesheet" type="text/css" /> -->
+        <link href="{!! asset('css/bootstrap-datetimepicker.min.css') !!}" media="all" rel="stylesheet" type="text/css" />
 
         <!-- Check if the language is set to RTL, so apply the RTL layouts -->
         <!-- Otherwise apply the normal LTR layouts -->
