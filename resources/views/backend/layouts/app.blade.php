@@ -77,9 +77,9 @@
         <!-- JavaScripts -->
         @yield('before-scripts')
         <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        {{ Html::script('js/moment.min.js') }}
         {{ Html::script('js/bootstrap-datepicker.min.js') }}
         {{ Html::script('js/bootstrap-datetimepicker.min.js') }}
-        {{ Html::script('js/moment.min.js') }}
         {{ Html::script('js/select2/select2.js') }}
         {{ Html::script('js/backend.js') }}
         {{ Html::script('js/backend-custom.js') }}
