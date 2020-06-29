@@ -2,6 +2,10 @@
 
 @section ('title', trans('labels.backend.zumhicacheusers.management'))
 
+@section('after-styles')
+    {{ Html::style("css/backend/plugin/datatables/dataTables.bootstrap.min.css") }}
+@endsection
+
 @section('page-header')
     <h1>{{ trans('labels.backend.zumhicacheusers.management') }}</h1>
 @endsection
