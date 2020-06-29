@@ -81,6 +81,7 @@
         {{ Html::script('js/bootstrap-datepicker.min.js') }}
         {{ Html::script('js/bootstrap-datetimepicker.min.js') }}
         {{ Html::script('js/select2/select2.js') }}
+        {{ Html::script('js/tinymce/tinymce.min.js') }}
         {{ Html::script('js/backend/admin.js') }}
         {{-- Html::script('js/backend-custom.js') --}}
         @yield('after-scripts')
