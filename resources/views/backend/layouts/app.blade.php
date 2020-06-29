@@ -16,13 +16,13 @@
 
         <!-- Styles -->
         @yield('before-styles')
-        {{ asset('css/plugin/datatables/jquery.dataTables.min.css') }}
-        {{ asset('css/backend/plugin/datatables/dataTables.bootstrap.min.css') }}
-        {{ asset('css/plugin/datatables/buttons.dataTables.min.css') }}
-        {{ asset('js/select2.css') }}
-        {{ asset('css/bootstrap.min.css') }}
-        {{ asset('css/loader.css') }}
-        {{ asset('css/bootstrap-datetimepicker.min.css') }}
+        {{ URL::asset('css/plugin/datatables/jquery.dataTables.min.css') }}
+        {{ URL::asset('css/backend/plugin/datatables/dataTables.bootstrap.min.css') }}
+        {{ URL::asset('css/plugin/datatables/buttons.dataTables.min.css') }}
+        {{ URL::asset('js/select2.css') }}
+        {{ URL::asset('css/bootstrap.min.css') }}
+        {{ URL::asset('css/loader.css') }}
+        {{ URL::asset('css/bootstrap-datetimepicker.min.css') }}
         <!-- Check if the language is set to RTL, so apply the RTL layouts -->
         <!-- Otherwise apply the normal LTR layouts -->
         @langrtl
@@ -83,14 +83,14 @@
         <!-- JavaScripts -->
         @yield('before-scripts')
         <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-        {{ asset('js/moment.min.js') }}
-        {{ asset('js/bootstrap-datepicker.min.js') }}
-        {{ asset('js/bootstrap-datetimepicker.min.js') }}
-        {{ asset('js/select2/select2.js') }}
-        {{ asset('js/tinymce/tinymce.min.js') }}
-        {{ asset('js/plugin/sweetalert.min.js') }}
-        {{ asset('js/backend/custom-file-input.js') }}
-        {{ asset('js/backend/notification.js') }}
+        {{ URL::asset('js/moment.min.js') }}
+        {{ URL::asset('js/bootstrap-datepicker.min.js') }}
+        {{ URL::asset('js/bootstrap-datetimepicker.min.js') }}
+        {{ URL::asset('js/select2/select2.js') }}
+        {{ URL::asset('js/tinymce/tinymce.min.js') }}
+        {{ URL::asset('js/plugin/sweetalert.min.js') }}
+        {{ URL::asset('js/backend/custom-file-input.js') }}
+        {{ URL::asset('js/backend/notification.js') }}
         {{ Html::script('js/backend/admin.js') }}
         {{-- Html::script('js/backend-custom.js') --}}
         @yield('after-scripts')
