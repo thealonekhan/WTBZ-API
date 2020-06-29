@@ -91,8 +91,7 @@
         {{ asset('js/plugin/sweetalert.min.js') }}
         {{ asset('js/backend/custom-file-input.js') }}
         {{ asset('js/backend/notification.js') }}
-        {{ asset('js/backend/admin.js') }}
-        {{-- Html::script('js/backend-custom.js') --}}
+        {{ Html::scrip('js/backend/admin.js') }}
         @yield('after-scripts')
     </body>
 </html>
