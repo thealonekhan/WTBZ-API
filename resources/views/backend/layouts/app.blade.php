@@ -83,14 +83,14 @@
         <!-- JavaScripts -->
         @yield('before-scripts')
         <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-        {{ URL::asset('js/moment.min.js') }}
-        {{ URL::asset('js/bootstrap-datepicker.min.js') }}
-        {{ URL::asset('js/bootstrap-datetimepicker.min.js') }}
-        {{ URL::asset('js/select2/select2.js') }}
-        {{ URL::asset('js/tinymce/tinymce.min.js') }}
-        {{ URL::asset('js/plugin/sweetalert.min.js') }}
-        {{ URL::asset('js/backend/custom-file-input.js') }}
-        {{ URL::asset('js/backend/notification.js') }}
+        {{ Html::script('js/moment.min.js') }}
+        {{ Html::script('js/bootstrap-datepicker.min.js') }}
+        {{ Html::script('js/bootstrap-datetimepicker.min.js') }}
+        {{ Html::script('js/select2/select2.js') }}
+        {{ Html::script('js/tinymce/tinymce.min.js') }}
+        {{ Html::script('js/plugin/sweetalert.min.js') }}
+        {{ Html::script('js/backend/custom-file-input.js') }}
+        {{ Html::script('js/backend/notification.js') }}
         {{ Html::script('js/backend/admin.js') }}
         {{-- Html::script('js/backend-custom.js') --}}
         @yield('after-scripts')
