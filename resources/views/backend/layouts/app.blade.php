@@ -16,7 +16,7 @@
 
         <!-- Styles -->
         @yield('before-styles')
-
+        {{ Html::style('js/select2.css') }}
         <!-- Check if the language is set to RTL, so apply the RTL layouts -->
         <!-- Otherwise apply the normal LTR layouts -->
         @langrtl
@@ -76,6 +76,11 @@
 
         <!-- JavaScripts -->
         @yield('before-scripts')
+
+        {{ Html::script('js/bootstrap-datepicker.min.js') }}
+        {{ Html::script('js/bootstrap-datetimepicker.min.js') }}
+        {{ Html::script('js/moment.min.js') }}
+        {{ Html::script('js/select2/select2.js') }}
         {{ Html::script('js/backend.js') }}
         {{ Html::script('js/backend-custom.js') }}
         @yield('after-scripts')
