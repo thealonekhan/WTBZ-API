@@ -92,7 +92,7 @@
         {{ Html::script('js/plugin/sweetalert.min.js') }}
         {{ Html::script('js/backend/custom-file-input.js') }}
         {{ Html::script('js/backend/notification.js') }}
-        {{ Html::script('js/select2/select2.js') }}
+        {{ Html::script('js/select2/select2.full.js') }}
         {{ Html::script('js/backend.js') }}
         {{ Html::script('js/backend/admin.js') }}
         @yield('after-scripts')
