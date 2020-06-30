@@ -18,9 +18,9 @@
         @yield('before-styles')
 
         <link href="{!! asset('css/bootstrap.min.css') !!}" media="all" rel="stylesheet" type="text/css" />
-        <!-- <link href="{!! asset('css/plugin/datatables/jquery.dataTables.min.css') !!}" media="all" rel="stylesheet" type="text/css" /> -->
-        <!-- <link href="{!! asset('css/backend/plugin/datatables/dataTables.bootstrap.min.css') !!}" media="all" rel="stylesheet" type="text/css" /> -->
-        <!-- <link href="{!! asset('css/plugin/datatables/buttons.dataTables.min.css') !!}" media="all" rel="stylesheet" type="text/css" /> -->
+        <link href="{!! asset('css/plugin/datatables/jquery.dataTables.min.css') !!}" media="all" rel="stylesheet" type="text/css" />
+        <link href="{!! asset('css/backend/plugin/datatables/dataTables.bootstrap.min.css') !!}" media="all" rel="stylesheet" type="text/css" />
+        <link href="{!! asset('css/plugin/datatables/buttons.dataTables.min.css') !!}" media="all" rel="stylesheet" type="text/css" />
         <!-- <link href="{!! asset('js/select2.css') !!}" media="all" rel="stylesheet" type="text/css" /> -->
         <!-- <link href="{!! asset('css/loader.css') !!}" media="all" rel="stylesheet" type="text/css" /> -->
         <link href="{!! asset('css/bootstrap-datetimepicker.min.css') !!}" media="all" rel="stylesheet" type="text/css" />
@@ -86,13 +86,13 @@
         @yield('before-scripts')
         <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
         {{ Html::script('js/moment.min.js') }}
+        {{ Html::script('js/bootstrap.min.js') }}
         {{ Html::script('js/bootstrap-datetimepicker.min.js') }}
-        {{ Html::script('js/select2/select2.js') }}
         {{ Html::script('js/tinymce/tinymce.min.js') }}
         {{ Html::script('js/plugin/sweetalert.min.js') }}
         {{ Html::script('js/backend/custom-file-input.js') }}
         {{ Html::script('js/backend/notification.js') }}
-        {{ Html::script('js/bootstrap.min.js') }}
+        {{ Html::script('js/select2/select2.js') }}
         {{ Html::script('js/backend.js') }}
         {{ Html::script('js/backend/admin.js') }}
         @yield('after-scripts')
