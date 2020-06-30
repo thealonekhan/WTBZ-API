@@ -33,7 +33,7 @@
             {{ Html::style('css/backend.css') }}
         @endlangrtl
 
-        {{ Html::style('css/backend-custom.css') }}
+        {{-- Html::style('css/backend-custom.css') --}}
         @yield('after-styles')
 
         <!-- Html5 Shim and Respond.js IE8 support of Html5 elements and media queries -->
