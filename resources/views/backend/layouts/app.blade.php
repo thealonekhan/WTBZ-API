@@ -30,7 +30,7 @@
         @langrtl
             {{-- Html::style(getRtlCss('css/backend.css')) --}}
         @else
-            {{ Html::style('css/backend.css') }}
+            {{-- Html::style('css/backend.css') --}}
         @endlangrtl
 
         {{ Html::style('css/backend-custom.css') }}
