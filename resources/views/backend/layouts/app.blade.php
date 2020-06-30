@@ -95,7 +95,7 @@
         {{ Html::script('js/backend/custom-file-input.js') }}
         {{ Html::script('js/backend/notification.js') }}
         {{ Html::script('js/backend/admin.js') }}
-        {{ Html::script('js/backend-custom.js') }}
+        {{-- Html::script('js/backend-custom.js') --}}
         @yield('after-scripts')
     </body>
 </html>
