@@ -17,7 +17,7 @@
         <!-- Styles -->
         @yield('before-styles')
 
-        <!-- <link href="{!! asset('css/bootstrap.min.css') !!}" media="all" rel="stylesheet" type="text/css" /> -->
+        <link href="{!! asset('css/bootstrap.min.css') !!}" media="all" rel="stylesheet" type="text/css" />
         <!-- <link href="{!! asset('css/plugin/datatables/jquery.dataTables.min.css') !!}" media="all" rel="stylesheet" type="text/css" /> -->
         <!-- <link href="{!! asset('css/backend/plugin/datatables/dataTables.bootstrap.min.css') !!}" media="all" rel="stylesheet" type="text/css" /> -->
         <!-- <link href="{!! asset('css/plugin/datatables/buttons.dataTables.min.css') !!}" media="all" rel="stylesheet" type="text/css" /> -->
