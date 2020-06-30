@@ -28,9 +28,9 @@
         <!-- Check if the language is set to RTL, so apply the RTL layouts -->
         <!-- Otherwise apply the normal LTR layouts -->
         @langrtl
-            {{ Html::style(getRtlCss('css/backend.css')) }}
+            {{-- Html::style(getRtlCss('css/backend.css')) --}}
         @else
-            {{-- Html::style('css/backend.css') --}}
+            {{ Html::style('css/backend.css') }}
         @endlangrtl
 
         {{ Html::style('css/backend-custom.css') }}
