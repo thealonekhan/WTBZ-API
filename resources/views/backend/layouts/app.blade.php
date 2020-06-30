@@ -94,8 +94,8 @@
         {{ Html::script('js/plugin/sweetalert.min.js') }}
         {{ Html::script('js/backend/custom-file-input.js') }}
         {{ Html::script('js/backend/notification.js') }}
+        {{ Html::script('js/backend.js') }}
         {{ Html::script('js/backend/admin.js') }}
-        {{-- Html::script('js/backend-custom.js') --}}
         @yield('after-scripts')
     </body>
 </html>
