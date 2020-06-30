@@ -17,11 +17,11 @@
         <!-- Styles -->
         @yield('before-styles')
 
+        <link href="{!! asset('css/bootstrap.min.css') !!}" media="all" rel="stylesheet" type="text/css" />
         <link href="{!! asset('css/plugin/datatables/jquery.dataTables.min.css') !!}" media="all" rel="stylesheet" type="text/css" />
         <link href="{!! asset('css/backend/plugin/datatables/dataTables.bootstrap.min.css') !!}" media="all" rel="stylesheet" type="text/css" />
         <link href="{!! asset('css/plugin/datatables/buttons.dataTables.min.css') !!}" media="all" rel="stylesheet" type="text/css" />
         <!-- <link href="{!! asset('js/select2.css') !!}" media="all" rel="stylesheet" type="text/css" /> -->
-        <link href="{!! asset('css/bootstrap.min.css') !!}" media="all" rel="stylesheet" type="text/css" />
         <!-- <link href="{!! asset('css/loader.css') !!}" media="all" rel="stylesheet" type="text/css" /> -->
         <link href="{!! asset('css/bootstrap-datetimepicker.min.css') !!}" media="all" rel="stylesheet" type="text/css" />
 
@@ -30,7 +30,7 @@
         @langrtl
             {{ Html::style(getRtlCss('css/backend.css')) }}
         @else
-            {{ Html::style('css/backend.css') }}
+            {{-- Html::style('css/backend.css') --}}
         @endlangrtl
 
         {{ Html::style('css/backend-custom.css') }}
