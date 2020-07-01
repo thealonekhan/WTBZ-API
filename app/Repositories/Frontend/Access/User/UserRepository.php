@@ -140,7 +140,7 @@ class UserRepository extends BaseRepository
                  * If this is a social account they are confirmed through the social provider by default
                  */
                 if (config('access.users.confirm_email') && $provider === false) {
-                    // $user->notify(new UserNeedsConfirmation($user->confirmation_code));
+                    $user->notify(new UserNeedsConfirmation($user->confirmation_code));
                 }
             }
         });
