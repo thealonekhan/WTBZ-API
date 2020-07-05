@@ -30,6 +30,7 @@ class ZumhiCacheSizeRepository extends BaseRepository
         return $this->query()
             ->select([
                 config('module.zumhicachesizes.table').'.id',
+                config('module.zumhicachesizes.table').'.name',
                 config('module.zumhicachesizes.table').'.created_at',
                 config('module.zumhicachesizes.table').'.updated_at',
             ]);

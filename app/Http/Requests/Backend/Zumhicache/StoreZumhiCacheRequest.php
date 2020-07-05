@@ -42,6 +42,7 @@ class StoreZumhiCacheRequest extends FormRequest
             'shortDescription'  => 'required',
             'relatedWebPage'    => 'nullable|url',
             'url'               => 'nullable|url',
+            'isPremiumOnly'      => 'nullable|boolean',
             'containsHtml'      => 'nullable|boolean',
             'hasSolutionChecker'=> 'nullable|boolean',
             'status_id'         => 'required|integer',

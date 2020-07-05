@@ -36,6 +36,7 @@ class CreateZumhiCachesTable extends Migration
             $table->string('ianaTimezoneId', 191)->nullable()->comment('timezone of the zumhicache');
             $table->text('relatedWebPage')->nullable()->comment('external web page associated with zumhicache');
             $table->text('url')->nullable()->comment('zumhicache.com web page associated with zumhicache');
+            $table->boolean('isPremiumOnly')->nullable()->comment('whether the zumhicache can only be viewed by premium members');
             $table->boolean('containsHtml')->nullable()->comment('flag for if the short or long description contains html');
             $table->boolean('hasSolutionChecker')->nullable()->comment('flag for if the short or long description contains htmlflag for if the native solution checker is used on the website');
             $table->softDeletes();

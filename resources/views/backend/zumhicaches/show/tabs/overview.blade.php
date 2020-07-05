@@ -95,6 +95,11 @@
     </tr>
 
     <tr>
+        <th>{{ trans('labels.backend.zumhicaches.tabs.content.overview.isPremiumOnly') }}</th>
+        <td>{!! $zumhicache->isPremiumOnly ? 'YES' : 'NO' !!}</td>
+    </tr>
+
+    <tr>
         <th>{{ trans('labels.backend.zumhicaches.tabs.content.overview.containsHtml') }}</th>
         <td>{!! $zumhicache->containsHtml ? 'YES' : 'NO' !!}</td>
     </tr>

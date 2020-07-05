@@ -168,6 +168,19 @@
     </div><!--form control-->
 
     <div class="form-group">
+        {{ Form::label('isPremiumOnly', trans('validation.attributes.backend.zumhicache.isPremiumOnly'), ['class' => 'col-lg-2 control-label']) }}
+
+        <div class="col-lg-1">
+                <div class="control-group">
+                <label class="control control--checkbox">
+                    {{ Form::checkbox('isPremiumOnly', '1', true) }}
+                    <div class="control__indicator"></div>
+                </label>
+            </div>
+        </div><!--col-lg-1-->
+    </div><!--form control-->
+
+    <div class="form-group">
         {{ Form::label('containsHtml', trans('validation.attributes.backend.zumhicache.containsHtml'), ['class' => 'col-lg-2 control-label']) }}
 
         <div class="col-lg-1">

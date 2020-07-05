@@ -45,6 +45,39 @@ class ZumhiCacheRepository extends BaseRepository
     }
 
     /**
+     * This method is used by Table Controller
+     * For getting the table data to show in
+     * the grid
+     * @return mixed
+     */
+    public function getForAPI()
+    {
+        return $this->query()
+        // ->leftJoin(config('module.zumhicachetypes.table'), config('module.zumhicaches.table').'.type_id', '=', config('module.zumhicachetypes.table').'.id')
+        // ->leftJoin(config('module.zumhicachesizes.table'), config('module.zumhicaches.table').'.size_id', '=', config('module.zumhicachesizes.table').'.id')
+        ->leftJoin(config('module.statuses.table'), config('module.zumhicaches.table').'.status_id', '=', config('module.statuses.table').'.id')
+            ->select([
+                config('module.zumhicaches.table').'.referenceCode',
+                config('module.zumhicaches.table').'.name',
+                config('module.zumhicaches.table').'.difficulty',
+                config('module.zumhicaches.table').'.terrain',
+                config('module.zumhicaches.table').'.placedDate',
+                config('module.zumhicaches.table').'.publishedDate',
+                config('module.zumhicaches.table').'.eventEndDate',
+                config('module.zumhicaches.table').'.lastVisitedDate',
+                config('module.zumhicaches.table').'.shortDescription',
+                config('module.zumhicaches.table').'.longDescription',
+                config('module.zumhicaches.table').'.hints',
+                config('module.zumhicaches.table').'.ianaTimezoneId',
+                config('module.zumhicaches.table').'.relatedWebPage',
+                config('module.zumhicaches.table').'.url',
+                config('module.zumhicaches.table').'.containsHtml',
+                config('module.zumhicaches.table').'.hasSolutionChecker',
+                config('module.statuses.table').'.name as status',
+            ]);
+    }
+
+    /**
      * For Creating the respective model in storage
      *
      * @param array $input
@@ -136,6 +169,7 @@ class ZumhiCacheRepository extends BaseRepository
         $zumhicache->ianaTimezoneId = $input['ianaTimezoneId'];
         $zumhicache->relatedWebPage = $input['relatedWebPage'];
         $zumhicache->url = $input['url'];
+        $zumhicache->isPremiumOnly = !empty($input['isPremiumOnly']) ? $input['isPremiumOnly'] : null;
         $zumhicache->containsHtml = !empty($input['containsHtml']) ? $input['containsHtml'] : null;
         $zumhicache->hasSolutionChecker = !empty($input['hasSolutionChecker']) ? $input['hasSolutionChecker'] : null;
         $zumhicache->status_id = $input['status_id'];

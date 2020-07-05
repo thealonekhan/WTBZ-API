@@ -212,6 +212,7 @@ return [
                 'ianaTimezoneId'   => 'ianaTimezoneId',
                 'relatedWebPage'   => 'Related Web Page',
                 'url'              => 'URL',
+                'isPremiumOnly'     => 'Is premium can only view?',
                 'containsHtml'     => 'Contains Html?',
                 'hasSolutionChecker' => 'Has Solution Checker?',
                 'status_id'        => 'Status',

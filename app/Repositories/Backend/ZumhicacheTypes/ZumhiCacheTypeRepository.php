@@ -30,6 +30,7 @@ class ZumhiCacheTypeRepository extends BaseRepository
         return $this->query()
             ->select([
                 config('module.zumhicachetypes.table').'.id',
+                config('module.zumhicachetypes.table').'.name',
                 config('module.zumhicachetypes.table').'.created_at',
                 config('module.zumhicachetypes.table').'.updated_at',
             ]);

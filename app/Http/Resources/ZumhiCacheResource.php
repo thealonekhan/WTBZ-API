@@ -20,26 +20,49 @@ class ZumhiCacheResource extends Resource
             'name'                  => $this->name,
             'difficulty'            => $this->difficulty,
             'terrain'               => $this->terrain,
-            'placedDate'            => $this->placedDate->format('d/m/Y h:i A'),
-            'publishedDate'         => $this->publishedDate->format('d/m/Y h:i A'),
-            'eventEndDate'          => $this->eventEndDate->format('d/m/Y h:i A'),
-            'user_id'               => $this->owner()->referenceCode,
-            'type_id'               => $this->type()->name,
-            'size_id'               => $this->size()->name,
-            'country_id'            => $this->country()->name,
-            'state_id'              => $this->state()->name,
-            'coordinates_id'        => $this->coordinate()->latitude.' '.$this->coordinate()->longitude,
+            'placedDate'            => $this->placedDate,
+            'publishedDate'         => $this->publishedDate,
+            'eventEndDate'          => $this->eventEndDate,
+            'lastVisitedDate'       => $this->lastVisitedDate,
             'shortDescription'      => $this->shortDescription,
             'longDescription'       => $this->longDescription,
             'hints'                 => $this->hints,
             'ianaTimezoneId'        => $this->ianaTimezoneId,
             'relatedWebPage'        => $this->relatedWebPage,
             'url'                   => $this->url,
+            'isPremiumOnly'          => $this->isPremiumOnly,
             'containsHtml'          => $this->containsHtml,
             'hasSolutionChecker'    => $this->hasSolutionChecker,
-            'status_id'             => $this->status()->name,
-            'created_at'            => $this->created_at->toIso8601String(),
-            'updated_at'            => $this->updated_at->toIso8601String(),
+            'status'                => $this->status->name,
+            'owner'                 => [
+                'referenceCode'     => $this->owner->referenceCode,
+                'username'          => $this->owner->owner->username,
+                'membershipLevelId' => $this->owner->membership->id,
+                'avatarUrl'         => $this->owner->avatarUrl,
+                'profileText'       => $this->owner->profileText,
+            ],
+            'zumhicacheType'        => [
+                'id'                => $this->type->id,
+                'name'              => $this->type->name,
+                'imageUrl'          => $this->type->imageUrl
+
+            ],
+            'zumhicacheSize'        => [
+                'id'                => $this->size->id,
+                'name'              => $this->size->name,
+            ],
+            'location'              => [
+                'country'           => $this->country->name,
+                'country_id'        => $this->country->id,
+                'state'             => $this->state->name,
+                'state_id'          => $this->state->id,
+            ],
+            'postedCoordinates'     => [
+                'latitude' => $this->coordinate->latitude,
+                'longitude' => $this->coordinate->longitude,
+            ],
+            'attributes'   => [],
+            'additionalWaypoints'   => []
         ];
     }
 }
