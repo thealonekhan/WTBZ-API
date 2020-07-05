@@ -2,9 +2,9 @@
 
 namespace App\Models\Zumhicache\Traits;
 
-use App\Models\ZumhiCacheUser\ZumhiCacheUser;
-use App\Models\ZumhiCacheTypes\ZumhiCacheType;
-use App\Models\ZumhiCacheSizes\ZumhiCacheSize;
+use App\Models\ZumhicacheUser\ZumhiCacheUser;
+use App\Models\ZumhicacheTypes\ZumhiCacheType;
+use App\Models\ZumhicacheSizes\ZumhiCacheSize;
 use App\Models\Country\Country;
 use App\Models\State\State;
 use App\Models\Status\Status;
