@@ -30,6 +30,7 @@ class ZumhiCacheMembershipRepository extends BaseRepository
         return $this->query()
             ->select([
                 config('module.zumhicachememberships.table').'.id',
+                config('module.zumhicachememberships.table').'.name',
                 config('module.zumhicachememberships.table').'.created_at',
                 config('module.zumhicachememberships.table').'.updated_at',
             ]);

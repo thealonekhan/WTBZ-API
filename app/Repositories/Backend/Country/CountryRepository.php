@@ -30,6 +30,8 @@ class CountryRepository extends BaseRepository
         return $this->query()
             ->select([
                 config('module.countries.table').'.id',
+                config('module.countries.table').'.code',
+                config('module.countries.table').'.name',
                 config('module.countries.table').'.created_at',
                 config('module.countries.table').'.updated_at',
             ]);

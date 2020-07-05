@@ -64,5 +64,14 @@ Route::group(['namespace' => 'Api\V1', 'prefix' => 'v1', 'as' => 'v1.'], functio
         
         // ZumhiCache Types
         Route::resource('zumhicachetypes', 'ZumhiCacheTypeController', ['except' => ['create', 'edit']]);
+        
+        // Countries
+        Route::resource('countries', 'CountryController', ['except' => ['create', 'edit']]);
+        
+        // Statuses
+        Route::resource('statuses', 'StatusController', ['except' => ['create', 'edit']]);
+        
+        // Memberships
+        Route::resource('zumhicache-memberships', 'ZumhiCacheMembershipController', ['except' => ['create', 'edit']]);
     });
 });

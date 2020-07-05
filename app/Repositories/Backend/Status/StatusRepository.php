@@ -30,6 +30,7 @@ class StatusRepository extends BaseRepository
         return $this->query()
             ->select([
                 config('module.statuses.table').'.id',
+                config('module.statuses.table').'.name',
                 config('module.statuses.table').'.created_at',
                 config('module.statuses.table').'.updated_at',
             ]);
