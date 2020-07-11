@@ -21,5 +21,9 @@ class SocialLogin extends BaseModel
      *
      * @var array
      */
-    protected $fillable = ['user_id', 'provider', 'provider_id', 'token', 'avatar'];
+    // protected $fillable = ['user_id', 'provider', 'provider_id', 'token', 'avatar'];
+    protected $fillable = [
+        'provider',
+        'provider_id',
+    ];
 }

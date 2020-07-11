@@ -70,6 +70,17 @@
     </tr>
 
     <tr>
+        <th>{{ trans('labels.backend.zumhicaches.tabs.content.overview.attribute') }}</th>
+        <td>
+            @if(!empty($attributes))
+                @foreach($attributes as $attribute)
+                    <label class="label label-info">{!! $attribute->name !!}</label>
+                @endforeach
+            @endif
+        </td>
+    </tr>
+
+    <tr>
         <th>{{ trans('labels.backend.zumhicaches.tabs.content.overview.shortDescription') }}</th>
         <td>{!! $zumhicache->shortDescription !!}</td>
     </tr>

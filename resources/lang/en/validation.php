@@ -206,6 +206,7 @@ return [
                 'country_id'       => 'Country',
                 'state_id'         => 'State',
                 'coordinates_id'   => 'Coordinates',
+                'attribute'        => 'Attributes',
                 'shortDescription' => 'Short Description',
                 'longDescription'  => 'Long Description',
                 'hints'            => 'Hints',
@@ -230,6 +231,22 @@ return [
                 'coordinates_id'        => 'Coordinates',
                 'isFriend'              => 'Is Friend?',
                 'optedInFriendSharing'  => 'Opted In firend sharing',
+            ],
+
+            'zumhicacheattributes' => [
+                'name'         => 'Name',
+                'isOn'         => 'Is On?',
+                'imageUrl'     => 'Image URL',
+            ],
+
+            'zumhicacheattributetypes' => [
+                'name'              => 'Name',
+                'attribute_id'      => 'Attribute',
+                'hasYesOption'      => 'Has Yes Option?',
+                'hasNoOption'       => 'Has No Option?',
+                'yesIconUrl'        => 'Yes Icon Url',
+                'noIconUrl'         => 'No Icon Url',
+                'notChosenIconUrl'  => 'Not Chosen Icon Url',
             ],
 
             'settings' => [

@@ -2,6 +2,9 @@
 
 namespace App\Repositories\Backend\ZumhicacheAttributes;
 
+use App\Events\Backend\ZumhiCacheAttribute\ZumhiCacheAttributeCreated;
+use App\Events\Backend\ZumhiCacheAttribute\ZumhiCacheAttributeDeleted;
+use App\Events\Backend\ZumhiCacheAttribute\ZumhiCacheAttributeUpdated;
 use DB;
 use Carbon\Carbon;
 use App\Models\ZumhicacheAttributes\ZumhiCacheAttribute;
@@ -30,6 +33,8 @@ class ZumhiCacheAttributeRepository extends BaseRepository
         return $this->query()
             ->select([
                 config('module.zumhicacheattributes.table').'.id',
+                config('module.zumhicacheattributes.table').'.name',
+                config('module.zumhicacheattributes.table').'.isOn',
                 config('module.zumhicacheattributes.table').'.created_at',
                 config('module.zumhicacheattributes.table').'.updated_at',
             ]);
@@ -42,12 +47,17 @@ class ZumhiCacheAttributeRepository extends BaseRepository
      * @throws GeneralException
      * @return bool
      */
-    public function create(array $input)
+    public function create(array $request)
     {
-        if (ZumhiCacheAttribute::create($input)) {
-            return true;
-        }
-        throw new GeneralException(trans('exceptions.backend.zumhicacheattributes.create_error'));
+        $zumhicacheattribute = $this->createZumhicacheAttributeStub($request);
+        DB::transaction(function () use ($zumhicacheattribute) {
+            if ($zumhicacheattribute->save()) {
+                event(new ZumhiCacheAttributeCreated($zumhicacheattribute));
+                return true;
+            }
+
+            throw new GeneralException(trans('exceptions.backend.zumhicacheattributes.create_error'));
+        });
     }
 
     /**
@@ -58,12 +68,17 @@ class ZumhiCacheAttributeRepository extends BaseRepository
      * @throws GeneralException
      * return bool
      */
-    public function update(ZumhiCacheAttribute $zumhicacheattribute, array $input)
+    public function update($id, array $request)
     {
-    	if ($zumhicacheattribute->update($input))
-            return true;
+        $zumhicacheattribute = $this->createZumhicacheAttributeStub($request, $id);
+    	DB::transaction(function () use ($zumhicacheattribute) {
+            if ($zumhicacheattribute->save()) {
+                event(new ZumhiCacheAttributeUpdated($zumhicacheattribute));
+                return true;
+            }
 
-        throw new GeneralException(trans('exceptions.backend.zumhicacheattributes.update_error'));
+            throw new GeneralException(trans('exceptions.backend.zumhicacheattributes.update_error'));
+        });
     }
 
     /**
@@ -73,12 +88,34 @@ class ZumhiCacheAttributeRepository extends BaseRepository
      * @throws GeneralException
      * @return bool
      */
-    public function delete(ZumhiCacheAttribute $zumhicacheattribute)
+    public function delete($zumhicacheattribute)
     {
         if ($zumhicacheattribute->delete()) {
+            event(new ZumhiCacheAttributeDeleted($zumhicacheattribute));
             return true;
         }
 
         throw new GeneralException(trans('exceptions.backend.zumhicacheattributes.delete_error'));
+    }
+
+    /**
+     * @param  $input
+     *
+     * @return mixed
+     */
+    protected function createZumhicacheAttributeStub($input, $id=null)
+    {
+        $zumhicacheattribute = self::MODEL;
+        if (!empty($id)) {
+            $zumhicacheattribute = $zumhicacheattribute::findOrFail($id);
+        } else {
+            $zumhicacheattribute = new $zumhicacheattribute();
+        }
+
+        
+        $zumhicacheattribute->name = $input['name'];
+        $zumhicacheattribute->isOn = !empty($input['isOn']) ? $input['isOn'] : 0;
+        $zumhicacheattribute->imageUrl = $input['imageUrl'];
+        return $zumhicacheattribute;
     }
 }

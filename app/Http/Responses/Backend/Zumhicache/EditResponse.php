@@ -18,6 +18,8 @@ class EditResponse implements Responsable
     protected $sizes;
 
     protected $coordinates;
+    
+    protected $attributes;
 
     protected $countries;
 
@@ -30,13 +32,14 @@ class EditResponse implements Responsable
     /**
      * @param App\Models\Zumhicache\ZumhiCache $zumhicache
      */
-    public function __construct($zumhicache, $users, $types, $sizes, $coordinates, $countries, $selectedStates, $statuses, $timezoneids)
+    public function __construct($zumhicache, $users, $types, $sizes, $coordinates, $attributes, $countries, $selectedStates, $statuses, $timezoneids)
     {
         $this->zumhicache = $zumhicache;
         $this->users = $users;
         $this->types = $types;
         $this->sizes = $sizes;
         $this->coordinates = $coordinates;
+        $this->attributes = $attributes;
         $this->countries = $countries;
         $this->selectedStates = $selectedStates;
         $this->statuses = $statuses;
@@ -52,12 +55,15 @@ class EditResponse implements Responsable
      */
     public function toResponse($request)
     { 
+        $selectedAttributes = $this->zumhicache->attributes->pluck('id')->toArray();
         return view('backend.zumhicaches.edit')->with([
             'zumhicache' => $this->zumhicache,
             'users' => $this->users,
             'types' => $this->types,
             'sizes' => $this->sizes,
             'coordinates' => $this->coordinates,
+            'attributes' => $this->attributes,
+            'selectedAttributes' => $selectedAttributes,
             'countries' => $this->countries,
             'selectedStates' => $this->selectedStates,
             'statuses' => $this->statuses,

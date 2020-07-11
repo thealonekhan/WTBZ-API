@@ -9,6 +9,7 @@ use App\Models\Country\Country;
 use App\Models\State\State;
 use App\Models\Status\Status;
 use App\Models\ZumhicacheCoordinates\ZumhiCacheCoordinate;
+use App\Models\ZumhicacheAttributes\ZumhiCacheAttribute;
 
 /**
  * Class ZumhiCacheRelationship
@@ -75,6 +76,14 @@ trait ZumhiCacheRelationship
     public function coordinate()
     {
         return $this->belongsTo(ZumhiCacheCoordinate::class, 'coordinates_id');
+    }
+
+    /**
+     * ZumhiCache has many relationship with ZumhiCacheAttribute.
+     */
+    public function attributes()
+    {
+        return $this->belongsToMany(ZumhiCacheAttribute::class, 'zumhicache_map_attributes', 'zumhicache_id', 'attribute_id');
     }
 
 

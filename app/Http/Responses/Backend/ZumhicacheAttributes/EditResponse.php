@@ -9,14 +9,14 @@ class EditResponse implements Responsable
     /**
      * @var App\Models\ZumhicacheAttributes\ZumhiCacheAttribute
      */
-    protected $zumhicacheattributes;
+    protected $zumhicacheattribute;
 
     /**
      * @param App\Models\ZumhicacheAttributes\ZumhiCacheAttribute $zumhicacheattributes
      */
-    public function __construct($zumhicacheattributes)
+    public function __construct($zumhicacheattribute)
     {
-        $this->zumhicacheattributes = $zumhicacheattributes;
+        $this->zumhicacheattribute = $zumhicacheattribute;
     }
 
     /**
@@ -29,7 +29,7 @@ class EditResponse implements Responsable
     public function toResponse($request)
     {
         return view('backend.zumhicacheattributes.edit')->with([
-            'zumhicacheattributes' => $this->zumhicacheattributes
+            'zumhicacheattribute' => $this->zumhicacheattribute
         ]);
     }
 }

@@ -22,12 +22,19 @@
                     <thead>
                         <tr>
                             <th>{{ trans('labels.backend.zumhicacheattributes.table.id') }}</th>
+                            <th>{{ trans('labels.backend.zumhicacheattributes.table.name') }}</th>
+                            <th>{{ trans('labels.backend.zumhicacheattributes.table.isOn') }}</th>
                             <th>{{ trans('labels.backend.zumhicacheattributes.table.createdat') }}</th>
                             <th>{{ trans('labels.general.actions') }}</th>
                         </tr>
                     </thead>
                     <thead class="transparent-bg">
                         <tr>
+                            <th></th>
+                            <th>
+                            {!! Form::text('name', null, ["class" => "search-input-text form-control", "data-column" => 1, "placeholder" => trans('labels.backend.zumhicacheattributes.table.name')]) !!}
+                                <a class="reset-data" href="javascript:void(0)"><i class="fa fa-times"></i></a>
+                            </th>
                             <th></th>
                             <th></th>
                             <th></th>
@@ -61,19 +68,21 @@
                 },
                 columns: [
                     {data: 'id', name: '{{config('module.zumhicacheattributes.table')}}.id'},
+                    {data: 'name', name: '{{config('module.zumhicacheattributes.table')}}.name'},
+                    {data: 'isOn', name: '{{config('module.zumhicacheattributes.table')}}.isOn'},
                     {data: 'created_at', name: '{{config('module.zumhicacheattributes.table')}}.created_at'},
                     {data: 'actions', name: 'actions', searchable: false, sortable: false}
                 ],
-                order: [[0, "asc"]],
+                order: [[0, "desc"]],
                 searchDelay: 500,
                 dom: 'lBfrtip',
                 buttons: {
                     buttons: [
-                        { extend: 'copy', className: 'copyButton',  exportOptions: {columns: [ 0, 1 ]  }},
-                        { extend: 'csv', className: 'csvButton',  exportOptions: {columns: [ 0, 1 ]  }},
-                        { extend: 'excel', className: 'excelButton',  exportOptions: {columns: [ 0, 1 ]  }},
-                        { extend: 'pdf', className: 'pdfButton',  exportOptions: {columns: [ 0, 1 ]  }},
-                        { extend: 'print', className: 'printButton',  exportOptions: {columns: [ 0, 1 ]  }}
+                        { extend: 'copy', className: 'copyButton',  exportOptions: {columns: [ 0, 1, 2, 3 ]  }},
+                        { extend: 'csv', className: 'csvButton',  exportOptions: {columns: [ 0, 1, 2, 3 ]  }},
+                        { extend: 'excel', className: 'excelButton',  exportOptions: {columns: [ 0, 1, 2, 3 ]  }},
+                        { extend: 'pdf', className: 'pdfButton',  exportOptions: {columns: [ 0, 1, 2, 3 ]  }},
+                        { extend: 'print', className: 'printButton',  exportOptions: {columns: [ 0, 1, 2, 3 ]  }}
                     ]
                 }
             });

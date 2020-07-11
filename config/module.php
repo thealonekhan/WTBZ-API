@@ -50,4 +50,7 @@ return [
 	"statuses" => [
 	"table" => "statuses",
 	],
+	"zumhicacheattributetypes" => [
+	"table" => "zumhicacheattributetypes",
+	],
 ];

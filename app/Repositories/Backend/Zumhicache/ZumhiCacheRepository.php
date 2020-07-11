@@ -8,6 +8,7 @@ use App\Events\Backend\ZumhiCache\ZumhiCacheUpdated;
 use DB;
 use Carbon\Carbon;
 use App\Models\Zumhicache\ZumhiCache;
+use App\Models\ZumhicacheAttributes\ZumhiCacheAttribute;
 use App\Exceptions\GeneralException;
 use App\Repositories\BaseRepository;
 use Illuminate\Support\Facades\Storage;
@@ -86,10 +87,17 @@ class ZumhiCacheRepository extends BaseRepository
      */
     public function create(array $request)
     {
+        $attributesArray = $this->createAttributes($request['attributes']);
+        unset($request['attributes']);
         $zumhicache = $this->createZumhicacheStub($request);
 
-        DB::transaction(function () use ($zumhicache) {
+        DB::transaction(function () use ($zumhicache, $attributesArray) {
             if ($zumhicache->save()) {
+
+                if (count($attributesArray)) {
+                    $zumhicache->attributes()->sync($attributesArray);
+                }
+
                 event(new ZumhiCacheCreated($zumhicache));
                 return true;
             }
@@ -108,9 +116,16 @@ class ZumhiCacheRepository extends BaseRepository
      */
     public function update($id, array $request)
     {
+        $attributesArray = $this->createAttributes($request['attributes']);
+        unset($request['attributes']);
         $zumhicache = $this->createZumhicacheStub($request, $id);
-    	DB::transaction(function () use ($zumhicache) {
+    	DB::transaction(function () use ($zumhicache, $attributesArray) {
             if ($zumhicache->save()) {
+
+                if (count($attributesArray)) {
+                    $zumhicache->attributes()->sync($attributesArray);
+                }
+
                 event(new ZumhiCacheUpdated($zumhicache));
                 return true;
             }
@@ -174,5 +189,33 @@ class ZumhiCacheRepository extends BaseRepository
         $zumhicache->hasSolutionChecker = !empty($input['hasSolutionChecker']) ? $input['hasSolutionChecker'] : null;
         $zumhicache->status_id = $input['status_id'];
         return $zumhicache;
+    }
+
+    /**
+     * Creating ZumhiCacheAttributes.
+     *
+     * @param Array($attributes)
+     *
+     * @return array
+     */
+    public function createAttributes($attributes)
+    {
+        //Creating a new array for attributes (newly created)
+        $attributes_array = [];
+
+        foreach ($attributes as $attribute) {
+            if (is_numeric($attribute)) {
+                $attributes_array[] = $attribute;
+            } else {
+                $newAttribute = new ZumhiCacheAttribute();
+                $newAttribute->name = $attribute;
+                $newAttribute->isOn = 1;
+                $newAttribute->save();
+
+                $attributes_array[] = $newAttribute->id;
+            }
+        }
+
+        return $attributes_array;
     }
 }

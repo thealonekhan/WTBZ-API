@@ -149,6 +149,13 @@ return [
 	"not_found" => "That Status does not exist.",
 	"update_error" => "There was a problem updating this Status. Please try again.",
 	],
+	"zumhicacheattributetypes" => [
+	"already_exists" => "That ZumhicacheAttributetype already exists. Please choose a different name.",
+	"create_error" => "There was a problem creating this ZumhicacheAttributetype. Please try again.",
+	"delete_error" => "There was a problem deleting this ZumhicacheAttributetype. Please try again.",
+	"not_found" => "That ZumhicacheAttributetype does not exist.",
+	"update_error" => "There was a problem updating this ZumhicacheAttributetype. Please try again.",
+	],
 	],
 	"frontend" => [
 	"auth" => [

@@ -104,6 +104,11 @@ return [
 	"deleted" => "The Status was successfully deleted.",
 	"updated" => "The Status was successfully updated.",
 	],
+	"zumhicacheattributetypes" => [
+	"created" => "The ZumhicacheAttributetype was successfully created.",
+	"deleted" => "The ZumhicacheAttributetype was successfully deleted.",
+	"updated" => "The ZumhicacheAttributetype was successfully updated.",
+	],
 	],
 	"frontend" => [
 	"users" => [

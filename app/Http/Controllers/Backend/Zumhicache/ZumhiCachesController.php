@@ -22,6 +22,7 @@ use App\Models\ZumhicacheTypes\ZumhiCacheType;
 use App\Models\ZumhicacheCoordinates\ZumhiCacheCoordinate;
 use App\Models\ZumhicacheMemberships\ZumhiCacheMembership;
 use App\Models\ZumhicacheUser\ZumhiCacheUser;
+use App\Models\ZumhicacheAttributes\ZumhiCacheAttribute;
 use App\Models\Status\Status;
 use App\Models\Country\Country;
 use App\Models\State\State;
@@ -71,8 +72,9 @@ class ZumhiCachesController extends Controller
         $types = ZumhiCacheType::getSelectData();
         $sizes = ZumhiCacheSize::getSelectData();
         $users = ZumhiCacheUser::getSelectData('referenceCode');
+        $attributes = ZumhiCacheAttribute::getSelectData();
         
-        return new CreateResponse($users, $types, $sizes, $coordinates, $countries, $statuses, config('timezone.timezone_ids'));
+        return new CreateResponse($users, $types, $sizes, $coordinates, $attributes, $countries, $statuses, config('timezone.timezone_ids'));
     }
     /**
      * Store a newly created resource in storage.
@@ -116,7 +118,8 @@ class ZumhiCachesController extends Controller
         $types = ZumhiCacheType::getSelectData();
         $sizes = ZumhiCacheSize::getSelectData();
         $users = ZumhiCacheUser::getSelectData('referenceCode');
-        return new EditResponse($zumhicache, $users, $types, $sizes, $coordinates, $countries, $selectedStates, $statuses, config('timezone.timezone_ids'));
+        $attributes = ZumhiCacheAttribute::getSelectData();
+        return new EditResponse($zumhicache, $users, $types, $sizes, $coordinates, $attributes, $countries, $selectedStates, $statuses, config('timezone.timezone_ids'));
     }
     /**
      * Update the specified resource in storage.

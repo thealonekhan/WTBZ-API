@@ -1,15 +1,33 @@
 <div class="box-body">
     <div class="form-group">
-        <!-- Create Your Field Label Here -->
-        <!-- Look Below Example for reference -->
-        {{-- {{ Form::label('name', trans('labels.backend.blogs.title'), ['class' => 'col-lg-2 control-label required']) }} --}}
+        {{ Form::label('name', trans('validation.attributes.backend.zumhicacheattributes.name'), ['class' => 'col-lg-2 control-label required']) }}
 
         <div class="col-lg-10">
-            <!-- Create Your Input Field Here -->
-            <!-- Look Below Example for reference -->
-            {{-- {{ Form::text('name', null, ['class' => 'form-control box-size', 'placeholder' => trans('labels.backend.blogs.title'), 'required' => 'required']) }} --}}
+            {{ Form::text('name', null, ['class' => 'form-control box-size', 'placeholder' => trans('validation.attributes.backend.zumhicacheattributes.name'), 'required' => 'required']) }}
         </div><!--col-lg-10-->
-    </div><!--form-group-->
+    </div><!--form control-->
+
+    <div class="form-group">
+        {{ Form::label('isOn', trans('validation.attributes.backend.zumhicacheattributes.isOn'), ['class' => 'col-lg-2 control-label']) }}
+
+        <div class="col-lg-1">
+                <div class="control-group">
+                <label class="control control--checkbox">
+                    {{ Form::checkbox('isOn', '1', true) }}
+                    <div class="control__indicator"></div>
+                </label>
+            </div>
+        </div><!--col-lg-1-->
+    </div><!--form control-->
+
+    <div class="form-group">
+        {{ Form::label('imageUrl', trans('validation.attributes.backend.zumhicacheattributes.imageUrl'), ['class' => 'col-lg-2 control-label']) }}
+
+        <div class="col-lg-10">
+            {{ Form::text('imageUrl', null, ['class' => 'form-control box-size', 'placeholder' => trans('validation.attributes.backend.zumhicacheattributes.imageUrl')]) }}
+        </div><!--col-lg-10-->
+    </div><!--form control-->
+
 </div><!--box-body-->
 
 @section("after-scripts")

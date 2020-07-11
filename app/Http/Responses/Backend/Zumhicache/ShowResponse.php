@@ -35,6 +35,7 @@ class ShowResponse implements Responsable
         $state = $this->zumhicache->state->name;
         $status = $this->zumhicache->status->name;
         $coordinates = $this->zumhicache->coordinate->getFullNameAttribute();
+        $attributes = $this->zumhicache->attributes;
         return view('backend.zumhicaches.show')->with([
             'zumhicache' => $this->zumhicache,
             'type'       => $type,
@@ -43,6 +44,7 @@ class ShowResponse implements Responsable
             'state'      => $state,
             'status'     => $status,
             'coordinates' => $coordinates,
+            'attributes' => $attributes,
             'user'       => $user,
         ]);
     }

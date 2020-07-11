@@ -73,5 +73,8 @@ Route::group(['namespace' => 'Api\V1', 'prefix' => 'v1', 'as' => 'v1.'], functio
         
         // Memberships
         Route::resource('zumhicache-memberships', 'ZumhiCacheMembershipController', ['except' => ['create', 'edit']]);
+        
+        // Attributes
+        Route::resource('attributes', 'ZumhiCacheAttributeTypeController', ['except' => ['create', 'edit']]);
     });
 });

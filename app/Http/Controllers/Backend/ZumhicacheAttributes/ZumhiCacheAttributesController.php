@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Backend\ZumhicacheAttributes;
 
-use App\Models\ZumhicacheAttributes\ZumhiCacheAttribute;
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Responses\RedirectResponse;
 use App\Http\Responses\ViewResponse;
 use App\Http\Responses\Backend\ZumhicacheAttributes\CreateResponse;
 use App\Http\Responses\Backend\ZumhicacheAttributes\EditResponse;
+use App\Http\Responses\Backend\ZumhicacheAttributes\ShowResponse;
 use App\Repositories\Backend\ZumhicacheAttributes\ZumhiCacheAttributeRepository;
 use App\Http\Requests\Backend\ZumhicacheAttributes\ManageZumhiCacheAttributeRequest;
 use App\Http\Requests\Backend\ZumhicacheAttributes\CreateZumhiCacheAttributeRequest;
@@ -16,6 +16,7 @@ use App\Http\Requests\Backend\ZumhicacheAttributes\StoreZumhiCacheAttributeReque
 use App\Http\Requests\Backend\ZumhicacheAttributes\EditZumhiCacheAttributeRequest;
 use App\Http\Requests\Backend\ZumhicacheAttributes\UpdateZumhiCacheAttributeRequest;
 use App\Http\Requests\Backend\ZumhicacheAttributes\DeleteZumhiCacheAttributeRequest;
+use App\Models\ZumhicacheAttributes\ZumhiCacheAttribute;
 
 /**
  * ZumhiCacheAttributesController
@@ -65,12 +66,19 @@ class ZumhiCacheAttributesController extends Controller
      */
     public function store(StoreZumhiCacheAttributeRequest $request)
     {
-        //Input received from the request
-        $input = $request->except(['_token']);
         //Create the model using repository create method
-        $this->repository->create($input);
+        $this->repository->create($request->except('_token'));
         //return with successfull message
         return new RedirectResponse(route('admin.zumhicacheattributes.index'), ['flash_success' => trans('alerts.backend.zumhicacheattributes.created')]);
+    }
+    /**
+     * @param App\Models\ZumhicacheAttributes\ZumhiCacheAttribute  $zumhicacheattribute
+     * @return \App\Http\Responses\Backend\ZumhicacheAttributes\ShowResponse
+     */
+    public function show($id)
+    {
+        $zumhicacheattribute = ZumhiCacheAttribute::findOrFail($id);
+        return new ShowResponse($zumhicacheattribute);
     }
     /**
      * Show the form for editing the specified resource.
@@ -79,8 +87,9 @@ class ZumhiCacheAttributesController extends Controller
      * @param  EditZumhiCacheAttributeRequestNamespace  $request
      * @return \App\Http\Responses\Backend\ZumhicacheAttributes\EditResponse
      */
-    public function edit(ZumhiCacheAttribute $zumhicacheattribute, EditZumhiCacheAttributeRequest $request)
-    {
+    public function edit($id)
+    {   
+        $zumhicacheattribute = ZumhiCacheAttribute::findOrFail($id);
         return new EditResponse($zumhicacheattribute);
     }
     /**
@@ -90,12 +99,12 @@ class ZumhiCacheAttributesController extends Controller
      * @param  App\Models\ZumhicacheAttributes\ZumhiCacheAttribute  $zumhicacheattribute
      * @return \App\Http\Responses\RedirectResponse
      */
-    public function update(UpdateZumhiCacheAttributeRequest $request, ZumhiCacheAttribute $zumhicacheattribute)
+    public function update(UpdateZumhiCacheAttributeRequest $request, $id)
     {
         //Input received from the request
-        $input = $request->except(['_token']);
+        // $input = $request->except(['_token']);
         //Update the model using repository update method
-        $this->repository->update( $zumhicacheattribute, $input );
+        $this->repository->update( $id, $request->except('_token') );
         //return with successfull message
         return new RedirectResponse(route('admin.zumhicacheattributes.index'), ['flash_success' => trans('alerts.backend.zumhicacheattributes.updated')]);
     }
@@ -106,8 +115,9 @@ class ZumhiCacheAttributesController extends Controller
      * @param  App\Models\ZumhicacheAttributes\ZumhiCacheAttribute  $zumhicacheattribute
      * @return \App\Http\Responses\RedirectResponse
      */
-    public function destroy(ZumhiCacheAttribute $zumhicacheattribute, DeleteZumhiCacheAttributeRequest $request)
+    public function destroy(DeleteZumhiCacheAttributeRequest $request, $id)
     {
+        $zumhicacheattribute = ZumhiCacheAttribute::find($id);
         //Calling the delete method on repository
         $this->repository->delete($zumhicacheattribute);
         //returning with successfull message

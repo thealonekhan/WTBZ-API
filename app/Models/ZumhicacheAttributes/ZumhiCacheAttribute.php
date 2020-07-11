@@ -3,13 +3,15 @@
 namespace App\Models\ZumhicacheAttributes;
 
 use App\Models\ModelTrait;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\BaseModel;
 use App\Models\ZumhicacheAttributes\Traits\ZumhiCacheAttributeAttribute;
 use App\Models\ZumhicacheAttributes\Traits\ZumhiCacheAttributeRelationship;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class ZumhiCacheAttribute extends Model
+class ZumhiCacheAttribute extends BaseModel
 {
     use ModelTrait,
+        SoftDeletes,
         ZumhiCacheAttributeAttribute,
     	ZumhiCacheAttributeRelationship {
             // ZumhiCacheAttributeAttribute::getEditButtonAttribute insteadof ModelTrait;
@@ -24,23 +26,23 @@ class ZumhiCacheAttribute extends Model
      * The database table used by the model.
      * @var string
      */
-    protected $table = 'zumhicacheattributes';
+    protected $table;
 
     /**
      * Mass Assignable fields of model
      * @var array
      */
-    protected $fillable = [
+    // protected $fillable = [
 
-    ];
+    // ];
 
     /**
      * Default values for model fields
      * @var array
      */
-    protected $attributes = [
+    // protected $attributes = [
 
-    ];
+    // ];
 
     /**
      * Dates
@@ -66,5 +68,6 @@ class ZumhiCacheAttribute extends Model
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
+        $this->table = config('module.zumhicacheattributes.table');
     }
 }

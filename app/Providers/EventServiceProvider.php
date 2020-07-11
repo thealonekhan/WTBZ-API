@@ -47,6 +47,8 @@ class EventServiceProvider extends ServiceProvider
         \App\Listeners\Backend\Blogs\BlogEventListener::class,
         \App\Listeners\Backend\ZumhiCache\ZumhiCacheEventListener::class,
         \App\Listeners\Backend\ZumhiCacheUser\ZumhiCacheUserEventListener::class,
+        \App\Listeners\Backend\ZumhiCacheAttribute\ZumhiCacheAttributeEventListener::class,
+        \App\Listeners\Backend\ZumhiCacheAttributeType\ZumhiCacheAttributeTypeEventListener::class,
     ];
 
     /**

@@ -13,6 +13,8 @@ class CreateResponse implements Responsable
     protected $sizes;
 
     protected $coordinates;
+    
+    protected $attributes;
 
     protected $countries;
 
@@ -20,12 +22,13 @@ class CreateResponse implements Responsable
 
     protected $timezoneids;
 
-    public function __construct($users, $types, $sizes, $coordinates, $countries, $statuses, $timezoneids)
+    public function __construct($users, $types, $sizes, $coordinates, $attributes, $countries, $statuses, $timezoneids)
     {
         $this->users = $users;
         $this->types = $types;
         $this->sizes = $sizes;
         $this->coordinates = $coordinates;
+        $this->attributes = $attributes;
         $this->countries = $countries;
         $this->statuses = $statuses;
         $this->timezoneids = $timezoneids;
@@ -38,6 +41,7 @@ class CreateResponse implements Responsable
             'types' => $this->types,
             'sizes' => $this->sizes,
             'coordinates' => $this->coordinates,
+            'attributes' => $this->attributes,
             'countries' => $this->countries,
             'statuses' => $this->statuses,
             'timezoneids' => $this->timezoneids,

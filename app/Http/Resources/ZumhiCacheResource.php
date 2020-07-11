@@ -15,6 +15,17 @@ class ZumhiCacheResource extends Resource
      */
     public function toArray($request)
     {
+        $attributes = [];
+        if (!empty($this->attributes)) {
+            foreach ($this->attributes as $value) {
+                $attributes[] = [
+                    'id' => $value->id,
+                    'name' => $value->name,
+                    'isOn' => $value->isOn,
+                    'imageUrl' => $value->imageUrl,
+                ];
+            }
+        }
         return [
             'referenceCode'         => $this->referenceCode,
             'name'                  => $this->name,
@@ -61,7 +72,7 @@ class ZumhiCacheResource extends Resource
                 'latitude' => $this->coordinate->latitude,
                 'longitude' => $this->coordinate->longitude,
             ],
-            'attributes'   => [],
+            'attributes'   => $attributes,
             'additionalWaypoints'   => []
         ];
     }

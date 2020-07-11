@@ -24,9 +24,9 @@ class UpdateZumhiCacheAttributeRequest extends FormRequest
     public function rules()
     {
         return [
-            //Put your rules for the request in here
-            //For Example : 'title' => 'required'
-            //Further, see the documentation : https://laravel.com/docs/6.x/validation#creating-form-requests
+            'name'             => 'required|max:191',
+            'isOn'             => 'nullable|boolean',
+            'imageUrl'         => 'nullable|url',
         ];
     }
 

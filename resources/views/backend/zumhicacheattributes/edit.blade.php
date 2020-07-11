@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-    {{ Form::model($zumhicacheattributes, ['route' => ['admin.zumhicacheattributes.update', $zumhicacheattribute], 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'PATCH', 'id' => 'edit-zumhicacheattribute']) }}
+    {{ Form::model($zumhicacheattribute, ['route' => ['admin.zumhicacheattributes.update', $zumhicacheattribute], 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'PATCH', 'id' => 'edit-zumhicacheattribute']) }}
 
         <div class="box box-info">
             <div class="box-header with-border">

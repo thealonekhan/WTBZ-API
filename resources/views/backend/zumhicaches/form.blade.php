@@ -128,6 +128,18 @@
     </div><!--form control-->
 
     <div class="form-group">
+        {{ Form::label('attributes', trans('validation.attributes.backend.zumhicache.attribute'), ['class' => 'col-lg-2 control-label']) }}
+
+        <div class="col-lg-10">
+        @if(!empty($selectedAttributes))
+            {{ Form::select('attributes[]', $attributes, $selectedAttributes, ['class' => 'form-control attribute-tags box-size', 'multiple' => 'multiple']) }}
+        @else
+            {{ Form::select('attributes[]', $attributes, null, ['class' => 'form-control attribute-tags box-size', 'multiple' => 'multiple']) }}
+        @endif
+        </div><!--col-lg-10-->
+    </div><!--form control-->
+
+    <div class="form-group">
         {{ Form::label('shortDescription', trans('validation.attributes.backend.zumhicache.shortDescription'), ['class' => 'col-lg-2 control-label required']) }}
 
         <div class="col-lg-10 mce-box">
@@ -223,6 +235,13 @@
         Backend.ZumhiCache.selectors.StateAjaxUrl = "{{url('/admin/zumhicaches/getstate')}}";
         Backend.ZumhiCache.init('{{ config('locale.languages.' . app()->getLocale())[1] }}');
         //$('.datetimepicker1').datetimepicker();
+        $( document ).ready( function() {
+            jQuery(".attribute-tags").select2({
+                placeholder: "Select Attributes",
+                allowClear: true,
+                tags: true,
+            });
+        });
         
     </script>
 @endsection
