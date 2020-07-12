@@ -185,6 +185,20 @@ return [
 	"management" => "Attribute Type Management",
 	"main" => "Attribute Types",
 	],
+	"zumhicachelogs" => [
+	"all" => "All ZumhicacheLogs",
+	"create" => "Create ZumhicacheLog",
+	"edit" => "Edit ZumhicacheLog",
+	"management" => "ZumhicacheLog Management",
+	"main" => "ZumhicacheLogs",
+	],
+	"logtypes" => [
+	"all" => "All LogTypes",
+	"create" => "Create LogType",
+	"edit" => "Edit LogType",
+	"management" => "LogType Management",
+	"main" => "LogTypes",
+	],
 	],
 	"language-picker" => [
 	"language" => "Language",

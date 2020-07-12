@@ -156,6 +156,20 @@ return [
 	"not_found" => "That ZumhicacheAttributetype does not exist.",
 	"update_error" => "There was a problem updating this ZumhicacheAttributetype. Please try again.",
 	],
+	"zumhicachelogs" => [
+	"already_exists" => "That ZumhicacheLog already exists. Please choose a different name.",
+	"create_error" => "There was a problem creating this ZumhicacheLog. Please try again.",
+	"delete_error" => "There was a problem deleting this ZumhicacheLog. Please try again.",
+	"not_found" => "That ZumhicacheLog does not exist.",
+	"update_error" => "There was a problem updating this ZumhicacheLog. Please try again.",
+	],
+	"logtypes" => [
+	"already_exists" => "That LogType already exists. Please choose a different name.",
+	"create_error" => "There was a problem creating this LogType. Please try again.",
+	"delete_error" => "There was a problem deleting this LogType. Please try again.",
+	"not_found" => "That LogType does not exist.",
+	"update_error" => "There was a problem updating this LogType. Please try again.",
+	],
 	],
 	"frontend" => [
 	"auth" => [

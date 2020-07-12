@@ -28,3 +28,5 @@ require __DIR__.'/ZumhiCacheAttribute.php';
 require __DIR__.'/ZumhiCacheMembership.php';
 require __DIR__.'/Status.php';
 require __DIR__.'/ZumhiCacheAttributeType.php';
+require __DIR__.'/ZumhiCacheLog.php';
+require __DIR__.'/LogType.php';

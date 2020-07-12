@@ -6,137 +6,124 @@ use Database\TruncateTable;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-/**
- * Class HistoryTypeTableSeeder.
- */
-class HistoryTypeTableSeeder extends Seeder
+class LogTypeTableSeeder extends Seeder
 {
     use DisableForeignKeys, TruncateTable;
-
     /**
-     * Run the database seed.
+     * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
         $this->disableForeignKeys();
-        $this->truncate(config('access.history_types_table'));
-        $this->truncate(config('access.history_table'));
+        $this->truncate(config('module.logtypes.table'));
 
         $types = [
             [
-                'id'         => 1,
-                'name'       => 'User',
+                'name'       => 'Found It',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
-                'id'         => 2,
-                'name'       => 'Role',
+                'name'       => 'Didn\'t find it',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
-                'id'         => 3,
-                'name'       => 'Permission',
+                'name'       => 'Write note',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
-                'id'         => 4,
-                'name'       => 'Page',
+                'name'       => 'Archive',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
-                'id'         => 5,
-                'name'       => 'BlogTag',
+                'name'       => 'Permanently Archived',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
-                'id'         => 6,
-                'name'       => 'BlogCategory',
+                'name'       => 'Needs Archived',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
-                'id'         => 7,
-                'name'       => 'Blog',
+                'name'       => 'Will Attend',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
-                'id'         => 8,
-                'name'       => 'ZumhiCache',
+                'name'       => 'Attended',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
-                'id'         => 9,
-                'name'       => 'ZumhiCacheUser',
+                'name'       => 'Webcam Photo Taken',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
-                'id'         => 10,
-                'name'       => 'ZumhiCacheType',
+                'name'       => 'Unarchive',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
-                'id'         => 11,
-                'name'       => 'ZumhiCacheSize',
+                'name'       => 'Temporarily Disable Listing',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
-                'id'         => 12,
-                'name'       => 'Country',
+                'name'       => 'Enable Listing',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
-                'id'         => 13,
-                'name'       => 'State',
+                'name'       => 'Publish Listing',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
-                'id'         => 14,
-                'name'       => 'Coordinates',
+                'name'       => 'Retract Listing',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
-                'id'         => 15,
-                'name'       => 'Status',
+                'name'       => 'Community Celebration Event',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
-                'id'         => 16,
-                'name'       => 'ZumhiCacheAttribute',
+                'name'       => 'Needs Maintenance',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
-                'id'         => 17,
-                'name'       => 'ZumhiCacheAttributeType',
+                'name'       => 'Owner Maintenance',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
-                'id'         => 18,
-                'name'       => 'ZumhiCacheLog',
+                'name'       => 'Update Coordinates',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name'       => 'Post Reviewer Note',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name'       => 'Announcement',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
         ];
 
-        DB::table(config('access.history_types_table'))->insert($types);
-
+        DB::table(config('module.logtypes.table'))->insert($types);
         $this->enableForeignKeys();
+
     }
 }

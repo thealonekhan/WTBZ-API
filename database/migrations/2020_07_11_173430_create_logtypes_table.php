@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateZumhicachecoordinatesTable extends Migration
+class CreateLogtypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateZumhicachecoordinatesTable extends Migration
      */
     public function up()
     {
-        Schema::create('zumhicachecoordinates', function (Blueprint $table) {
+        Schema::create('logtypes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->decimal('latitude', 10, 6)->nullable();
-            $table->decimal('longitude', 10, 6)->nullable();
+            $table->string('name', 191)->nullable();
+            $table->text('imageUrl')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
@@ -29,6 +29,6 @@ class CreateZumhicachecoordinatesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('zumhicachecoordinates');
+        Schema::dropIfExists('logtypes');
     }
 }

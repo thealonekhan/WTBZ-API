@@ -53,4 +53,10 @@ return [
 	"zumhicacheattributetypes" => [
 	"table" => "zumhicacheattributetypes",
 	],
+	"zumhicachelogs" => [
+	"table" => "zumhicachelogs",
+	],
+	"logtypes" => [
+	"table" => "logtypes",
+	],
 ];

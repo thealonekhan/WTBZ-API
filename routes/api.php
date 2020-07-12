@@ -55,6 +55,10 @@ Route::group(['namespace' => 'Api\V1', 'prefix' => 'v1', 'as' => 'v1.'], functio
         // ZumhiCaches
         Route::resource('zumhicaches', 'ZumhiCacheController', ['except' => ['create', 'edit']]);
         Route::post('zumhicaches/search', 'ZumhiCacheController@search');
+
+        // ZumhiCacheLogs
+        Route::resource('zumhicachelogs', 'ZumhiCacheLogController');
+        Route::get('zumhicaches/{referenceCode}/zumhicachelogs', 'ZumhiCacheLogController@index');
         
         // ZumhiCache Users
         Route::resource('zumhicacheusers', 'ZumhiCacheUserController', ['except' => ['create', 'edit']]);
@@ -76,5 +80,8 @@ Route::group(['namespace' => 'Api\V1', 'prefix' => 'v1', 'as' => 'v1.'], functio
         
         // Attributes
         Route::resource('attributes', 'ZumhiCacheAttributeTypeController', ['except' => ['create', 'edit']]);
+        
+        // ZumhiCache Log Types
+        Route::resource('zumhicachelogtypes', 'ZumhiCacheLogTypeController', ['except' => ['create', 'edit']]);
     });
 });

@@ -109,6 +109,16 @@ return [
 	"deleted" => "The ZumhicacheAttributetype was successfully deleted.",
 	"updated" => "The ZumhicacheAttributetype was successfully updated.",
 	],
+	"zumhicachelogs" => [
+	"created" => "The ZumhicacheLog was successfully created.",
+	"deleted" => "The ZumhicacheLog was successfully deleted.",
+	"updated" => "The ZumhicacheLog was successfully updated.",
+	],
+	"logtypes" => [
+	"created" => "The LogType was successfully created.",
+	"deleted" => "The LogType was successfully deleted.",
+	"updated" => "The LogType was successfully updated.",
+	],
 	],
 	"frontend" => [
 	"users" => [
