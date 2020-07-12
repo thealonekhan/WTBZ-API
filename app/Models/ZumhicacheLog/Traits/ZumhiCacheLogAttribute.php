@@ -19,9 +19,13 @@ trait ZumhiCacheLogAttribute
     {
         return '<div class="btn-group action-btn">
             '.$this->getViewButtonAttribute().'
-            '.$this->getEditButtonAttribute('edit-zumhicachelog', 'admin.zumhicachelogs.edit').'
-            '.$this->getDeleteButtonAttribute('delete-zumhicachelog', 'admin.zumhicachelogs.destroy').'
         </div>';
+
+        // return '<div class="btn-group action-btn">
+        //     '.$this->getViewButtonAttribute().'
+        //     '.$this->getEditButtonAttribute('edit-zumhicachelog', 'admin.zumhicachelogs.edit').'
+        //     '.$this->getDeleteButtonAttribute('delete-zumhicachelog', 'admin.zumhicachelogs.destroy').'
+        // </div>';
     }
 
     /**

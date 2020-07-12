@@ -13,7 +13,6 @@
         <th>{{ trans('labels.backend.zumhicachelogs.tabs.content.overview.zumhicacheName') }}</th>
         <td>{{ $zumhicacheName }}</td>
     </tr>
-
     <tr>
         <th>{{ trans('labels.backend.zumhicachelogs.tabs.content.overview.ownerCode') }}</th>
         <td>{{ $ownerCode }}</td>

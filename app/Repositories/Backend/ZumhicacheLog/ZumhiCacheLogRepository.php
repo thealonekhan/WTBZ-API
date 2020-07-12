@@ -31,12 +31,11 @@ class ZumhiCacheLogRepository extends BaseRepository
     public function getForDataTable()
     {
         return $this->query()
-            ->leftJoin(config('module.zumhicacheusers.table'), config('module.zumhicachelogs.table').'.user_id', '=', config('module.zumhicacheusers.table').'.id')
             ->select([
                 config('module.zumhicachelogs.table').'.id',
                 config('module.zumhicachelogs.table').'.referenceCode',
                 config('module.zumhicachelogs.table').'.zumhicacheCode',
-                config('module.zumhicacheusers.table').'.referenceCode as ownerCode',
+                config('module.zumhicachelogs.table').'.ownerCode',
                 config('module.zumhicachelogs.table').'.created_at',
                 config('module.zumhicachelogs.table').'.updated_at',
             ]);
@@ -117,7 +116,7 @@ class ZumhiCacheLogRepository extends BaseRepository
 
         
         $zumhicachelog->referenceCode = $input['referenceCode'];
-        $zumhicachelog->user_id = $input['user_id'];
+        $zumhicachelog->ownerCode = $input['ownerCode'];
         $zumhicachelog->zumhicacheCode = $input['zumhicacheCode'];
         $zumhicachelog->loggedDate = !empty($input['loggedDate']) ? Carbon::parse($input['loggedDate']) : null;
         $zumhicachelog->text = !empty($input['text']) ? $input['text'] : null;

@@ -17,7 +17,7 @@ trait ZumhiCacheLogRelationship
      */
     public function owner()
     {
-        return $this->belongsTo(ZumhiCacheUser::class, 'user_id');
+        return $this->belongsTo(ZumhiCacheUser::class, 'ownerCode', 'referenceCode');
     }
 
     /**

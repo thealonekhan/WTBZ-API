@@ -463,6 +463,7 @@ return [
 	"zumhicachelogs" => [
 	"create" => "Create Zumhicache Log",
 	"edit" => "Edit Zumhicache Log",
+	"show" => "View Zumhicache Log",
 	"management" => "ZumhicacheLog Management",
 	"title" => "Zumhicache Logs",
 	"table" => [

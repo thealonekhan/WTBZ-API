@@ -30,10 +30,10 @@ class ShowResponse implements Responsable
     {
         $ownerCode = $this->zumhicachelog->owner->referenceCode;
         $zumhicacheCode = $this->zumhicachelog->zumhicache->referenceCode;
-        $zumhicacheName = $this->zumhicachelog->zumhicache->Name;
-        $logType = $this->zumhicacheuser->logType->name;
-        $coordinates = $this->zumhicacheuser->coordinate->getFullNameAttribute();
-        return view('backend.zumhicacheusers.show')->with([
+        $zumhicacheName = $this->zumhicachelog->zumhicache->name;
+        $logType = $this->zumhicachelog->logType->name;
+        $coordinates = $this->zumhicachelog->coordinate ? $this->zumhicachelog->coordinate->getFullNameAttribute() : '';
+        return view('backend.zumhicachelogs.show')->with([
             'zumhicachelog' => $this->zumhicachelog,
             'ownerCode' => $ownerCode,
             'zumhicacheCode' => $zumhicacheCode,

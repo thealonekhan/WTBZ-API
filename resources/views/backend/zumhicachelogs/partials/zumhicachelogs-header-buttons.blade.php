@@ -26,13 +26,13 @@
                 <i class="fa fa-list-ul"></i> {{ trans( 'menus.backend.zumhicachelogs.all' ) }}
             </a>
         </li>
-        @permission( 'create-zumhicachelog' )
+        <!-- @permission( 'create-zumhicachelog' )
             <li>
                 <a href="{{ route( 'admin.zumhicachelogs.create' ) }}">
                     <i class="fa fa-plus"></i> {{ trans( 'menus.backend.zumhicachelogs.create' ) }}
                 </a>
             </li>
-        @endauth
+        @endauth -->
     </ul>
 </div>
 <div class="clearfix"></div>

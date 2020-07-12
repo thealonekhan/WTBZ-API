@@ -16,7 +16,7 @@ class CreateZumhicachelogsTable extends Migration
         Schema::create('zumhicachelogs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->uuid('referenceCode')->comment('uniquely identifies the zumhicache user');
-            $table->integer('user_id')->nullable()->comment('relation to zumhicache user table');
+            $table->uuid('ownerCode')->nullable()->comment('relation to zumhicache user table');
             $table->uuid('zumhicacheCode')->nullable()->comment('relation to zumhicache table');
             $table->dateTimeTz('loggedDate', 0)->nullable()->comment('date and time of when user logged the zumhicache in the timezone of the zumhicache');
             $table->string('text', 191)->nullable()->comment('display text of the zumhicache log');
