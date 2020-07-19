@@ -14,6 +14,7 @@
 Route::group(['namespace' => 'Api\V1', 'prefix' => 'v1', 'as' => 'v1.'], function () {
     Route::group(['prefix' => 'auth', 'middleware' => ['guest']], function () {
         Route::post('register', 'RegisterController@register');
+        Route::post('social-register', 'RegisterController@social_register');
         Route::post('login', 'AuthController@login');
         // Password Reset
         Route::post('password/email', 'ForgotPasswordController@sendResetLinkEmail');

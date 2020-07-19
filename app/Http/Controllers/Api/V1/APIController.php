@@ -121,6 +121,23 @@ class APIController extends Controller
     }
 
     /**
+     * respond with error.
+     *
+     * @param $message
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function respondWithErrorSocial($message, $statusCode)
+    {
+        return $this->setStatusCode($statusCode)->respond([
+            'error' => [
+                'message' => $message,
+                'status_code' => $statusCode
+            ]
+        ]);
+    }
+
+    /**
      * responsd not found.
      *
      * @param string $message
