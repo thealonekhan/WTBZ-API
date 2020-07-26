@@ -440,7 +440,8 @@ var Backend = {}; // common variable used in all the files of the backend
                 });
                 this.selectors.ddCoordinates.select2({
                     placeholder: "Select a Coordinate",
-                    allowClear: true
+                    allowClear: true,
+                    tags: true
                 });
                 this.selectors.ddStatus.select2({
                     placeholder: "Select a Status",

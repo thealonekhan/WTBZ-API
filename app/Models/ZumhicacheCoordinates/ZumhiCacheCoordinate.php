@@ -73,6 +73,6 @@ class ZumhiCacheCoordinate extends BaseModel
 
     public function getFullNameAttribute()
     {
-        return 'lat: '.$this->latitude . ", long: " . $this->longitude;
+        return $this->latitude . ", " . $this->longitude;
     }
 }

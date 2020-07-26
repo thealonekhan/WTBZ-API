@@ -43,7 +43,7 @@ class UpdateZumhiCacheRequest extends FormRequest
             'country_id'        => 'required|integer',
             'state_id'          => 'required|integer',
             'ianaTimezoneId'    => 'required',
-            'coordinates_id'    => 'required|integer',
+            'coordinates_id'    => 'required',
             'lastVisitedDate'   => 'nullable|date',
             'shortDescription'  => 'required',
             'relatedWebPage'    => 'nullable|url',

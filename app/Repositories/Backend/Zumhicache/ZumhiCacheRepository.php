@@ -9,6 +9,7 @@ use DB;
 use Carbon\Carbon;
 use App\Models\Zumhicache\ZumhiCache;
 use App\Models\ZumhicacheAttributes\ZumhiCacheAttribute;
+use App\Models\ZumhicacheCoordinates\ZumhiCacheCoordinate;
 use App\Exceptions\GeneralException;
 use App\Repositories\BaseRepository;
 use Illuminate\Support\Facades\Storage;
@@ -91,6 +92,10 @@ class ZumhiCacheRepository extends BaseRepository
         unset($request['attributes']);
         $zumhicache = $this->createZumhicacheStub($request);
 
+        $coordinates_id = $this->checkCoordinates($request['coordinates_id']);
+        
+        $zumhicache->coordinates_id = $coordinates_id;
+        
         DB::transaction(function () use ($zumhicache, $attributesArray) {
             if ($zumhicache->save()) {
 
@@ -119,6 +124,11 @@ class ZumhiCacheRepository extends BaseRepository
         $attributesArray = $this->createAttributes($request['attributes']);
         unset($request['attributes']);
         $zumhicache = $this->createZumhicacheStub($request, $id);
+
+        $coordinates_id = $this->checkCoordinates($request['coordinates_id']);
+        
+        $zumhicache->coordinates_id = $coordinates_id;
+
     	DB::transaction(function () use ($zumhicache, $attributesArray) {
             if ($zumhicache->save()) {
 
@@ -177,7 +187,7 @@ class ZumhiCacheRepository extends BaseRepository
         $zumhicache->size_id = $input['size_id'];
         $zumhicache->country_id = $input['country_id'];
         $zumhicache->state_id = $input['state_id'];
-        $zumhicache->coordinates_id = $input['coordinates_id'];
+        // $zumhicache->coordinates_id = $input['coordinates_id'];
         $zumhicache->shortDescription = $input['shortDescription'];
         $zumhicache->longDescription = $input['longDescription'];
         $zumhicache->hints = $input['hints'];
@@ -217,5 +227,28 @@ class ZumhiCacheRepository extends BaseRepository
         }
 
         return $attributes_array;
+    }
+    
+    /**
+     * Checking coordinates for existing or new.
+     *
+     * @param string($coordinates_id)
+     *
+     * @return string $coordinates_id
+     */
+    public function checkCoordinates($coordinates_id)
+    {
+        $coordinatesArray = explode(',', $coordinates_id);
+
+        if (is_array($coordinatesArray) && count($coordinatesArray) > 1) {
+            
+            $coordinates = new ZumhiCacheCoordinate();
+            $coordinates->latitude = $coordinatesArray[0];
+            $coordinates->longitude = $coordinatesArray[1];
+            $coordinates->save();
+
+            $coordinates_id = $coordinates->id;
+        }
+         return $coordinates_id;
     }
 }
