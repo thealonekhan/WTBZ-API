@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Backend\ZumhicacheCoordinates;
 
-use App\Models\ZumhicacheCoordinates\ZumhiCacheCoordinate;
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Responses\RedirectResponse;
 use App\Http\Responses\ViewResponse;
 use App\Http\Responses\Backend\ZumhicacheCoordinates\CreateResponse;
 use App\Http\Responses\Backend\ZumhicacheCoordinates\EditResponse;
+use App\Http\Responses\Backend\ZumhicacheCoordinates\ShowResponse;
 use App\Repositories\Backend\ZumhicacheCoordinates\ZumhiCacheCoordinateRepository;
 use App\Http\Requests\Backend\ZumhicacheCoordinates\ManageZumhiCacheCoordinateRequest;
 use App\Http\Requests\Backend\ZumhicacheCoordinates\CreateZumhiCacheCoordinateRequest;
@@ -16,6 +16,7 @@ use App\Http\Requests\Backend\ZumhicacheCoordinates\StoreZumhiCacheCoordinateReq
 use App\Http\Requests\Backend\ZumhicacheCoordinates\EditZumhiCacheCoordinateRequest;
 use App\Http\Requests\Backend\ZumhicacheCoordinates\UpdateZumhiCacheCoordinateRequest;
 use App\Http\Requests\Backend\ZumhicacheCoordinates\DeleteZumhiCacheCoordinateRequest;
+use App\Models\ZumhicacheCoordinates\ZumhiCacheCoordinate;
 
 /**
  * ZumhiCacheCoordinatesController
@@ -66,11 +67,20 @@ class ZumhiCacheCoordinatesController extends Controller
     public function store(StoreZumhiCacheCoordinateRequest $request)
     {
         //Input received from the request
-        $input = $request->except(['_token']);
+        // $input = $request->except(['_token']);
         //Create the model using repository create method
-        $this->repository->create($input);
+        $this->repository->create($request->except('_token'));
         //return with successfull message
         return new RedirectResponse(route('admin.zumhicachecoordinates.index'), ['flash_success' => trans('alerts.backend.zumhicachecoordinates.created')]);
+    }
+    /**
+     * @param App\Models\ZumhicacheCoordinates\ZumhiCacheCoordinate  $zumhicachecoordinate
+     * @return \App\Http\Responses\Backend\ZumhicacheCoordinates\ShowResponse
+     */
+    public function show($id)
+    {
+        $zumhicachecoordinate = ZumhiCacheCoordinate::findOrFail($id);
+        return new ShowResponse($zumhicachecoordinate);
     }
     /**
      * Show the form for editing the specified resource.
@@ -79,8 +89,9 @@ class ZumhiCacheCoordinatesController extends Controller
      * @param  EditZumhiCacheCoordinateRequestNamespace  $request
      * @return \App\Http\Responses\Backend\ZumhicacheCoordinates\EditResponse
      */
-    public function edit(ZumhiCacheCoordinate $zumhicachecoordinate, EditZumhiCacheCoordinateRequest $request)
+    public function edit($id)
     {
+        $zumhicachecoordinate = ZumhiCacheCoordinate::findOrFail($id);
         return new EditResponse($zumhicachecoordinate);
     }
     /**
@@ -90,12 +101,12 @@ class ZumhiCacheCoordinatesController extends Controller
      * @param  App\Models\ZumhicacheCoordinates\ZumhiCacheCoordinate  $zumhicachecoordinate
      * @return \App\Http\Responses\RedirectResponse
      */
-    public function update(UpdateZumhiCacheCoordinateRequest $request, ZumhiCacheCoordinate $zumhicachecoordinate)
+    public function update(UpdateZumhiCacheCoordinateRequest $request, $id)
     {
         //Input received from the request
-        $input = $request->except(['_token']);
+        // $input = $request->except(['_token']);
         //Update the model using repository update method
-        $this->repository->update( $zumhicachecoordinate, $input );
+        $this->repository->update( $id, $request->except('_token') );
         //return with successfull message
         return new RedirectResponse(route('admin.zumhicachecoordinates.index'), ['flash_success' => trans('alerts.backend.zumhicachecoordinates.updated')]);
     }
@@ -106,8 +117,9 @@ class ZumhiCacheCoordinatesController extends Controller
      * @param  App\Models\ZumhicacheCoordinates\ZumhiCacheCoordinate  $zumhicachecoordinate
      * @return \App\Http\Responses\RedirectResponse
      */
-    public function destroy(ZumhiCacheCoordinate $zumhicachecoordinate, DeleteZumhiCacheCoordinateRequest $request)
+    public function destroy(DeleteZumhiCacheCoordinateRequest $request, $id)
     {
+        $zumhicachecoordinate = ZumhiCacheCoordinate::find($id);
         //Calling the delete method on repository
         $this->repository->delete($zumhicachecoordinate);
         //returning with successfull message

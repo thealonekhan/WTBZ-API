@@ -2,6 +2,9 @@
 
 namespace App\Repositories\Backend\ZumhicacheCoordinates;
 
+use App\Events\Backend\ZumhiCacheCoordinate\ZumhiCacheCoordinateCreated;
+use App\Events\Backend\ZumhiCacheCoordinate\ZumhiCacheCoordinateDeleted;
+use App\Events\Backend\ZumhiCacheCoordinate\ZumhiCacheCoordinateUpdated;
 use DB;
 use Carbon\Carbon;
 use App\Models\ZumhicacheCoordinates\ZumhiCacheCoordinate;
@@ -30,6 +33,8 @@ class ZumhiCacheCoordinateRepository extends BaseRepository
         return $this->query()
             ->select([
                 config('module.zumhicachecoordinates.table').'.id',
+                config('module.zumhicachecoordinates.table').'.latitude',
+                config('module.zumhicachecoordinates.table').'.longitude',
                 config('module.zumhicachecoordinates.table').'.created_at',
                 config('module.zumhicachecoordinates.table').'.updated_at',
             ]);
@@ -42,12 +47,17 @@ class ZumhiCacheCoordinateRepository extends BaseRepository
      * @throws GeneralException
      * @return bool
      */
-    public function create(array $input)
+    public function create(array $request)
     {
-        if (ZumhiCacheCoordinate::create($input)) {
-            return true;
-        }
-        throw new GeneralException(trans('exceptions.backend.zumhicachecoordinates.create_error'));
+        $zumhicachecoordinate = $this->createZumhicacheCoordinateStub($request);
+        DB::transaction(function () use ($zumhicachecoordinate) {
+            if ($zumhicachecoordinate->save()) {
+                event(new ZumhiCacheCoordinateCreated($zumhicachecoordinate));
+                return true;
+            }
+
+            throw new GeneralException(trans('exceptions.backend.zumhicachecoordinates.create_error'));
+        });
     }
 
     /**
@@ -58,12 +68,17 @@ class ZumhiCacheCoordinateRepository extends BaseRepository
      * @throws GeneralException
      * return bool
      */
-    public function update(ZumhiCacheCoordinate $zumhicachecoordinate, array $input)
+    public function update($id, array $request)
     {
-    	if ($zumhicachecoordinate->update($input))
-            return true;
+        $zumhicachecoordinate = $this->createZumhicacheCoordinateStub($request, $id);
+    	DB::transaction(function () use ($zumhicachecoordinate) {
+            if ($zumhicachecoordinate->save()) {
+                event(new ZumhiCacheCoordinateUpdated($zumhicachecoordinate));
+                return true;
+            }
 
-        throw new GeneralException(trans('exceptions.backend.zumhicachecoordinates.update_error'));
+            throw new GeneralException(trans('exceptions.backend.zumhicachecoordinates.update_error'));
+        });
     }
 
     /**
@@ -73,12 +88,33 @@ class ZumhiCacheCoordinateRepository extends BaseRepository
      * @throws GeneralException
      * @return bool
      */
-    public function delete(ZumhiCacheCoordinate $zumhicachecoordinate)
+    public function delete($zumhicachecoordinate)
     {
         if ($zumhicachecoordinate->delete()) {
+            event(new ZumhiCacheCoordinateDeleted($zumhicachecoordinate));
             return true;
         }
 
         throw new GeneralException(trans('exceptions.backend.zumhicachecoordinates.delete_error'));
+    }
+
+    /**
+     * @param  $input
+     *
+     * @return mixed
+     */
+    protected function createZumhicacheCoordinateStub($input, $id=null)
+    {
+        $zumhicachecoordinate = self::MODEL;
+        if (!empty($id)) {
+            $zumhicachecoordinate = $zumhicachecoordinate::findOrFail($id);
+        } else {
+            $zumhicachecoordinate = new $zumhicachecoordinate();
+        }
+
+        
+        $zumhicachecoordinate->latitude = $input['latitude'];
+        $zumhicachecoordinate->longitude = $input['longitude'];
+        return $zumhicachecoordinate;
     }
 }

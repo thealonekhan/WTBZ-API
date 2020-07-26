@@ -4,15 +4,15 @@ namespace App\Http\Responses\Backend\ZumhicacheCoordinates;
 
 use Illuminate\Contracts\Support\Responsable;
 
-class EditResponse implements Responsable
+class ShowResponse implements Responsable
 {
     /**
-     * @var App\Models\ZumhicacheCoordinates\ZumhiCacheCoordinate
+     * @var \App\Models\ZumhicacheCoordinates\ZumhiCacheCoordinates
      */
     protected $zumhicachecoordinate;
 
     /**
-     * @param App\Models\ZumhicacheCoordinates\ZumhiCacheCoordinate $zumhicachecoordinate
+     * @param \App\Models\ZumhiCacheCoordinates\ZumhiCacheCoordinates $zumhicachecoordinate
      */
     public function __construct($zumhicachecoordinate)
     {
@@ -20,7 +20,7 @@ class EditResponse implements Responsable
     }
 
     /**
-     * To Response
+     * In Response.
      *
      * @param \App\Http\Requests\Request $request
      *
@@ -28,7 +28,7 @@ class EditResponse implements Responsable
      */
     public function toResponse($request)
     {
-        return view('backend.zumhicachecoordinates.edit')->with([
+        return view('backend.zumhicachecoordinates.show')->with([
             'zumhicachecoordinate' => $this->zumhicachecoordinate
         ]);
     }

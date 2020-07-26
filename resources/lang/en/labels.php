@@ -369,13 +369,31 @@ return [
 	],
 	],
 	"zumhicachecoordinates" => [
-	"create" => "Create ZumhicacheCoordinate",
-	"edit" => "Edit ZumhicacheCoordinate",
-	"management" => "ZumhicacheCoordinate Management",
+	"create" => "Create Coordinate",
+	"edit" => "Edit Coordinate",
+	"show" => "View Attribute",
+	"management" => "Coordinates Management",
 	"title" => "ZumhicacheCoordinates",
 	"table" => [
 	"id" => "Id",
+	"latitude" => "Latitude",
+	"longitude" => "Longitude",
 	"createdat" => "Created At",
+	],
+	"tabs" => [
+	"titles" => [
+	"overview" => "Overview",
+	"history" => "History",
+	],
+	"content" => [
+	"overview" => [
+	"latitude" => "Latitude",
+	"longitude" => "Longitude",
+	"created_at" => "Created At",
+	"last_updated" => "Last Updated",
+	"deleted_at" => "Deleted At",
+	],
+	],
 	],
 	],
 	"zumhicacheattributes" => [

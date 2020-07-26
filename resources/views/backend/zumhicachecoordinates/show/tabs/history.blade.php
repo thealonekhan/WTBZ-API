@@ -1,0 +1,1 @@
+{!! history()->renderEntity('Coordinates', $zumhicachecoordinate->id) !!}

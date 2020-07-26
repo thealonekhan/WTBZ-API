@@ -68,5 +68,25 @@ return [
             'deleted' => 'deleted ZumhiCache User',
             'updated' => 'updated ZumhiCache User',
         ],
+        'zumhicacheattribute' => [
+            'created' => 'created ZumhiCache Attribute',
+            'deleted' => 'deleted ZumhiCache Attribute',
+            'updated' => 'updated ZumhiCache Attribute',
+        ],
+        'zumhicacheattributetype' => [
+            'created' => 'created ZumhiCache Attribute Type',
+            'deleted' => 'deleted ZumhiCache Attribute Type',
+            'updated' => 'updated ZumhiCache Attribute Type',
+        ],
+        'zumhicachecoordinate' => [
+            'created' => 'created ZumhiCache Coordinate',
+            'deleted' => 'deleted ZumhiCache Coordinate',
+            'updated' => 'updated ZumhiCache Coordinate',
+        ],
+        'zumhicachelog' => [
+            'created' => 'created ZumhiCache Log',
+            'deleted' => 'deleted ZumhiCache Log',
+            'updated' => 'updated ZumhiCache Log',
+        ],
     ],
 ];

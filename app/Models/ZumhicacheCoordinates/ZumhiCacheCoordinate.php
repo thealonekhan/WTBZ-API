@@ -2,8 +2,8 @@
 
 namespace App\Models\ZumhicacheCoordinates;
 
-use App\Models\BaseModel;
 use App\Models\ModelTrait;
+use App\Models\BaseModel;
 use App\Models\ZumhicacheCoordinates\Traits\ZumhiCacheCoordinateAttribute;
 use App\Models\ZumhicacheCoordinates\Traits\ZumhiCacheCoordinateRelationship;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -26,23 +26,23 @@ class ZumhiCacheCoordinate extends BaseModel
      * The database table used by the model.
      * @var string
      */
-    protected $table = 'zumhicachecoordinates';
+    protected $table;
 
     /**
      * Mass Assignable fields of model
      * @var array
      */
-    protected $fillable = [
+    // protected $fillable = [
 
-    ];
+    // ];
 
     /**
      * Default values for model fields
      * @var array
      */
-    protected $attributes = [
+    // protected $attributes = [
 
-    ];
+    // ];
 
     /**
      * Dates
@@ -68,6 +68,7 @@ class ZumhiCacheCoordinate extends BaseModel
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
+        $this->table = config('module.zumhicachecoordinates.table');
     }
 
     public function getFullNameAttribute()

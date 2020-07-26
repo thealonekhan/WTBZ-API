@@ -238,7 +238,7 @@ return [
                 'isOn'         => 'Is On?',
                 'imageUrl'     => 'Image URL',
             ],
-
+            
             'zumhicacheattributetypes' => [
                 'name'              => 'Name',
                 'attribute_id'      => 'Attribute',
@@ -247,6 +247,10 @@ return [
                 'yesIconUrl'        => 'Yes Icon Url',
                 'noIconUrl'         => 'No Icon Url',
                 'notChosenIconUrl'  => 'Not Chosen Icon Url',
+            ],
+            'zumhicachecoordinates' => [
+                "latitude" => "Latitude",
+	            "longitude" => "Longitude",
             ],
 
             'settings' => [

@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-    {{ Form::model($zumhicachecoordinates, ['route' => ['admin.zumhicachecoordinates.update', $zumhicachecoordinate], 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'PATCH', 'id' => 'edit-zumhicachecoordinate']) }}
+    {{ Form::model($zumhicachecoordinate, ['route' => ['admin.zumhicachecoordinates.update', $zumhicachecoordinate], 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'PATCH', 'id' => 'edit-zumhicachecoordinate']) }}
 
         <div class="box box-info">
             <div class="box-header with-border">

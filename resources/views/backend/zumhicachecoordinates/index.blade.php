@@ -22,12 +22,19 @@
                     <thead>
                         <tr>
                             <th>{{ trans('labels.backend.zumhicachecoordinates.table.id') }}</th>
+                            <th>{{ trans('labels.backend.zumhicachecoordinates.table.latitude') }}</th>
+                            <th>{{ trans('labels.backend.zumhicachecoordinates.table.longitude') }}</th>
                             <th>{{ trans('labels.backend.zumhicachecoordinates.table.createdat') }}</th>
                             <th>{{ trans('labels.general.actions') }}</th>
                         </tr>
                     </thead>
                     <thead class="transparent-bg">
                         <tr>
+                            <th></th>
+                            <th>
+                            {!! Form::text('latitude', null, ["class" => "search-input-text form-control", "data-column" => 1, "placeholder" => trans('labels.backend.zumhicachecoordinates.table.latitude')]) !!}
+                                <a class="reset-data" href="javascript:void(0)"><i class="fa fa-times"></i></a>
+                            </th>
                             <th></th>
                             <th></th>
                             <th></th>
@@ -61,19 +68,21 @@
                 },
                 columns: [
                     {data: 'id', name: '{{config('module.zumhicachecoordinates.table')}}.id'},
+                    {data: 'latitude', name: '{{config('module.zumhicachecoordinates.table')}}.latitude'},
+                    {data: 'longitude', name: '{{config('module.zumhicachecoordinates.table')}}.longitude'},
                     {data: 'created_at', name: '{{config('module.zumhicachecoordinates.table')}}.created_at'},
                     {data: 'actions', name: 'actions', searchable: false, sortable: false}
                 ],
-                order: [[0, "asc"]],
+                order: [[0, "desc"]],
                 searchDelay: 500,
                 dom: 'lBfrtip',
                 buttons: {
                     buttons: [
-                        { extend: 'copy', className: 'copyButton',  exportOptions: {columns: [ 0, 1 ]  }},
-                        { extend: 'csv', className: 'csvButton',  exportOptions: {columns: [ 0, 1 ]  }},
-                        { extend: 'excel', className: 'excelButton',  exportOptions: {columns: [ 0, 1 ]  }},
-                        { extend: 'pdf', className: 'pdfButton',  exportOptions: {columns: [ 0, 1 ]  }},
-                        { extend: 'print', className: 'printButton',  exportOptions: {columns: [ 0, 1 ]  }}
+                        { extend: 'copy', className: 'copyButton',  exportOptions: {columns: [ 0, 1, 2, 3 ]  }},
+                        { extend: 'csv', className: 'csvButton',  exportOptions: {columns: [ 0, 1, 2, 3 ]  }},
+                        { extend: 'excel', className: 'excelButton',  exportOptions: {columns: [ 0, 1, 2, 3 ]  }},
+                        { extend: 'pdf', className: 'pdfButton',  exportOptions: {columns: [ 0, 1, 2, 3 ]  }},
+                        { extend: 'print', className: 'printButton',  exportOptions: {columns: [ 0, 1, 2, 3 ]  }}
                     ]
                 }
             });
