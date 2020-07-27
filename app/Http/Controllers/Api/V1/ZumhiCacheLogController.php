@@ -173,11 +173,11 @@ class ZumhiCacheLogController extends APIController
 
         $validation = Validator::make($request->all(), [
             'referenceCode'     => $referenceCode,
-            'ownerCode'         => 'required',
-            'zumhicacheCode'    => 'required',
+            'ownerCode'         => 'required|exists:zumhicacheusers,referenceCode',
+            'zumhicacheCode'    => 'required|exists:zumhi_caches,referenceCode',
             'loggedDate'        => 'required|date',
-            'logtype_id'        => 'required|integer',
-            'coordinates_id'    => 'nullable|integer',
+            'logtype_id'        => 'required|integer|exists:logtypes,id',
+            'coordinates_id'    => 'nullable|integer|exists:zumhicachecoordinates,id',
             'usedFavoritePoint' => 'nullable|boolean',
             'isEncoded'         => 'nullable|boolean',
             'isArchived'        => 'nullable|boolean',
