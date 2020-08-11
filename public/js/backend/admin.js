@@ -528,6 +528,55 @@ var Backend = {}; // common variable used in all the files of the backend
                 this.selectors.datetimepicker1.datetimepicker();
             }
         },
+        /**
+         * Trackable
+         *
+         */
+        Trackable: {
+            selectors: {
+                ddOwner: jQuery(".dd-owner"),
+                ddHolder: jQuery(".dd-holder"),
+                ddZumhi: jQuery(".dd-zumhi"),
+                ddCountry: jQuery(".dd-country"),
+                ddType: jQuery(".dd-type"),
+                datetimepicker1: jQuery(".datetimepicker1"),
+            },
+
+            init: function (locale) {
+                this.addHandlers();
+                Backend.tinyMCE.init(locale);
+            },
+
+            addHandlers: function () {
+
+                // this.selectors.tags.select2({
+                //     tags: true,
+                // });
+                this.selectors.ddOwner.select2({
+                    placeholder: "Select an ownerCode",
+                    allowClear: true
+                });
+                this.selectors.ddHolder.select2({
+                    placeholder: "Select a holderCode",
+                    allowClear: true
+                });
+                this.selectors.ddZumhi.select2({
+                    placeholder: "Select a ZumhiCode",
+                    allowClear: true
+                });
+                this.selectors.ddCountry.select2({
+                    placeholder: "Select a Country",
+                    allowClear: true
+                });
+                this.selectors.ddType.select2({
+                    placeholder: "Select a Type",
+                    allowClear: true
+                });
+
+                //For Blog datetimepicker for publish_datetime
+                this.selectors.datetimepicker1.datetimepicker();
+            }
+        },
 
         Menu: {
             selectors: {

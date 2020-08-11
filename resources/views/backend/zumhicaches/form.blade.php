@@ -1,3 +1,12 @@
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <div class="box-body">
     <div class="form-group">
         {{ Form::label('referenceCode', trans('validation.attributes.backend.zumhicache.referenceCode'), ['class' => 'col-lg-2 control-label required']) }}
@@ -229,6 +238,12 @@
 </div>
 
 @section("after-scripts")
+    <style>
+        .alert{
+            width: 98%;
+            margin: 0 auto;
+        }
+    </style>
     <script type="text/javascript">
 
         //Backend.Blog.selectors.SlugUrl = "{{url('/')}}";

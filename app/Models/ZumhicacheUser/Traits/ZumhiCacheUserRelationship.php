@@ -12,7 +12,7 @@ use App\Models\ZumhicacheMemberships\ZumhiCacheMembership;
 trait ZumhiCacheUserRelationship
 {
 
-     /**
+    /**
      * ZumhicacheUser belongsTo with User.
      */
     public function owner()

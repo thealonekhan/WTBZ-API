@@ -59,4 +59,13 @@ return [
 	"logtypes" => [
 	"table" => "logtypes",
 	],
+	"trackables" => [
+	"table" => "trackables",
+	],
+	"trackablelogs" => [
+	"table" => "trackablelogs",
+	],
+	"trackablelogtypes" => [
+	"table" => "trackablelogtypes",
+	],
 ];

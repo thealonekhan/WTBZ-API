@@ -133,6 +133,18 @@ class HistoryTypeTableSeeder extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
+            [
+                'id'         => 19,
+                'name'       => 'Trackable',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'id'         => 20,
+                'name'       => 'TrackableLog',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
         ];
 
         DB::table(config('access.history_types_table'))->insert($types);

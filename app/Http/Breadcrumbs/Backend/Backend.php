@@ -30,3 +30,6 @@ require __DIR__.'/Status.php';
 require __DIR__.'/ZumhiCacheAttributeType.php';
 require __DIR__.'/ZumhiCacheLog.php';
 require __DIR__.'/LogType.php';
+require __DIR__.'/Trackable.php';
+require __DIR__.'/TrackableLog.php';
+require __DIR__.'/TrackableLogType.php';

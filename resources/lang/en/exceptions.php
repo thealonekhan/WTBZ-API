@@ -170,6 +170,27 @@ return [
 	"not_found" => "That LogType does not exist.",
 	"update_error" => "There was a problem updating this LogType. Please try again.",
 	],
+	"trackables" => [
+	"already_exists" => "That Trackable already exists. Please choose a different name.",
+	"create_error" => "There was a problem creating this Trackable. Please try again.",
+	"delete_error" => "There was a problem deleting this Trackable. Please try again.",
+	"not_found" => "That Trackable does not exist.",
+	"update_error" => "There was a problem updating this Trackable. Please try again.",
+	],
+	"trackablelogs" => [
+	"already_exists" => "That TrackableLog already exists. Please choose a different name.",
+	"create_error" => "There was a problem creating this TrackableLog. Please try again.",
+	"delete_error" => "There was a problem deleting this TrackableLog. Please try again.",
+	"not_found" => "That TrackableLog does not exist.",
+	"update_error" => "There was a problem updating this TrackableLog. Please try again.",
+	],
+	"trackablelogtypes" => [
+	"already_exists" => "That TrackableLogType already exists. Please choose a different name.",
+	"create_error" => "There was a problem creating this TrackableLogType. Please try again.",
+	"delete_error" => "There was a problem deleting this TrackableLogType. Please try again.",
+	"not_found" => "That TrackableLogType does not exist.",
+	"update_error" => "There was a problem updating this TrackableLogType. Please try again.",
+	],
 	],
 	"frontend" => [
 	"auth" => [

@@ -60,6 +60,7 @@ Route::group(['namespace' => 'Api\V1', 'prefix' => 'v1', 'as' => 'v1.'], functio
         // ZumhiCacheLogs
         Route::resource('zumhicachelogs', 'ZumhiCacheLogController');
         Route::get('zumhicaches/{referenceCode}/zumhicachelogs', 'ZumhiCacheLogController@index');
+        Route::get('zumhicaches/{referenceCode}/trackables', 'TrackableController@zumhicacheTrackables');
         
         // ZumhiCache Users
         Route::resource('zumhicacheusers', 'ZumhiCacheUserController', ['except' => ['create', 'edit']]);
@@ -84,5 +85,16 @@ Route::group(['namespace' => 'Api\V1', 'prefix' => 'v1', 'as' => 'v1.'], functio
         
         // ZumhiCache Log Types
         Route::resource('zumhicachelogtypes', 'ZumhiCacheLogTypeController', ['except' => ['create', 'edit']]);
+        
+        // Trackable
+        Route::resource('trackables', 'TrackableController', ['except' => ['create', 'edit']]);
+        Route::get('trackables/{referenceCode}/trackablelogs', 'TrackableLogController@index');
+        Route::get('trackable-zumhicointypes', 'TrackableController@zumhicointypes');
+        
+        // Trackable Log
+        Route::resource('trackablelogs', 'TrackableLogController', ['except' => ['create', 'edit']]);
+        
+        // Trackable Log Types
+        Route::resource('trackablelogtypes', 'TrackableLogTypeController', ['except' => ['create', 'edit']]);
     });
 });

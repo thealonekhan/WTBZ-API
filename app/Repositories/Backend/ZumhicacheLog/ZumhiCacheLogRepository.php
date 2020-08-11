@@ -125,7 +125,7 @@ class ZumhiCacheLogRepository extends BaseRepository
         $zumhicachelog->usedFavoritePoint = !empty($input['usedFavoritePoint']) ? $input['usedFavoritePoint'] : 0;
         $zumhicachelog->isEncoded = !empty($input['isEncoded']) ? $input['isEncoded'] : 0;
         $zumhicachelog->isArchived = !empty($input['isArchived']) ? $input['isArchived'] : 0;
-        $zumhicachelog->url = !empty($input['url']) ? $input['url'] : 0;
+        $zumhicachelog->url = !empty($input['url']) ? $input['url'] : null;
         return $zumhicachelog;
     }
 }

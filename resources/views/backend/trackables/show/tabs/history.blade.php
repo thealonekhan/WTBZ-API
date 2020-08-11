@@ -1,0 +1,1 @@
+{!! history()->renderEntity('Trackable', $trackable->id) !!}

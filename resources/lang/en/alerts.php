@@ -119,6 +119,21 @@ return [
 	"deleted" => "The LogType was successfully deleted.",
 	"updated" => "The LogType was successfully updated.",
 	],
+	"trackables" => [
+	"created" => "The Trackable was successfully created.",
+	"deleted" => "The Trackable was successfully deleted.",
+	"updated" => "The Trackable was successfully updated.",
+	],
+	"trackablelogs" => [
+	"created" => "The TrackableLog was successfully created.",
+	"deleted" => "The TrackableLog was successfully deleted.",
+	"updated" => "The TrackableLog was successfully updated.",
+	],
+	"trackablelogtypes" => [
+	"created" => "The TrackableLogType was successfully created.",
+	"deleted" => "The TrackableLogType was successfully deleted.",
+	"updated" => "The TrackableLogType was successfully updated.",
+	],
 	],
 	"frontend" => [
 	"users" => [

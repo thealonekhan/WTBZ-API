@@ -253,6 +253,26 @@ return [
 	            "longitude" => "Longitude",
             ],
 
+            'trackable' => [
+                'referenceCode'         => 'Reference Code',
+                'iconUrl'               => 'Icon Url',
+                'name'                  => 'Name',
+                'goal'                  => 'Goal',
+                'description'           => 'Description',
+                'releasedDate'          => 'Released Date',
+                'country_id'            => 'Origin Country',
+                'ownerCode'             => 'ownerCode',
+                'holderCode'            => 'holderCode',
+                'inHolderCollection'    => 'In Holder Collection?',
+                'zumhiCode'             => 'Current ZumhiCache Code',
+                'isMissing'             => 'Is Missing?',
+                'trackingNumber'        => 'Tracking Number',
+                'kilometersTraveled'    => 'Kilometers Traveled',
+                'milesTraveled'         => 'Miles Traveled',
+                'type_id'               => 'Trackable Type',
+                'url'                   => 'Url',
+            ],
+
             'settings' => [
                 'sitelogo'        => 'Site Logo',
                 'favicon'         => 'Fav Icon',

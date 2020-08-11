@@ -88,5 +88,15 @@ return [
             'deleted' => 'deleted ZumhiCache Log',
             'updated' => 'updated ZumhiCache Log',
         ],
+        'trackable' => [
+            'created' => 'created Trackable',
+            'deleted' => 'deleted Trackable',
+            'updated' => 'updated Trackable',
+        ],
+        'trackablelog' => [
+            'created' => 'created Trackable Log',
+            'deleted' => 'deleted Trackable Log',
+            'updated' => 'updated Trackable Log',
+        ],
     ],
 ];

@@ -199,6 +199,27 @@ return [
 	"management" => "LogType Management",
 	"main" => "LogTypes",
 	],
+	"trackables" => [
+	"all" => "All Trackables",
+	"create" => "Create Trackable",
+	"edit" => "Edit Trackable",
+	"management" => "Trackable Management",
+	"main" => "Trackables",
+	],
+	"trackablelogs" => [
+	"all" => "All TrackableLogs",
+	"create" => "Create TrackableLog",
+	"edit" => "Edit TrackableLog",
+	"management" => "TrackableLog Management",
+	"main" => "TrackableLogs",
+	],
+	"trackablelogtypes" => [
+	"all" => "All TrackableLogTypes",
+	"create" => "Create TrackableLogType",
+	"edit" => "Edit TrackableLogType",
+	"management" => "TrackableLogType Management",
+	"main" => "TrackableLogTypes",
+	],
 	],
 	"language-picker" => [
 	"language" => "Language",
