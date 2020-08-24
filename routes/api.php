@@ -56,6 +56,7 @@ Route::group(['namespace' => 'Api\V1', 'prefix' => 'v1', 'as' => 'v1.'], functio
         // ZumhiCaches
         Route::resource('zumhicaches', 'ZumhiCacheController', ['except' => ['create', 'edit']]);
         Route::post('zumhicaches/search', 'ZumhiCacheController@search');
+        Route::get('get-dummy-list', 'ZumhiCacheController@getlist');
 
         // ZumhiCacheLogs
         Route::resource('zumhicachelogs', 'ZumhiCacheLogController');

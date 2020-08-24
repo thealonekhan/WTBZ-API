@@ -53,8 +53,29 @@ class ZumhiCacheController extends APIController
         }
 
         return $collections;
+    }
+    
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getlist(Request $request)
+    {
 
+        $lite = $request->get('lite') ? $request->get('lite') : 'false';
+        $fields = $request->get('fields') ? $request->get('fields') : null;
 
+        $collections =  ZumhiCacheResource::collection(
+            ZumhiCache::with(['owner', 'owner.owner', 'owner.membership', 'type', 'size', 'country', 'state', 'coordinate'])
+            ->get()
+        );
+
+        if ($fields && $lite == 'false') {
+            $collections = $collections->map->only(APIHelper::formatRefCodes($fields));
+        }
+
+        return $collections;
     }
 
     /**
