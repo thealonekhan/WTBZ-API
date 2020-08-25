@@ -134,6 +134,12 @@ return [
 	"deleted" => "The TrackableLogType was successfully deleted.",
 	"updated" => "The TrackableLogType was successfully updated.",
 	],
+	"userwaypoints" => [
+	"created" => "The UserWayPoint was successfully created.",
+	"deleted" => "The UserWayPoint was successfully deleted.",
+	"updated" => "The UserWayPoint was successfully updated.",
+	"deleted_coordinates" => "The UserWayPoint Coordinates were successfully deleted.",
+	],
 	],
 	"frontend" => [
 	"users" => [

@@ -1,5 +1,5 @@
 <!--Action Button-->
-@if( Active::checkUriPattern( 'admin/trackablelogs' ) )
+@if( Active::checkUriPattern( 'admin/userwaypoints' ) )
     <div class="btn-group">
         <button type="button" class="btn btn-warning btn-flat dropdown-toggle" data-toggle="dropdown">Export
             <span class="caret"></span>
@@ -22,14 +22,14 @@
     </button>
     <ul class="dropdown-menu" role="menu">
         <li>
-            <a href="{{ route( 'admin.trackablelogs.index' ) }}">
-                <i class="fa fa-list-ul"></i> {{ trans( 'menus.backend.trackablelogs.all' ) }}
+            <a href="{{ route( 'admin.userwaypoints.index' ) }}">
+                <i class="fa fa-list-ul"></i> {{ trans( 'menus.backend.userwaypoints.all' ) }}
             </a>
         </li>
-        <!-- @permission( 'create-trackablelog' )
+        <!-- @permission( 'create-userwaypoint' )
             <li>
-                <a href="{{ route( 'admin.trackablelogs.create' ) }}">
-                    <i class="fa fa-plus"></i> {{ trans( 'menus.backend.trackablelogs.create' ) }}
+                <a href="{{ route( 'admin.userwaypoints.create' ) }}">
+                    <i class="fa fa-plus"></i> {{ trans( 'menus.backend.userwaypoints.create' ) }}
                 </a>
             </li>
         @endauth -->

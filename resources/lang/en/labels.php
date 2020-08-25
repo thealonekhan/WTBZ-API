@@ -622,6 +622,63 @@ return [
 	"id" => "Id",
 	"createdat" => "Created At",
 	],
+	"tabs" => [
+	"titles" => [
+	"overview" => "Overview",
+	"history" => "History",
+	],
+	"content" => [
+	"overview" => [
+	"referenceCode" => "ReferenceCode",
+	"trackableCode" => "TrackableCode",
+	"ownerCode" => "OwnerCode",
+	"zumhiCode" => "ZumhicacheCode",
+	"zumhicacheName" => "Zumhicache Name",
+	"trackableLogTypeId" => "TrackableLog Type",
+	"logDate" => "Log Date",
+	"coordinates" => "Coordinates",
+	"text" => "Text",
+	"isRot13Encoded" => "Is Rot13 Encoded?",
+	"trackingNumber" => "Tracking Number",
+	"url" => "URL",
+	"created_at" => "Created At",
+	"last_updated" => "Last Updated",
+	"deleted_at" => "Deleted At",
+	],
+	],
+	],
+	],
+	"userwaypoints" => [
+	"create" => "Create UserWayPoint",
+	"edit" => "Edit UserWayPoint",
+	"show" => "View UserWayPoint",
+	"management" => "UserWayPoint Management",
+	"title" => "UserWayPoints",
+	"table" => [
+	"id" => "Id",
+	"referenceCode" => "ReferenceCode",
+	"zumhiCode" => "ZumhicacheCode",
+	"isCorrectedCoordinates" => "Is Corrected Coordinates?",
+	"createdat" => "Created At",
+	],
+	"tabs" => [
+	"titles" => [
+	"overview" => "Overview",
+	"history" => "History",
+	],
+	"content" => [
+	"overview" => [
+	"referenceCode" => "ReferenceCode",
+	"zumhiCode" => "ZumhicacheCode",
+	"isCorrectedCoordinates" => "Is Corrected Coordinates?",
+	"coordinates" => "Coordinates",
+	"description" => "Description",
+	"created_at" => "Created At",
+	"last_updated" => "Last Updated",
+	"deleted_at" => "Deleted At",
+	],
+	],
+	],
 	],
 	],
 	"frontend" => [

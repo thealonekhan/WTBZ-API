@@ -191,6 +191,13 @@ return [
 	"not_found" => "That TrackableLogType does not exist.",
 	"update_error" => "There was a problem updating this TrackableLogType. Please try again.",
 	],
+	"userwaypoints" => [
+	"already_exists" => "That UserWayPoint already exists. Please choose a different name.",
+	"create_error" => "There was a problem creating this UserWayPoint. Please try again.",
+	"delete_error" => "There was a problem deleting this UserWayPoint. Please try again.",
+	"not_found" => "That UserWayPoint does not exist.",
+	"update_error" => "There was a problem updating this UserWayPoint. Please try again.",
+	],
 	],
 	"frontend" => [
 	"auth" => [

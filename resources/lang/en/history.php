@@ -98,5 +98,10 @@ return [
             'deleted' => 'deleted Trackable Log',
             'updated' => 'updated Trackable Log',
         ],
+        'userwaypoint' => [
+            'created' => 'created UserWayPoint',
+            'deleted' => 'deleted UserWayPoint',
+            'updated' => 'updated UserWayPoint',
+        ],
     ],
 ];

@@ -53,6 +53,7 @@ class EventServiceProvider extends ServiceProvider
         \App\Listeners\Backend\ZumhiCacheCoordinate\ZumhiCacheCoordinateEventListener::class,
         \App\Listeners\Backend\Trackable\TrackableEventListener::class,
         \App\Listeners\Backend\TrackableLog\TrackableLogEventListener::class,
+        \App\Listeners\Backend\UserWayPoint\UserWayPointEventListener::class,
     ];
 
     /**

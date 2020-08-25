@@ -62,6 +62,9 @@ Route::group(['namespace' => 'Api\V1', 'prefix' => 'v1', 'as' => 'v1.'], functio
         Route::resource('zumhicachelogs', 'ZumhiCacheLogController');
         Route::get('zumhicaches/{referenceCode}/zumhicachelogs', 'ZumhiCacheLogController@index');
         Route::get('zumhicaches/{referenceCode}/trackables', 'TrackableController@zumhicacheTrackables');
+        Route::get('zumhicaches/{referenceCode}/userwaypoints', 'UserWayPointController@zumhicacheUserWayPoint');
+        Route::put('zumhicaches/{referenceCode}/correctedcoordinates', 'UserWayPointController@zumhicacheCorrectedCoordinatesUpsert');
+        Route::delete('zumhicaches/{referenceCode}/correctedcoordinates', 'UserWayPointController@zumhicacheCorrectedCoordinatesDelete');
         
         // ZumhiCache Users
         Route::resource('zumhicacheusers', 'ZumhiCacheUserController', ['except' => ['create', 'edit']]);
@@ -97,5 +100,8 @@ Route::group(['namespace' => 'Api\V1', 'prefix' => 'v1', 'as' => 'v1.'], functio
         
         // Trackable Log Types
         Route::resource('trackablelogtypes', 'TrackableLogTypeController', ['except' => ['create', 'edit']]);
+
+        // UserWayPoint Log
+        Route::resource('userwaypoints', 'UserWayPointController', ['except' => ['create', 'edit']]);
     });
 });

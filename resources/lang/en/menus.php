@@ -220,6 +220,13 @@ return [
 	"management" => "TrackableLogType Management",
 	"main" => "TrackableLogTypes",
 	],
+	"userwaypoints" => [
+	"all" => "All UserWayPoints",
+	"create" => "Create UserWayPoint",
+	"edit" => "Edit UserWayPoint",
+	"management" => "UserWayPoint Management",
+	"main" => "UserWayPoints",
+	],
 	],
 	"language-picker" => [
 	"language" => "Language",

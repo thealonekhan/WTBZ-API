@@ -33,3 +33,4 @@ require __DIR__.'/LogType.php';
 require __DIR__.'/Trackable.php';
 require __DIR__.'/TrackableLog.php';
 require __DIR__.'/TrackableLogType.php';
+require __DIR__.'/UserWayPoint.php';

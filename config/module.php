@@ -68,4 +68,7 @@ return [
 	"trackablelogtypes" => [
 	"table" => "trackablelogtypes",
 	],
+	"userwaypoints" => [
+	"table" => "userwaypoints",
+	],
 ];

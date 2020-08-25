@@ -1,0 +1,1 @@
+{!! history()->renderEntity('UserWayPoint', $userwaypoint->id) !!}
