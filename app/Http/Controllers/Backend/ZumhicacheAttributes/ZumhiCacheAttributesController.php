@@ -66,8 +66,10 @@ class ZumhiCacheAttributesController extends Controller
      */
     public function store(StoreZumhiCacheAttributeRequest $request)
     {
+        //Input received from the request
+        $input = $request->except(['_token']);
         //Create the model using repository create method
-        $this->repository->create($request->except('_token'));
+        $this->repository->create($input);
         //return with successfull message
         return new RedirectResponse(route('admin.zumhicacheattributes.index'), ['flash_success' => trans('alerts.backend.zumhicacheattributes.created')]);
     }

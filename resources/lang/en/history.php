@@ -103,5 +103,15 @@ return [
             'deleted' => 'deleted UserWayPoint',
             'updated' => 'updated UserWayPoint',
         ],
+        'sponsor' => [
+            'created' => 'created Sponsor',
+            'deleted' => 'deleted Sponsor',
+            'updated' => 'updated Sponsor',
+        ],
+        'zumhitour' => [
+            'created' => 'created Tour',
+            'deleted' => 'deleted Tour',
+            'updated' => 'updated Tour',
+        ],
     ],
 ];

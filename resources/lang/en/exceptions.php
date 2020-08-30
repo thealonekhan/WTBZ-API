@@ -198,6 +198,20 @@ return [
 	"not_found" => "That UserWayPoint does not exist.",
 	"update_error" => "There was a problem updating this UserWayPoint. Please try again.",
 	],
+	"zumhitours" => [
+	"already_exists" => "That ZumhiTour already exists. Please choose a different name.",
+	"create_error" => "There was a problem creating this ZumhiTour. Please try again.",
+	"delete_error" => "There was a problem deleting this ZumhiTour. Please try again.",
+	"not_found" => "That ZumhiTour does not exist.",
+	"update_error" => "There was a problem updating this ZumhiTour. Please try again.",
+	],
+	"sponsors" => [
+	"already_exists" => "That Sponsor already exists. Please choose a different name.",
+	"create_error" => "There was a problem creating this Sponsor. Please try again.",
+	"delete_error" => "There was a problem deleting this Sponsor. Please try again.",
+	"not_found" => "That Sponsor does not exist.",
+	"update_error" => "There was a problem updating this Sponsor. Please try again.",
+	],
 	],
 	"frontend" => [
 	"auth" => [

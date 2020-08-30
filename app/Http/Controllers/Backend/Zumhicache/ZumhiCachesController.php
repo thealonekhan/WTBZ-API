@@ -84,7 +84,6 @@ class ZumhiCachesController extends Controller
      */
     public function store(StoreZumhiCacheRequest $request)
     {
-        
         //Create the model using repository create method
         $this->repository->create($request->except('_token'));
         //return with successfull message

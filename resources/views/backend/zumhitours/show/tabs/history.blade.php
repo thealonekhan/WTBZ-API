@@ -1,0 +1,1 @@
+{!! history()->renderEntity('Tour', $zumhitour->id) !!}

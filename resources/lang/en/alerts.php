@@ -140,6 +140,16 @@ return [
 	"updated" => "The UserWayPoint was successfully updated.",
 	"deleted_coordinates" => "The UserWayPoint Coordinates were successfully deleted.",
 	],
+	"zumhitours" => [
+	"created" => "The ZumhiTour was successfully created.",
+	"deleted" => "The ZumhiTour was successfully deleted.",
+	"updated" => "The ZumhiTour was successfully updated.",
+	],
+	"sponsors" => [
+	"created" => "The Sponsor was successfully created.",
+	"deleted" => "The Sponsor was successfully deleted.",
+	"updated" => "The Sponsor was successfully updated.",
+	],
 	],
 	"frontend" => [
 	"users" => [

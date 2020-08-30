@@ -71,4 +71,10 @@ return [
 	"userwaypoints" => [
 	"table" => "userwaypoints",
 	],
+	"zumhitours" => [
+	"table" => "zumhitours",
+	],
+	"sponsors" => [
+	"table" => "sponsors",
+	],
 ];

@@ -54,6 +54,8 @@ class EventServiceProvider extends ServiceProvider
         \App\Listeners\Backend\Trackable\TrackableEventListener::class,
         \App\Listeners\Backend\TrackableLog\TrackableLogEventListener::class,
         \App\Listeners\Backend\UserWayPoint\UserWayPointEventListener::class,
+        \App\Listeners\Backend\Sponsor\SponsorEventListener::class,
+        \App\Listeners\Backend\ZumhiTour\ZumhiTourEventListener::class,
     ];
 
     /**

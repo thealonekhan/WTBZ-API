@@ -68,6 +68,7 @@ Route::group(['namespace' => 'Api\V1', 'prefix' => 'v1', 'as' => 'v1.'], functio
         
         // ZumhiCache Users
         Route::resource('zumhicacheusers', 'ZumhiCacheUserController', ['except' => ['create', 'edit']]);
+        Route::get('zumhicacheusers/{referenceCode}/zumhicachelogs', 'ZumhiCacheUserController@zumhicachelogs');
 
         // ZumhiCache Sizes
         Route::resource('zumhicachesizes', 'ZumhiCacheSizeController', ['except' => ['create', 'edit']]);
@@ -103,5 +104,9 @@ Route::group(['namespace' => 'Api\V1', 'prefix' => 'v1', 'as' => 'v1.'], functio
 
         // UserWayPoint Log
         Route::resource('userwaypoints', 'UserWayPointController', ['except' => ['create', 'edit']]);
+        
+        // ZumhiTours
+        Route::resource('zumhitours', 'ZumhiTourController', ['except' => ['create', 'edit']]);
+        Route::get('zumhitours/{referenceCode}/zumhicaches', 'ZumhiTourController@zumhicaches');
     });
 });

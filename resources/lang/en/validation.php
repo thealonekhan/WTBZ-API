@@ -273,6 +273,24 @@ return [
                 'url'                   => 'Url',
             ],
 
+            'sponsors' => [
+                'name'              => 'Name',
+                'relatedWebPage'    => 'Related WebPage',
+                'relatedWebPageText'=> 'Related WebPage Text',
+            ],
+            
+            'zumhitours' => [
+                'referenceCode'         => 'ReferenceCode',
+                'name'                  => 'Name',
+                'coordinates_id'        => 'Coordinates',
+                'sponsor_id'            => 'Sponsor',
+                'zumhicaches'           => 'ZumhiCaches',
+                'description'           => 'Description',
+                'url'                   => 'Url',
+                'coverImageUrl'         => 'Cover ImageUrl',
+                'logoImageUrl'          => 'Logo ImageUrl',
+            ],
+
             'settings' => [
                 'sitelogo'        => 'Site Logo',
                 'favicon'         => 'Fav Icon',

@@ -680,6 +680,70 @@ return [
 	],
 	],
 	],
+	"zumhitours" => [
+	"create" => "Create ZumhiTour",
+	"edit" => "Edit ZumhiTour",
+	"show" => "View ZumhiTour",
+	"management" => "ZumhiTour Management",
+	"title" => "ZumhiTours",
+	"table" => [
+	"id" => "Id",
+	"referenceCode" => "ReferenceCode",
+	"name" => "Name",
+	"sponsor" => "Sponsor",
+	"createdat" => "Created At",
+	],
+	"tabs" => [
+	"titles" => [
+	"overview" => "Overview",
+	"history" => "History",
+	],
+	"content" => [
+	"overview" => [
+	'referenceCode'         => 'ReferenceCode',
+	'name'                  => 'Name',
+	'coordinates_id'        => 'Coordinates',
+	'sponsor_id'            => 'Sponsor',
+	'zumhicaches'           => 'ZumhiCaches',
+	'description'           => 'Description',
+	'url'                   => 'Url',
+	'coverImageUrl'         => 'Cover ImageUrl',
+	'logoImageUrl'          => 'Logo ImageUrl',
+	"created_at" => "Created At",
+	"last_updated" => "Last Updated",
+	"deleted_at" => "Deleted At",
+	],
+	],
+	],
+	],
+	"sponsors" => [
+	"create" => "Create Sponsor",
+	"edit" => "Edit Sponsor",
+	"show" => "View Sponsor",
+	"management" => "Sponsor Management",
+	"title" => "Sponsors",
+	"table" => [
+	"id" => "Id",
+	"name" => "Name",
+	"createdat" => "Created At",
+	],
+	"tabs" => [
+	"titles" => [
+	"overview" => "Overview",
+	"history" => "History",
+	],
+	"content" => [
+	"overview" => [
+	"name" => "Name",
+	"relatedWebPage" => "Related WebPage",
+	"relatedWebPageText" => "Related WebPage Text",
+	"created_at" => "Created At",
+	"last_updated" => "Last Updated",
+	"deleted_at" => "Deleted At",
+	],
+	],
+	],
+	],
 	],
 	"frontend" => [
 	"auth" => [

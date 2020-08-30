@@ -16,7 +16,12 @@ class ZumhiCacheAttributeTypeResource extends JsonResource
     {
         return [
             'id'                => $this->id,
-            'attribute_id'      => $this->attribute_id,
+            'attribute'         => [
+                'id' => $this->attribute->id,
+                'name' => $this->attribute->name,
+                'isOn' => $this->attribute->isOn,
+                'imageUrl' => $this->attribute->imageUrl,
+            ],
             'name'              => $this->name,
             'hasYesOption'      => $this->hasYesOption,
             'hasNoOption'       => $this->hasNoOption,

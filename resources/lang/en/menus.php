@@ -227,6 +227,20 @@ return [
 	"management" => "UserWayPoint Management",
 	"main" => "UserWayPoints",
 	],
+	"zumhitours" => [
+	"all" => "All ZumhiTours",
+	"create" => "Create ZumhiTour",
+	"edit" => "Edit ZumhiTour",
+	"management" => "ZumhiTour Management",
+	"main" => "ZumhiTours",
+	],
+	"sponsors" => [
+	"all" => "All Sponsors",
+	"create" => "Create Sponsor",
+	"edit" => "Edit Sponsor",
+	"management" => "Sponsor Management",
+	"main" => "Sponsors",
+	],
 	],
 	"language-picker" => [
 	"language" => "Language",

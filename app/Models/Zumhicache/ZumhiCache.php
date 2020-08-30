@@ -48,4 +48,9 @@ class ZumhiCache extends BaseModel
         parent::__construct($attributes);
         $this->table = config('module.zumhicaches.table');
     }
+
+    public function getFullNameAttribute()
+    {
+        return $this->referenceCode . " - " . $this->name;
+    }
 }
