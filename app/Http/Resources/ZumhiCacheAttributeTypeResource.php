@@ -16,12 +16,6 @@ class ZumhiCacheAttributeTypeResource extends JsonResource
     {
         return [
             'id'                => $this->id,
-            'attribute'         => [
-                'id' => $this->attribute->id,
-                'name' => $this->attribute->name,
-                'isOn' => $this->attribute->isOn,
-                'imageUrl' => $this->attribute->imageUrl,
-            ],
             'name'              => $this->name,
             'hasYesOption'      => $this->hasYesOption,
             'hasNoOption'       => $this->hasNoOption,
@@ -29,6 +23,12 @@ class ZumhiCacheAttributeTypeResource extends JsonResource
             'noIconUrl'         => $this->noIconUrl,
             'notChosenIconUrl'  => $this->notChosenIconUrl,
             'created_at'        => optional($this->created_at)->toDateString(),
+            'attribute'         => [
+                'id' => $this->attribute->id,
+                'name' => $this->attribute->name,
+                'isOn' => $this->attribute->isOn,
+                'imageUrl' => $this->attribute->imageUrl,
+            ],
             // 'updated_at'        => optional($this->updated_at)->toDateString(),
         ];
     }
