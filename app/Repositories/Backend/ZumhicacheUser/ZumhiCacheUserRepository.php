@@ -36,7 +36,7 @@ class ZumhiCacheUserRepository extends BaseRepository
             ->select([
                 config('module.zumhicacheusers.table').'.id',
                 config('module.zumhicacheusers.table').'.referenceCode',
-                config('access.users_table').'.username as Username',
+                config('access.users_table').'.email as Username',
                 config('module.zumhicachememberships.table').'.name as Membership',
                 config('module.zumhicacheusers.table').'.created_at',
                 config('module.zumhicacheusers.table').'.updated_at',
