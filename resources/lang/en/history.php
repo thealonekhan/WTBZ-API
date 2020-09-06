@@ -113,5 +113,15 @@ return [
             'deleted' => 'deleted Tour',
             'updated' => 'updated Tour',
         ],
+        'zclist' => [
+            'created' => 'created List',
+            'deleted' => 'deleted List',
+            'updated' => 'updated List',
+        ],
+        'listzumhicache' => [
+            'created' => 'created List ZumhiCaches',
+            'deleted' => 'deleted List ZumhiCaches',
+            'updated' => 'updated List ZumhiCaches',
+        ],
     ],
 ];

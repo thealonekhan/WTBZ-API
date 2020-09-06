@@ -150,6 +150,21 @@ return [
 	"deleted" => "The Sponsor was successfully deleted.",
 	"updated" => "The Sponsor was successfully updated.",
 	],
+	"listzumhicaches" => [
+	"created" => "The ListZumhiCache was successfully created.",
+	"deleted" => "The ListZumhiCache was successfully deleted.",
+	"updated" => "The ListZumhiCache was successfully updated.",
+	],
+	"listtypes" => [
+	"created" => "The ListType was successfully created.",
+	"deleted" => "The ListType was successfully deleted.",
+	"updated" => "The ListType was successfully updated.",
+	],
+	"zclists" => [
+	"created" => "The List was successfully created.",
+	"deleted" => "The List was successfully deleted.",
+	"updated" => "The List was successfully updated.",
+	],
 	],
 	"frontend" => [
 	"users" => [

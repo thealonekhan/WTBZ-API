@@ -103,10 +103,19 @@ class ZumhiCacheUserController extends APIController
         $lite = request()->lite ? request()->lite : 'false';
         $fields = request()->fields ? request()->fields : null;
 
-        $collections =  ZumhiCacheUserResource::collection(
-            ZumhiCacheUser::with(['owner', 'coordinate', 'membership'])
+        if (strtolower($referenceCode) == 'me') {
+            
+            $zumhiuser = ZumhiCacheUser::with(['owner', 'coordinate', 'membership'])
+            ->where('user_id', request()->user()->id)
+            ->get();
+        } else {
+            $zumhiuser = ZumhiCacheUser::with(['owner', 'coordinate', 'membership'])
             ->where('referenceCode', $referenceCode)
-            ->get()
+            ->get();
+        }
+
+        $collections =  ZumhiCacheUserResource::collection(
+            $zumhiuser
         )->first();
 
         if ($fields && $lite == 'false') {

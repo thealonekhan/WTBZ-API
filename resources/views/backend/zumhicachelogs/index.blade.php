@@ -37,11 +37,11 @@
                                 <a class="reset-data" href="javascript:void(0)"><i class="fa fa-times"></i></a>
                             </th>
                             <th>
-                            {!! Form::text('zumhicacheCode', null, ["class" => "search-input-text form-control", "data-column" => 1, "placeholder" => trans('labels.backend.zumhicachelogs.table.zumhicacheCode')]) !!}
+                            {!! Form::text('zumhicacheCode', null, ["class" => "search-input-text form-control", "data-column" => 2, "placeholder" => trans('labels.backend.zumhicachelogs.table.zumhicacheCode')]) !!}
                                 <a class="reset-data" href="javascript:void(0)"><i class="fa fa-times"></i></a>
                             </th>
                             <th>
-                            {!! Form::text('ownerCode', null, ["class" => "search-input-text form-control", "data-column" => 1, "placeholder" => trans('labels.backend.zumhicachelogs.table.ownerCode')]) !!}
+                            {!! Form::text('ownerCode', null, ["class" => "search-input-text form-control", "data-column" => 3, "placeholder" => trans('labels.backend.zumhicachelogs.table.ownerCode')]) !!}
                                 <a class="reset-data" href="javascript:void(0)"><i class="fa fa-times"></i></a>
                             </th>
                             <th></th>
@@ -77,8 +77,8 @@
                 columns: [
                     {data: 'id', name: '{{config('module.zumhicachelogs.table')}}.id'},
                     {data: 'referenceCode', name: '{{config('module.zumhicachelogs.table')}}.referenceCode'},
-                    {data: 'zumhicacheCode', name: '{{config('module.zumhicaches.table')}}.referenceCode'},
-                    {data: 'ownerCode', name: '{{config('module.zumhicacheusers.table')}}.referenceCode'},
+                    {data: 'zumhicacheCode', name: '{{config('module.zumhicachelogs.table')}}.zumhicacheCode'},
+                    {data: 'ownerCode', name: '{{config('module.zumhicachelogs.table')}}.ownerCode'},
                     {data: 'created_at', name: '{{config('module.zumhicachelogs.table')}}.created_at'},
                     {data: 'actions', name: 'actions', searchable: false, sortable: false}
                 ],

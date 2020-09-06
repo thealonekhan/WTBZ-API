@@ -35,7 +35,10 @@
                             {!! Form::text('latitude', null, ["class" => "search-input-text form-control", "data-column" => 1, "placeholder" => trans('labels.backend.zumhicachecoordinates.table.latitude')]) !!}
                                 <a class="reset-data" href="javascript:void(0)"><i class="fa fa-times"></i></a>
                             </th>
-                            <th></th>
+                            <th>
+                            {!! Form::text('longitude', null, ["class" => "search-input-text form-control", "data-column" => 2, "placeholder" => trans('labels.backend.zumhicachecoordinates.table.longitude')]) !!}
+                                <a class="reset-data" href="javascript:void(0)"><i class="fa fa-times"></i></a>
+                            </th>
                             <th></th>
                             <th></th>
                         </tr>

@@ -241,6 +241,27 @@ return [
 	"management" => "Sponsor Management",
 	"main" => "Sponsors",
 	],
+	"listzumhicaches" => [
+	"all" => "All ListZumhiCaches",
+	"create" => "Create ListZumhiCache",
+	"edit" => "Edit ListZumhiCache",
+	"management" => "ListZumhiCache Management",
+	"main" => "ListZumhiCaches",
+	],
+	"listtypes" => [
+	"all" => "All ListTypes",
+	"create" => "Create ListType",
+	"edit" => "Edit ListType",
+	"management" => "ListType Management",
+	"main" => "ListTypes",
+	],
+	"zclists" => [
+	"all" => "All Lists",
+	"create" => "Create List",
+	"edit" => "Edit List",
+	"management" => "List Management",
+	"main" => "Lists",
+	],
 	],
 	"language-picker" => [
 	"language" => "Language",

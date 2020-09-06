@@ -80,7 +80,7 @@ class RegisterController extends APIController
     public function social_register(Request $request)
     {
         $validation = Validator::make($request->all(), [
-            'access_token'          => 'required',
+            'access_token' => 'required',
             'provider' => [
                 'required',
                 Rule::in(['google', 'facebook']),
@@ -105,11 +105,17 @@ class RegisterController extends APIController
                 
                 $user = User::where('email', $email)->first();
                 if (!$user) {
-                    $user = new User();
-                    $user->first_name = $fistName;
-                    $user->last_name = $lastName;
-                    $user->email = $email;
-                    $user->save();
+                    // $user = new User();
+                    // $user->first_name = $fistName;
+                    // $user->last_name = $lastName;
+                    // $user->email = $email;
+                    // $user->save();
+
+                    $user = $this->repository->createSocial([
+                        'first_name' => $fistName,
+                        'last_name' => $lastName,
+                        'email' => $email,
+                    ], true);
 
                     $message = trans('api.messages.registeration.success');
                     $this->addZumhiCacheUser($user);

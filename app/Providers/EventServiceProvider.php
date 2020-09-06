@@ -56,6 +56,8 @@ class EventServiceProvider extends ServiceProvider
         \App\Listeners\Backend\UserWayPoint\UserWayPointEventListener::class,
         \App\Listeners\Backend\Sponsor\SponsorEventListener::class,
         \App\Listeners\Backend\ZumhiTour\ZumhiTourEventListener::class,
+        \App\Listeners\Backend\ZCList\ZCListEventListener::class,
+        \App\Listeners\Backend\ListZumhiCache\ListZumhiCacheEventListener::class,
     ];
 
     /**

@@ -1,0 +1,1 @@
+{!! history()->renderEntity('List', $zclist->id) !!}

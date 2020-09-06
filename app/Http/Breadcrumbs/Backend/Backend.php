@@ -36,3 +36,6 @@ require __DIR__.'/TrackableLogType.php';
 require __DIR__.'/UserWayPoint.php';
 require __DIR__.'/ZumhiTour.php';
 require __DIR__.'/Sponsor.php';
+require __DIR__.'/ListZumhiCache.php';
+require __DIR__.'/ListType.php';
+require __DIR__.'/ZCList.php';

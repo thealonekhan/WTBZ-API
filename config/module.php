@@ -77,4 +77,13 @@ return [
 	"sponsors" => [
 	"table" => "sponsors",
 	],
+	"listzumhicaches" => [
+	"table" => "listzumhicaches",
+	],
+	"listtypes" => [
+	"table" => "listtypes",
+	],
+	"zclists" => [
+	"table" => "lists",
+	],
 ];

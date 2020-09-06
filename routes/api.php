@@ -101,12 +101,23 @@ Route::group(['namespace' => 'Api\V1', 'prefix' => 'v1', 'as' => 'v1.'], functio
         
         // Trackable Log Types
         Route::resource('trackablelogtypes', 'TrackableLogTypeController', ['except' => ['create', 'edit']]);
-
+        
         // UserWayPoint Log
         Route::resource('userwaypoints', 'UserWayPointController', ['except' => ['create', 'edit']]);
         
         // ZumhiTours
         Route::resource('zumhitours', 'ZumhiTourController', ['except' => ['create', 'edit']]);
         Route::get('zumhitours/{referenceCode}/zumhicaches', 'ZumhiTourController@zumhicaches');
+        
+        // List Types
+        Route::resource('listtypes', 'ListTypeController', ['except' => ['create', 'edit']]);
+        
+        // Lists
+        Route::resource('lists', 'ZCListController', ['except' => ['create', 'edit']]);
+        
+        // ListZumhiCaches
+        Route::get('list-zumhicache/{listCode}/zumhicaches', 'ListZumhiCacheController@index');
+        Route::post('list-zumhicache', 'ListZumhiCacheController@store');
+        Route::delete('list-zumhicache/{listCode}/zumhicaches/{zumhiCode}', 'ListZumhiCacheController@destroy');
     });
 });

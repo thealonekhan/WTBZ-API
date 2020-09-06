@@ -212,6 +212,27 @@ return [
 	"not_found" => "That Sponsor does not exist.",
 	"update_error" => "There was a problem updating this Sponsor. Please try again.",
 	],
+	"listzumhicaches" => [
+	"already_exists" => "That ListZumhiCache already exists. Please choose a different name.",
+	"create_error" => "There was a problem creating this ListZumhiCache. Please try again.",
+	"delete_error" => "There was a problem deleting this ListZumhiCache. Please try again.",
+	"not_found" => "That ListZumhiCache does not exist.",
+	"update_error" => "There was a problem updating this ListZumhiCache. Please try again.",
+	],
+	"listtypes" => [
+	"already_exists" => "That ListType already exists. Please choose a different name.",
+	"create_error" => "There was a problem creating this ListType. Please try again.",
+	"delete_error" => "There was a problem deleting this ListType. Please try again.",
+	"not_found" => "That ListType does not exist.",
+	"update_error" => "There was a problem updating this ListType. Please try again.",
+	],
+	"zclists" => [
+	"already_exists" => "That List already exists. Please choose a different name.",
+	"create_error" => "There was a problem creating this List. Please try again.",
+	"delete_error" => "There was a problem deleting this List. Please try again.",
+	"not_found" => "That List does not exist.",
+	"update_error" => "There was a problem updating this List. Please try again.",
+	],
 	],
 	"frontend" => [
 	"auth" => [
