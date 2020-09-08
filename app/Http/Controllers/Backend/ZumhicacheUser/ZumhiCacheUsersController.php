@@ -59,7 +59,7 @@ class ZumhiCacheUsersController extends Controller
      */
     public function create(CreateZumhiCacheUserRequest $request)
     {
-        $users = User::pluck('username', 'id');
+        $users = User::pluck('email', 'id');
         $memberships = ZumhiCacheMembership::getSelectData();
         $coordinates = ZumhiCacheCoordinate::get()->pluck('full_name', 'id');
         return new CreateResponse($users, $memberships, $coordinates);
@@ -98,7 +98,7 @@ class ZumhiCacheUsersController extends Controller
     public function edit($id)
     {
         $zumhicacheuser = ZumhiCacheUser::findOrFail($id);
-        $users = User::pluck('username', 'id');
+        $users = User::pluck('email', 'id');
         $memberships = ZumhiCacheMembership::getSelectData();
         $coordinates = ZumhiCacheCoordinate::get()->pluck('full_name', 'id');
 

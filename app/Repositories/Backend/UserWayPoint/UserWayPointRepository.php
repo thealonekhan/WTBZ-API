@@ -8,6 +8,7 @@ use App\Events\Backend\UserWayPoint\UserWayPointUpdated;
 use DB;
 use Carbon\Carbon;
 use App\Models\UserWayPoint\UserWayPoint;
+use App\Models\ZumhicacheCoordinates\ZumhiCacheCoordinate;
 use App\Exceptions\GeneralException;
 use App\Repositories\BaseRepository;
 use Illuminate\Database\Eloquent\Model;
@@ -51,6 +52,8 @@ class UserWayPointRepository extends BaseRepository
     public function create(array $request)
     {
         $userwaypoint = $this->createUserWayPointStub($request);
+        $coordinates = ZumhiCacheCoordinate::create($request['coordinates']);
+        $userwaypoint->coordinates_id = $coordinates->id;
 
         DB::transaction(function () use ($userwaypoint) {
             if ($userwaypoint->save()) {
@@ -73,6 +76,9 @@ class UserWayPointRepository extends BaseRepository
     public function update($id, array $request)
     {
         $userwaypoint = $this->createUserWayPointStub($request, $id);
+        $userwaypointupdate = UserWayPoint::findOrFail($id);
+        $coordinates = ZumhiCacheCoordinate::where('id', $userwaypointupdate->coordinates_id)
+        ->update($request['coordinates']);
     	DB::transaction(function () use ($userwaypoint) {
             if ($userwaypoint->save()) {
                 event(new UserWayPointUpdated($userwaypoint));
@@ -92,7 +98,9 @@ class UserWayPointRepository extends BaseRepository
      */
     public function delete($userwaypoint)
     {
+        $coordinates_id = $userwaypoint->coordinates_id;
         if ($userwaypoint->delete()) {
+            ZumhiCacheCoordinate::findOrFail($coordinates_id)->delete();
             event(new UserWayPointDeleted($userwaypoint));
             return true;
         }
@@ -142,7 +150,7 @@ class UserWayPointRepository extends BaseRepository
         $userwaypoint->zumhiCode = $input['zumhicacheCode'];
         $userwaypoint->description = !empty($input['description']) ? $input['description'] : null;
         $userwaypoint->isCorrectedCoordinates = !empty($input['isCorrectedCoordinates']) ? $input['isCorrectedCoordinates'] : 0;
-        $userwaypoint->coordinates_id = !empty($input['coordinates_id']) ? $input['coordinates_id'] : null;
+        // $userwaypoint->coordinates_id = !empty($input['coordinates_id']) ? $input['coordinates_id'] : null;
         return $userwaypoint;
     }
 }

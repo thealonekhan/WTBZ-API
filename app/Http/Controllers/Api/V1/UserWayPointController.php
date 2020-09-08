@@ -241,9 +241,11 @@ class UserWayPointController extends APIController
             'referenceCode'             => $referenceCode,
             'description'               => 'required',
             'isCorrectedCoordinates'    => 'nullable|boolean',
-            'coordinates_id'            => 'nullable|integer|exists:zumhicachecoordinates,id',
+            'coordinates'               => 'required',
+            'coordinates.latitude'      => 'required|numeric',
+            'coordinates.longitude'     => 'required|numeric',
             'zumhicacheCode'            => 'required|exists:zumhi_caches,referenceCode',
-        ]);
+        ], $this->messages());
 
         return $validation;
 
@@ -264,5 +266,15 @@ class UserWayPointController extends APIController
 
         return $validation;
 
+    }
+
+    public function messages()
+    {
+        return [
+            'coordinates.latitude.required'  => 'The Latitude filed is required',
+            'coordinates.longitude.required' => 'The longitude filed is required',
+            'coordinates.latitude.numeric'   =>  'The latitude must be a number',
+            'coordinates.longitude.numeric'  =>  'The longitude must be a number',
+        ];
     }
 }

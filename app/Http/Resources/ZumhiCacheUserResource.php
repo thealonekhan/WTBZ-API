@@ -20,7 +20,7 @@ class ZumhiCacheUserResource extends Resource
             'findCount'             => 0,
             'hideCount'             => 0,
             'favoritePoints'        => 0,
-            'username'              => $this->owner->username,
+            'username'              => $this->owner->username ? $this->owner->username : $this->owner->email,
             'membershipLevelId'     => $this->membership->id,
             'joinedDateUtc'         => $this->joinedDateUtc,
             'avatarUrl'             => $this->avatarUrl,

@@ -28,7 +28,7 @@ class ShowResponse implements Responsable
      */
     public function toResponse($request)
     {
-        $user = $this->zumhicacheuser->owner->username;
+        $user = $this->zumhicacheuser->owner->email;
         $membership = $this->zumhicacheuser->membership->name;
         $coordinates = $this->zumhicacheuser->coordinate->getFullNameAttribute();
         return view('backend.zumhicacheusers.show')->with([
