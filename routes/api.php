@@ -57,6 +57,7 @@ Route::group(['namespace' => 'Api\V1', 'prefix' => 'v1', 'as' => 'v1.'], functio
         Route::resource('zumhicaches', 'ZumhiCacheController', ['except' => ['create', 'edit']]);
         Route::post('zumhicaches/search', 'ZumhiCacheController@search');
         Route::get('get-dummy-list', 'ZumhiCacheController@getlist');
+        Route::post('zumhicaches/change-status', 'ZumhiCacheController@changeStatus');
 
         // ZumhiCacheLogs
         Route::resource('zumhicachelogs', 'ZumhiCacheLogController');
@@ -119,5 +120,7 @@ Route::group(['namespace' => 'Api\V1', 'prefix' => 'v1', 'as' => 'v1.'], functio
         Route::get('list-zumhicache/{listCode}/zumhicaches', 'ListZumhiCacheController@index');
         Route::post('list-zumhicache', 'ListZumhiCacheController@store');
         Route::delete('list-zumhicache/{listCode}/zumhicaches/{zumhiCode}', 'ListZumhiCacheController@destroy');
+
+        Route::resource('statuses', 'StatusesController', ['except' => ['create', 'edit']]);
     });
 });

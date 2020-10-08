@@ -162,6 +162,30 @@ class ZumhiCacheRepository extends BaseRepository
     }
 
     /**
+     * For updating the respective Model in storage
+     *
+     * @param ZumhiCache $zumhicache
+     * @param  $input
+     * @throws GeneralException
+     * return bool
+     */
+    public function changeStatus(array $request)
+    {
+        
+        $zumhicache = self::MODEL;
+        $zumhicache = $zumhicache::where('referenceCode', $request['zumhicacheCode'])->first();
+        $zumhicache->status_id = $request['status_id'];
+    	DB::transaction(function () use ($zumhicache) {
+            if ($zumhicache->save()) {
+                event(new ZumhiCacheUpdated($zumhicache));
+                return true;
+            }
+
+            throw new GeneralException(trans('exceptions.backend.zumhicaches.update_error'));
+        });
+    }
+
+    /**
      * @param  $input
      *
      * @return mixed

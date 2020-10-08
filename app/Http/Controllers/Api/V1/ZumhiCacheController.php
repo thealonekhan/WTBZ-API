@@ -280,6 +280,18 @@ class ZumhiCacheController extends APIController
         return $collections;
     }
 
+    public function changeStatus(Request $request)
+    {
+        $validation = $this->validateStatusRequest($request);
+
+        if ($validation->fails()) {
+            return $this->throwValidation($validation->messages()->first());
+        }
+        $this->repository->changeStatus($request->all());
+
+        return new ZumhiCacheResource(ZumhiCache::where('referenceCode', $request->zumhicacheCode)->first());
+    }
+
     /**
      * validate ZumhiCache.
      *
@@ -296,6 +308,24 @@ class ZumhiCacheController extends APIController
             ]);   
             return $validation;
         }
+
+    }
+    
+    /**
+     * validate StatusRequest.
+     *
+     * @param $request
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function validateStatusRequest(Request $request)
+    {
+
+        $validation = Validator::make($request->all(), [
+            'zumhicacheCode'    => 'required|exists:zumhi_caches,referenceCode',
+            'status_id'         => 'required|exists:statuses,id'
+        ]);   
+        return $validation;
 
     }
 }
